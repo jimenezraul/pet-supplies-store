@@ -1,0 +1,1 @@
+// setup mongoose to connect to the database
