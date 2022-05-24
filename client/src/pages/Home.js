@@ -27,18 +27,26 @@ const slideImages = [
 
 const Home = () => {
   return (
-    <div className="slide-container">
-      <Slide>
-        {slideImages.map((slideImage, index) => (
-          <div className="each-slide" key={index}>
-            <div>
-              <img src={slideImage.url} alt="slide-pictures" />
-
-              <span>{slideImage.caption}</span>
+    <div>
+      <div className="slide-container">
+        <Slide>
+          {slideImages.map((slideImage, index) => (
+            <div className="each-slide" key={index}>
+              <div>
+                <img
+                  className="slideImage"
+                  src={slideImage.url}
+                  alt="slide-pictures"
+                />
+              </div>
             </div>
-          </div>
-        ))}
-      </Slide>
+          ))}
+        </Slide>
+      </div>
+      <div className="midSection">
+        <h1>Welcome to ProPet </h1>
+        <button className="shopButton">Shop Now</button>
+      </div>
     </div>
   );
 };
