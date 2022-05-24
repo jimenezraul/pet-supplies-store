@@ -1,0 +1,18 @@
+.each-slide>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    min-height: 150px;
+}
+
+.each-slide span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+}
+
+.welcome {
+    font-family: 'Open Sans', sans-serif;
+}
