@@ -15,11 +15,14 @@ const Navbar = () => {
   useEffect(() => {
     if (currentPathName === "") {
       dispatch(updateCurrentPage("Home"));
+      document.title = "ProPet | Home";
       return;
     }
     const currentPage =
       currentPathName.charAt(0).toUpperCase() + currentPathName.slice(1);
     dispatch(updateCurrentPage(currentPage));
+
+    document.title = `ProPet | ${currentPage}`;
   }, [currentPathName, dispatch]);
 
   const isAdmin = true;
@@ -57,7 +60,11 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-700 border-gray-200 px-2 sm:px-4 py-2.5">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <Link to="/" className="flex items-center">
+        <Link
+          onClick={() => dispatch(updateCurrentPage("Home"))}
+          to="/"
+          className="flex items-center"
+        >
           <img src={logo} className="text-2xl h-12" alt="Logo" />
           <div className="relative flex flex-col p-4">
             <h1 className="relative logo text-3xl text-white">ProPet</h1>
@@ -120,11 +127,11 @@ const Navbar = () => {
                 <li
                   className={`${
                     currentPage === "" && page.path === "/"
-                      ? "text-white bg-blue-800"
+                      ? "text-white bg-blue-600"
                       : currentPage === page.name
-                      ? "text-white bg-blue-800"
+                      ? "text-white bg-blue-600"
                       : "text-white"
-                  } hover:text-white hover:bg-blue-600 py-2 px-4 rounded-lg`}
+                  } hover:text-white hover:bg-blue-600 py-2 px-4`}
                   onClick={() => {
                     setIsOpen(false);
                     dispatch(updateCurrentPage(page.name));

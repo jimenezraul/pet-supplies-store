@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import imgCat from "../assets/homepage/cat.jpeg";
@@ -10,6 +11,8 @@ import categoryFish from "../assets/categories/fish/fish.jpeg";
 import categoryHamster from "../assets/categories/hamsters/hamster.jpeg";
 import categoryParrot from "../assets/categories/parrots/parrot.jpeg";
 import "./home.css";
+import { useDispatch } from "react-redux";
+import { updateCurrentPage } from "../redux/Store/storeSlice";
 
 const slideImages = [
   {
@@ -26,7 +29,37 @@ const slideImages = [
   },
 ];
 
+const categories = [
+  {
+    url: categoryDog,
+    name: "Dog",
+    path: "/store/dog",
+  },
+  {
+    url: categoryCat,
+    name: "Cat",
+    path: "/store/cat",
+  },
+  {
+    url: categoryFish,
+    name: "Fish",
+    path: "/store/fish",
+  },
+  {
+    url: categoryHamster,
+    name: "Hamster",
+    path: "/store/hamster",
+  },
+  {
+    url: categoryParrot,
+    name: "Bird",
+    path: "/store/bird",
+  },
+];
+
 const Home = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className="flex flex-col flex-1">
       <div className="container mx-auto my-3 md:my-5">
@@ -59,28 +92,20 @@ const Home = () => {
           <div className="p-2">
             <p className="font-bold md:ml-9 text-3xl">Shop By Pet</p>
           </div>
-          <div className="categories bg-white py-5">
+          <div className="categories bg-white pb-5">
             <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
-              <div className="text-center ">
-                <img alt="dog category" src={categoryDog} />
-                <span>Dog</span>
-              </div>
-              <div className="text-center font-medium">
-                <img alt="cat category" src={categoryCat} />
-                <span>Cat</span>
-              </div>
-              <div className="text-center font-medium">
-                <img alt="fish category" src={categoryFish} />
-                <span>Fish</span>
-              </div>
-              <div className="text-center font-medium">
-                <img alt="hamster category" src={categoryHamster} />
-                <span>Hamster</span>
-              </div>
-              <div className="text-center font-medium">
-                <img alt="Parrot category" src={categoryParrot} />
-                <span>Parrot</span>
-              </div>
+              {categories.map((category, index) => (
+                <Link
+                  onClick={() => dispatch(updateCurrentPage("store"))}
+                  to={category.path}
+                  key={index}
+                >
+                  <div key={index} className="text-center font-medium">
+                    <img alt="dog category" src={category.url} />
+                    <p className="mt-5 font-semibold text-lg">{category.name}</p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
