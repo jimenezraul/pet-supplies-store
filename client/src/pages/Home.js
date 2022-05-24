@@ -83,9 +83,14 @@ const Home = () => {
           Welcome to ProPet{" "}
         </h2>
         <div className="w-full text-center">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4">
-            Shop Now
-          </button>
+          <Link
+            to="/store"
+            onClick={() => dispatch(updateCurrentPage("store"))}
+          >
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4">
+              Shop Now
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -103,7 +108,11 @@ const Home = () => {
                   key={index}
                 >
                   <div key={index} className="text-center mx-auto">
-                    <img className="inline-flex w-44" alt={category.name} src={category.url} />
+                    <img
+                      className="inline-flex w-44"
+                      alt={category.name}
+                      src={category.url}
+                    />
                     <p className="mt-5 font-semibold text-lg">
                       {category.name}
                     </p>
