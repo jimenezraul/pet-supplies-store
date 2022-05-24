@@ -49,29 +49,34 @@ const Home = () => {
         </Slide>
       </div>
       <div className="midSection ">
-        <h1>Welcome to ProPet </h1>
+        <h1 className="text-center">Welcome to ProPet </h1>
         <button className="shopButton">Shop Now</button>
       </div>
       <div className="bg-white">
-        <div>
+        <div className="p-3">
           <p className="font-bold">Shop By Pet</p>
         </div>
-        <div className="categories bg-white">
-          <div className="grid grid-cols-5 gap-4 justify-items-center">
-            <div>
+        <div className="categories bg-white ">
+          <div className="grid grid-cols-5 gap-4">
+            <div className="text-center font-medium">
               <img alt="dog category" src={categoryDog} />
+              <span>Dog</span>
             </div>
-            <div>
+            <div className="text-center font-medium">
               <img alt="cat category" src={categoryCat} />
+              <span>Cat</span>
             </div>
-            <div>
+            <div className="text-center font-medium">
               <img alt="fish category" src={categoryFish} />
+              <span>Fish</span>
             </div>
-            <div>
+            <div className="text-center font-medium">
               <img alt="hamster category" src={categoryHamster} />
+              <span>Hamster</span>
             </div>
-            <div>
+            <div className="text-center font-medium">
               <img alt="Parrot category" src={categoryParrot} />
+              <span>Parrot</span>
             </div>
           </div>
         </div>
