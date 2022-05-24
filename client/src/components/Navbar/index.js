@@ -12,9 +12,9 @@ const Navbar = () => {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <Link to="/" className="flex items-center">
           <img src={logo} className="text-2xl h-12" alt="Logo" />
-          <div className="relative flex flex-col p-3">
+          <div className="relative flex flex-col p-4">
             <h1 className="relative logo text-3xl text-white">ProPet</h1>
-            <p className="absolute top-10 left-8 text-white">onlineStore</p>
+            <p className="absolute text-sm top-11 left-12 text-white">onlineStore</p>
           </div>
         </Link>
         <Link to="/cart" className="flex items-center">
