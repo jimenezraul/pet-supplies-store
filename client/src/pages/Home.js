@@ -81,26 +81,3 @@ const Home = () => {
 };
 
 export default Home;
-
-/* <ul className="categoryList">
-          <li>
-            <img alt="dog category" src={categoryDog} />
-            <p>Dogs</p>
-          </li>
-          <li>
-            <img alt="cat category" src={categoryCat} />
-            <p>Cats</p>
-          </li>
-          <li>
-            <img alt="fish category" src={categoryFish} />
-            <p>Fish</p>
-          </li>
-          <li>
-            <img alt="hamster category" src={categoryHamster} />
-            <p>Hamsters</p>
-          </li>
-          <li>
-            <img alt="parrots category" src={categoryParrot} />
-            <p>Parrots</p>
-          </li>
-        </ul> */
