@@ -15,12 +15,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.slide-container {
-  height: 50%;
+/* HOME PAGE STYLES */
+.slideImage {
+  height: 350px;
   width: 100%;
 }
 
-.each-slide {
-  min-height: 50%;
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 50px;
+}
+.midSection {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
+.shopButton {
+  background-color: #1d1da7;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 30px;
+  min-width: 120px;
+}
+/* END OF HOMEPAGE STYLES */
