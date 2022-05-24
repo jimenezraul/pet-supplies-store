@@ -41,4 +41,8 @@ h1 {
   min-height: 30px;
   min-width: 120px;
 }
+.shopButton:hover {
+  background-color: #6687e2;
+  transition: 0.7s;
+}
 /* END OF HOMEPAGE STYLES */
