@@ -30,6 +30,9 @@ h1 {
   align-items: center;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .shopButton {
@@ -40,9 +43,17 @@ h1 {
   padding: 15px;
   min-height: 30px;
   min-width: 120px;
+  margin-bottom: 10px;
 }
 .shopButton:hover {
   background-color: #6687e2;
   transition: 0.7s;
+}
+
+.categories img {
+  border-radius: 50%;
+}
+.categories img:hover {
+  border: 3px solid #6687e2;
 }
 /* END OF HOMEPAGE STYLES */
