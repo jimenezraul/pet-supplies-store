@@ -50,12 +50,6 @@ h1 {
   transition: 0.7s;
 }
 
-/* ul {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-} */
-
 .categories img {
   border-radius: 50%;
 }
