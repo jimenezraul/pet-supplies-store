@@ -1,32 +1,27 @@
-// const Home = () => {
-//   return (
-//     <div>
-//       <h1>Home</h1>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import img1 from "../assets/homepage/cat.jpeg";
-import img2 from "../assets/homepage/fish2.jpeg";
-import img3 from "../assets/homepage/parrots.jpeg";
+import imgCat from "../assets/homepage/cat.jpeg";
+import imgFish from "../assets/homepage/fish2.jpeg";
+import imgParrots from "../assets/homepage/parrots.jpeg";
+import imgDog from "../assets/homepage/dog.jpeg";
 
 const slideImages = [
   {
-    url: img1,
+    url: imgCat,
     caption: "Cat",
   },
   {
-    url: img2,
+    url: imgFish,
     caption: "Fish",
   },
   {
-    url: img3,
+    url: imgParrots,
     caption: "Parrot",
+  },
+  {
+    url: imgDog,
+    caption: "Dog",
   },
 ];
 
