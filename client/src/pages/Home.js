@@ -79,7 +79,9 @@ const Home = () => {
       </div>
 
       <div className="flex bg-white flex-col justify-center mb-4 shadow-md">
-        <h1 className="text-center font-semibold">Welcome to ProPet </h1>
+        <h2 className="text-center text-4xl py-4 font-semibold">
+          Welcome to ProPet{" "}
+        </h2>
         <div className="w-full text-center">
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4">
             Shop Now
@@ -90,7 +92,7 @@ const Home = () => {
       <div className="bg-white mb-5 shadow-md">
         <div className="container mx-auto">
           <div className="p-2">
-            <p className="font-bold md:ml-9 text-3xl">Shop By Pet</p>
+            <p className="font-bold md:ml-9 text-2xl">Shop By Pet</p>
           </div>
           <div className="categories bg-white pb-5">
             <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
@@ -100,9 +102,11 @@ const Home = () => {
                   to={category.path}
                   key={index}
                 >
-                  <div key={index} className="text-center font-medium">
-                    <img alt="dog category" src={category.url} />
-                    <p className="mt-5 font-semibold text-lg">{category.name}</p>
+                  <div key={index} className="text-center mx-auto">
+                    <img className="inline-flex w-44" alt={category.name} src={category.url} />
+                    <p className="mt-5 font-semibold text-lg">
+                      {category.name}
+                    </p>
                   </div>
                 </Link>
               ))}
