@@ -1,11 +1,58 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
 import logo from "../../assets/logo/logo.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { updateCurrentPage } from "../../redux/Store/storeSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const { currentPage, cart } = useSelector((state) => state.store);
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+  const currentPath = window.location.pathname;
+  const currentPathName = currentPath.split("/")[1];
+
+  useEffect(() => {
+    if (currentPathName === "") {
+      dispatch(updateCurrentPage("Home"));
+      return;
+    }
+    const currentPage =
+      currentPathName.charAt(0).toUpperCase() + currentPathName.slice(1);
+    dispatch(updateCurrentPage(currentPage));
+  }, [currentPathName, dispatch]);
+
+  const isAdmin = true;
+
+  let pages = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "Store",
+      path: "/store",
+    },
+    {
+      name: "Profile",
+      path: "/profile",
+    },
+    {
+      name: "Admin",
+      path: "/admin",
+    },
+    {
+      name: "Login",
+      path: "/login",
+    },
+  ];
+
+  pages = pages.filter((page) => {
+    if (isAdmin) {
+      return page.name;
+    }
+    return page.name !== "Admin";
+  });
 
   return (
     <nav className="bg-blue-700 border-gray-200 px-2 sm:px-4 py-2.5">
@@ -14,14 +61,18 @@ const Navbar = () => {
           <img src={logo} className="text-2xl h-12" alt="Logo" />
           <div className="relative flex flex-col p-4">
             <h1 className="relative logo text-3xl text-white">ProPet</h1>
-            <p className="absolute text-sm top-11 left-12 text-white">onlineStore</p>
+            <p className="absolute text-sm top-11 left-12 text-white">
+              onlineStore
+            </p>
           </div>
         </Link>
         <Link to="/cart" className="flex items-center">
-          <i class="relative text-white fa-solid fa-cart-shopping text-xl">
-            <span class="absolute badge inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
-              1
-            </span>
+          <i className="relative text-white fa-solid fa-cart-shopping text-xl">
+            {cart.length > 0 && (
+              <span className="absolute badge inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
+                {cart.length}
+              </span>
+            )}
           </i>
         </Link>
 
@@ -64,39 +115,25 @@ const Navbar = () => {
           id="mobile-menu"
         >
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-            <li>
-              <Link
-                to="/store"
-                className="block py-2 pr-4 pl-3 text-white bg-blue-500 rounded hover:bg-blue-500"
-                aria-current="page"
-              >
-                Store
+            {pages.map((page) => (
+              <Link key={page.name} to={page.path}>
+                <li
+                  className={`${
+                    currentPage === "" && page.path === "/"
+                      ? "text-white bg-blue-800"
+                      : currentPage === page.name
+                      ? "text-white bg-blue-800"
+                      : "text-white"
+                  } hover:text-white hover:bg-blue-600 py-2 px-4 rounded-lg`}
+                  onClick={() => {
+                    setIsOpen(false);
+                    dispatch(updateCurrentPage(page.name));
+                  }}
+                >
+                  {page.name}
+                </li>
               </Link>
-            </li>
-            <li>
-              <Link
-                to="/profile"
-                className="block py-2 pr-4 pl-3 text-gray-300 rounded hover:bg-blue-500 hover:text-white"
-              >
-                Profile
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/admin"
-                className="block py-2 pr-4 pl-3 text-gray-300 rounded hover:bg-blue-500 hover:text-white"
-              >
-                Admin
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/login"
-                className="block py-2 pr-4 pl-3 text-gray-300 rounded hover:bg-blue-500 hover:text-white"
-              >
-                Login
-              </Link>
-            </li>
+            ))}
           </ul>
         </div>
       </div>
