@@ -26,7 +26,7 @@ const Navbar = () => {
   }, [currentPathName, dispatch]);
 
   const isAdmin = true;
-
+  console.log(cart)
   let pages = [
     {
       name: "Home",

@@ -29,15 +29,15 @@ const Store = () => {
   const products = useSelector((state) => state.store.products);
   const dispatch = useDispatch();
   const addToCartHandler = (e) => {
-    console.log(e);
-    dispatch(addToCart(e));
+    const quantity = 1;
+    dispatch(addToCart({ ...e, quantity }));
   };
   return (
     <div className="mt-4 flex-1">
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center md:space-x-2">
           <div className="w-full md:w-3/12">
-            <div className="bg-white border p-3 shadow-lg mb-4 md:mb-0">
+            <div className="bg-white rounded border p-3 shadow-lg mb-4 md:mb-0">
               <h2 className="text-2xl border-b-2 font-semibold pb-4">
                 Categories
               </h2>
