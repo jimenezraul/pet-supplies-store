@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../assets/logo/logo.svg";
 
+
 const LogIn = () => {
   const logInHandler = (e) => {
     e.preventDefault();
@@ -38,6 +39,15 @@ const LogIn = () => {
                 Login
                 <img id="buttonLogo" src={Logo} className="w-full" alt="Logo" />
               </button>
+              <p class="text-sm font-semibold mt-2 pt-1 mb-0">
+                Don't have an account?
+                <a
+                  href="/signup"
+                  class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                >
+                   Sign Up
+                </a>
+              </p>
             </div>
           </form>
         </div>
