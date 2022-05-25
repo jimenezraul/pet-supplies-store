@@ -3,10 +3,20 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
-    username: {
+    first_name: {
       type: String,
       required: true,
       unique: true,
+      trim: true
+    },
+     last_name: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true
+    },
+    image_url: {
+      type: String,
       trim: true
     },
     email: {
@@ -20,10 +30,20 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    pets: [
+    idAdmin: {
+      type: String,
+      default: false
+    },
+    orders: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Pets'
+        ref: 'Order'
+      }
+    ],
+    cart: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'WishList'
       }
     ],
     
@@ -55,3 +75,45 @@ userSchema.methods.isCorrectPassword = async function(password) {
 const User = model('User', userSchema);
 
 module.exports = User;
+
+
+// create user model
+
+// user schema 
+
+    // first_name
+        // required
+        // trim
+
+    // last_name
+        // required
+        // trim
+
+    // image_url
+        // trim
+
+    // email
+        // required
+        // trim
+        // unique
+
+    // password
+        // required
+        // min
+
+    // isAdmin
+        // default false
+
+    // orders
+        // array of order schema
+
+    // cart
+        // array of cart schema
+        
+    // wishlist
+        // array of wishlist schema
+
+        
+// set up pre-save middleware to create password
+
+// compare the incoming password with the hashed password
