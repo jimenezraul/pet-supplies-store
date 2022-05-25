@@ -1,20 +1,22 @@
 import React from "react";
 import Logo from "../assets/logo/logo.svg";
 
-
 const LogIn = () => {
   const logInHandler = (e) => {
     e.preventDefault();
     console.log(e.target);
   };
   return (
-    <section className=" h-screen ">
+    <section>
       <div className="px-6 h-full text-gray-800 flex justify-center">
         <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
           <form
-            className="logInForm bg-white p-10 border-solid border-2 border-grey-600 shadow-lg"
+            className="bg-white p-10 border-solid border-2 border-grey-600 shadow-lg"
             onSubmit={logInHandler}
           >
+            <h1 className="font-semibold mb-8 text-3xl leading-snug uppercase text-center">
+              Log In
+            </h1>
             <div className="mb-6">
               <input
                 type="text"
@@ -45,7 +47,7 @@ const LogIn = () => {
                   href="/signup"
                   class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                 >
-                   Sign Up
+                  Sign Up
                 </a>
               </p>
             </div>
