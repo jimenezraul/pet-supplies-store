@@ -43,3 +43,20 @@ h1 {
   border: 3px solid #6687e2;
 }
 /* END OF HOMEPAGE STYLES */
+
+/* logIn styles */
+
+.logInForm {
+  margin-top: 25%;
+  display: center;
+}
+#buttonLogo {
+  width: 25px;
+  height: 25px;
+  display: inline;
+  margin-left: 5px;
+}
+
+/* <div class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0">
+<img src={Logo} class="w-full" alt="Logo" />
+</div> */
