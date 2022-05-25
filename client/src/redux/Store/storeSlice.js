@@ -60,7 +60,7 @@ export const {
   updateProduct,
   updateCategory,
   updateCurrentCategory,
-  add2Cart,
+  addToCart,
   addMultipleToCart,
   deleteFromCart,
   updateCartQuantity,

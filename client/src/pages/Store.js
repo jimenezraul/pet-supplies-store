@@ -9,6 +9,9 @@ import pic7 from "../assets/categories/dogs/care/ear_wipes.jpg";
 import pic8 from "../assets/categories/dogs/care/oil.jpg";
 import pic9 from "../assets/categories/dogs/care/paw_cleaner.jpg";
 
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/Store/storeSlice";
+
 const products = [
   {
     id: 1,
@@ -55,13 +58,13 @@ const products = [
   {
     id: 8,
     name: "Product 8",
-      price: "8.99",
+    price: "8.99",
     url: pic8,
   },
   {
     id: 9,
     name: "Product 9",
-      price: "9.99",
+    price: "9.99",
     url: pic9,
   },
 ];
@@ -90,8 +93,13 @@ const categories = [
 ];
 
 const Store = () => {
+  const dispatch = useDispatch();
+  const addToCartHandler = (e) => {
+    console.log(e);
+    dispatch(addToCart(e));
+  };
   return (
-    <div className="mt-4">
+    <div className="mt-4 flex-1">
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center md:space-x-2">
           <div className="w-full md:w-3/12">
@@ -106,9 +114,8 @@ const Store = () => {
                     last = true;
                   }
                   return (
-                    <Link to={category.path}>
+                    <Link key={index} to={category.path}>
                       <li
-                        key={index}
                         className={`${
                           !last && "border-b-2"
                         } p-2 hover:bg-gray-100 font-medium`}
@@ -135,15 +142,20 @@ const Store = () => {
                       alt={product.name}
                     />
                     <div className="px-6 py-4">
-                      <div className="font-bold text-xl mb-2">
-                        {product.name}
-                      </div>
+                      <Link to={`/store/product/${product.id}`}>
+                        <div className="font-bold text-xl mb-2 hover:text-blue-700 hover:underline">
+                          {product.name}
+                        </div>
+                      </Link>
                       <p className="text-gray-700 font-semibold">
                         ${product.price}
                       </p>
                     </div>
                     <div className="px-6 pt-4 pb-2">
-                      <button className="ml-1 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent">
+                      <button
+                        onClick={() => addToCartHandler(product)}
+                        className="ml-1 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent"
+                      >
                         Add To Cart
                       </button>
                     </div>
