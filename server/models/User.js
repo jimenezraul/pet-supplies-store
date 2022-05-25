@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const Order = require('./Order');
+const Cart = require('./Cart');
 
 const userSchema = new Schema(
   {
@@ -34,18 +36,8 @@ const userSchema = new Schema(
       type: String,
       default: false
     },
-    orders: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Order'
-      }
-    ],
-    cart: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'WishList'
-      }
-    ],
+    orders: [Order.schema],
+    cart: [Cart.schema],
     
   },
   {
