@@ -32,7 +32,7 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    idAdmin: {
+    isAdmin: {
       type: String,
       default: false
     },

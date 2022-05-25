@@ -15,7 +15,7 @@ const orderSchema = new Schema({
   ],
   order_status: {
     type: String,
-    default: pending,
+    default: false,
   },
 });
 
