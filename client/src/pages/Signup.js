@@ -3,7 +3,7 @@ import Logo from "../assets/logo/logo.svg";
 
 const SignUp = () => {
   return (
-    <div className="bg-grey-lighter min-h-screen flex flex-col">
+    <div className="bg-grey-lighter my-5 flex flex-col">
       <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div className="bg-white px-6 py-8 rounded shadow-lg text-black w-full">
           <h1 className="font-semibold mb-8 text-3xl leading-snug uppercase text-center">
