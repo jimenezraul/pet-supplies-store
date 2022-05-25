@@ -1,40 +1,39 @@
-// types
-    // type Category
-    // id
-    // name
+const { gql } = require('apollo-server-express');
 
-    // type SubCategory
-    // id
-    // name
+const typeDefs = gql`
+  type User {
+    _id: ID
+    first_name: String
+    last_name: String
+    image_url: String
+    email: String
+    password: String
+    isAdmin: String
+   
+   
+  }
 
-    // type Product
-    // id
-    // name
-    // description
-    // image_url
-    // price
-    // quantity
-    // category
-    // subCategory
 
-    // type order
-    // id
-    // purchadeDate
-    // products
+  
 
-    // type wishlist
-    // id
-    // products
+  type Auth {
+    token: ID!
+    user: User
+  }
 
-    // type checkout
-    // session id
-
-    // type auth
-    // token
-    // user
+  type Query {
+    me: User
+    users: [User]
+    user(username: String!): User
     
-    //____________________________________________________________
+  }
 
-    // Query
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+  
+   
+  }
+`;
 
-    // Mutation
+module.exports = typeDefs;
