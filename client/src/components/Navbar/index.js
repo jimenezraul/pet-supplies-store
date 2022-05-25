@@ -73,16 +73,6 @@ const Navbar = () => {
             </p>
           </div>
         </Link>
-        <Link to="/cart" className="flex items-center">
-          <i className="relative text-white fa-solid fa-cart-shopping text-xl">
-            {cart.length > 0 && (
-              <span className="absolute badge inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
-                {cart.length}
-              </span>
-            )}
-          </i>
-        </Link>
-
         <button
           data-collapse-toggle="mobile-menu"
           type="button"
@@ -141,7 +131,17 @@ const Navbar = () => {
                 </li>
               </Link>
             ))}
-          </ul>
+            <Link to="/cart" className="flex items-center">
+            <i className="relative text-white fa-solid fa-cart-shopping text-xl">
+              {cart.length > 0 && (
+                <span className="absolute badge inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
+                  {cart.length}
+                </span>
+              )}
+            </i>
+          </Link>
+                  </ul>
+                  
         </div>
       </div>
     </nav>
