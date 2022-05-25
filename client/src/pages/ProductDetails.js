@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../redux/Store/storeSlice";
+import { useRef } from "react";
 
 const ProductDetails = () => {
+  const quantity = useRef(null);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.store.products);
   const { id } = useParams();
@@ -16,6 +18,14 @@ const ProductDetails = () => {
       </option>
     );
   }
+
+  const addToCartHandler = () => {
+    console.log(quantity.current.value);
+    dispatch(
+      addToCart({ ...product, quantity: parseInt(quantity.current.value) })
+    );
+  };
+
   return (
     <div className="flex-1">
       <div className="container mx-auto px-4 py-8">
@@ -37,7 +47,10 @@ const ProductDetails = () => {
                   <div className="flex ml-6 items-center">
                     <span className="mr-3">Quantity</span>
                     <div className="relative">
-                      <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base pl-3 pr-10">
+                      <select
+                        ref={quantity}
+                        className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 text-base pl-3 pr-10"
+                      >
                         {options}
                       </select>
                       <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
@@ -61,13 +74,13 @@ const ProductDetails = () => {
                     ${product.price}
                   </span>
                   <button
-                    onClick={() => dispatch(addToCart(product))}
+                    onClick={addToCartHandler}
                     className="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 font-bold"
                   >
                     Add To Cart
                   </button>
                   <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                  <i class="fa-solid fa-bookmark"></i>
+                    <i className="fa-solid fa-bookmark"></i>
                   </button>
                 </div>
               </div>
