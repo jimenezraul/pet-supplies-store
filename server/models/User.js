@@ -1,7 +1,7 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
-const Order = require('./Order');
-const Cart = require('./Cart');
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
+const Order = require("./Order");
+const Product = require("./Product");
 
 const userSchema = new Schema(
   {
@@ -9,41 +9,41 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      trim: true
+      trim: true,
     },
-     last_name: {
+    last_name: {
       type: String,
       required: true,
       unique: true,
-      trim: true
+      trim: true,
     },
     image_url: {
       type: String,
-      trim: true
+      trim: true,
     },
     email: {
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, 'Must match an email address!']
+      match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
     },
     password: {
       type: String,
       required: true,
-      minlength: 5
+      minlength: 5,
     },
     isAdmin: {
-      type: String,
-      default: false
+      type: Boolean,
+      default: false,
     },
     orders: [Order.schema],
-    cart: [Cart.schema],
-    
-  },
-  {
-    toJSON: {
-      virtuals: true
-    }
+    cart: [Product.schema],
+    wishlist: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Product",
+      },
+    ],
   }
 );
 
@@ -59,53 +59,9 @@ userSchema.pre('save', async function(next) {
 
 // compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function(password) {
-  return bcrypt.compare(password, this.password);
+  return await bcrypt.compare(password, this.password);
 };
-
-
 
 const User = model('User', userSchema);
 
 module.exports = User;
-
-
-// create user model
-
-// user schema 
-
-    // first_name
-        // required
-        // trim
-
-    // last_name
-        // required
-        // trim
-
-    // image_url
-        // trim
-
-    // email
-        // required
-        // trim
-        // unique
-
-    // password
-        // required
-        // min
-
-    // isAdmin
-        // default false
-
-    // orders
-        // array of order schema
-
-    // cart
-        // array of cart schema
-        
-    // wishlist
-        // array of wishlist schema
-
-        
-// set up pre-save middleware to create password
-
-// compare the incoming password with the hashed password
