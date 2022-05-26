@@ -21,7 +21,7 @@ const typeDefs = gql`
     price: Float
     quantity: Int
     category: Category
-    subcategory: SubCategory
+    subCategory: SubCategory
   }
 
   type Order {
@@ -51,6 +51,10 @@ const typeDefs = gql`
   type Query {
     user: User
     users: [User]
+    products: [Product]
+    product(id: ID!): Product
+    categories: [Category]
+    subcategories: [SubCategory]
   }
 
   type Mutation {

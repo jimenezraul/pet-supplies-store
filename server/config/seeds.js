@@ -38,7 +38,7 @@ db.once("open", async () => {
       100 percent nutrition for adult dogs, 0 percent fillers. Every ingredient has a purpose
       Dry dog food for skin and coat care includes omega-6 fatty acids and natural sources of glucosamine for joint health for dogs plus four antioxidant sources to help support a strong immune system`,
       price: 67.65,
-      url: `/assets/dogs/food/purina.jpg`,
+      image_url: `/assets/dogs/food/purina.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -51,7 +51,7 @@ db.once("open", async () => {
       Delivers complete and balanced nutrition enriched with omega-6 fatty acids to help nourish your dog’s skin and coat
       Made in the USA with the World’s Finest Ingredients`,
       price: 21.98,
-      url: `/assets/dogs/food/pedegree.jpg`,
+      image_url: `/assets/dogs/food/pedegree.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -64,7 +64,7 @@ db.once("open", async () => {
       Made in the USA with the world's finest ingredients, Cesar makes a great meal on its own or as a moist dog food topper mixed with dry food
       This gourmet dog food is served in convenient trays with easy, peel-away freshness seals`,
       price: 23.48,
-      url: `/assets/dogs/food/cesar.jpg`,
+      image_url: `/assets/dogs/food/cesar.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -77,7 +77,7 @@ db.once("open", async () => {
       SPECIALIZED KIBBLE: Small breed adult dog food has an exclusive kibble design adapted for miniature jaws
       GREAT FOR PICKY EATERS: Enhanced palatable dog food satisfies the fussy appetites of small dogs`,
       price: 25.99,
-      url: `/assets/dogs/food/small_dog.jpg`,
+      image_url: `/assets/dogs/food/small_dog.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -92,7 +92,7 @@ db.once("open", async () => {
       Made in the USA, using domestic and globally sourced ingredients from trusted suppliers
       30 LB bag of Wonder Bound Adult Dry Dog Food, Chicken & Brown Rice Recipe shredded blend`,
       price: 39.45,
-      url: `/assets/dogs/food/wonder_bound.jpg`,
+      image_url: `/assets/dogs/food/wonder_bound.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -101,7 +101,7 @@ db.once("open", async () => {
       name: `Portable Dog Water Bottle with Food`,
       description: `Avelora water bottle can hold max 19 ounces (550 ml) of water and 100 g food. It not only ensures dog drinking water easily but also cat, rabbit or other small pet to drinking water easily. You can put this bottle into your pocket, backpack or hanging on your hand with sling rope.`,
       price: 18.99,
-      url: `/assets/dogs/accessories/food_bottle.jpg`,
+      image_url: `/assets/dogs/accessories/food_bottle.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -110,7 +110,7 @@ db.once("open", async () => {
       name: `Absorbent Hooded Dog Bathrobe Towel`,
       description: `Ultra-Absorbent - BarkBox dog towel robes are fun AND functional. Enjoy an ultra-absorbent & fast-drying bathrobe that’s perfect for after bathtime, a rainy hike, or a dewy grass day. You’ll save your bathroom, car, and home from the dreaded wet-dog shake.`,
       price: 18.99,
-      url: `/assets/dogs/accessories/towel.jpg`,
+      image_url: `/assets/dogs/accessories/towel.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -119,7 +119,7 @@ db.once("open", async () => {
       name: `Walking Kit`,
       description: `Premium Quality: The Bricobe dog accessories are durable. The dog collar is strong enough that your dog cannot nibble and destroy it. The leash has a strong braided rope with a padded area for your holding. The dog food bowl is collapsible and can be changed to be of any size.`,
       price: 19.99,
-      url: `/assets/dogs/accessories/out_set.jpg`,
+      image_url: `/assets/dogs/accessories/out_set.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -128,7 +128,7 @@ db.once("open", async () => {
       name: `Retractable Dog Leash`,
       description: `Light weight but sturdy --- 6.6 oz light weight that both adults and children can easily hold it. The light weight and ergonomic non-slip handle are designed to be held for long periods of time without fatigue. The leash consists of a high density strong nylon belt which has abrasion resistance.`,
       price: 11.99,
-      url: `/assets/dogs/accessories/portable.jpg`,
+      image_url: `/assets/dogs/accessories/portable.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -138,7 +138,7 @@ db.once("open", async () => {
       description: `PREMIUM QUALITY MATERIAL - Made of a durable dyed material making it the ideal bandanas for dogs, dual layer makes it long lasting, not like other low quality bandana with one layer only, our bandana he sewing machine work line is neat and straight. Breathable material, keeps your dog cool during those hot summer days. Machine wash and dry available.
       ONE SIZE FITS & FOLDABLE - Wedding dog bandana comes as a 18 x 18 inch Dog Bandana, which can be folded over multiple times. This dog bandana is ideal for small to medium size dogs.Please measure the size of your cutie and leave room to tie knot.`,
       price: 12.99,
-      url: `/assets/dogs/accessories/bandanas.jpg`,
+      image_url: `/assets/dogs/accessories/bandanas.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -149,7 +149,7 @@ db.once("open", async () => {
       GREENIES Dog Treats are proudly made in our Kansas City, MO, USA facility with the world’s finest ingredients
       GREENIES Dog Treats are made with natural ingredients plus vitamins, minerals, & nutrients`,
       price: 18.99,
-      url: `/assets/dogs/treats/greenies.jpg`,
+      image_url: `/assets/dogs/treats/greenies.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -161,7 +161,7 @@ db.once("open", async () => {
       Fortified with 12 vitamins and minerals
       Great for dogs of all sizes`,
       price: 12.99,
-      url: `/assets/dogs/treats/soft_chewy.jpg`,
+      image_url: `/assets/dogs/treats/soft_chewy.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -171,7 +171,7 @@ db.once("open", async () => {
       description: `MEATY TRAINING TREATS: For dogs that love a meaty treat, BLUE Bits are tender, bite-sized morsels that are the perfect size for training. Plus with DHA to help support cognitive development, they’re an ideal puppy treat
       WHOLESOME INGREDIENTS: These dog treats don’t contain any chicken (or poultry) by-product meals and are free from corn, wheat and soy. Plus, they’re free from artificial preservatives like propylene glycol and colors like red dye 40`,
       price: 9.99,
-      url: `/assets/dogs/treats/bits.jpg`,
+      image_url: `/assets/dogs/treats/bits.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -182,7 +182,7 @@ db.once("open", async () => {
       Crunchy texture helps freshen breath and reduce tartar build-up, perfect for sloppy doggie kisses
       Wholesome goodness at only 5 calories per treat with 12 vitamins and minerals`,
       price: 11.48,
-      url: `/assets/dogs/treats/minis.jpg`,
+      image_url: `/assets/dogs/treats/minis.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -191,7 +191,7 @@ db.once("open", async () => {
       name: `Turkey Tendon and Chicken Dog Treats `,
       description: `Premium all natural dog chew treat made from US-sourced turkey tendon and chicken with NO preservatives, NO antibiotics, NO artificial flavors or coloring, NO steroids, NO growth hormones, and NO other harmful ingredients — a healthy natural alternative to rawhide products.`,
       price: 12.99,
-      url: `/assets/dogs/treats/bones.jpg`,
+      image_url: `/assets/dogs/treats/bones.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -201,7 +201,7 @@ db.once("open", async () => {
       description: `Gentle and Safe for Regular Use which Prevents Ear Infections, Reduces Wax Build Up and Removes Debris in and Around the Ear
       100 Convenient, Alcohol Free, Soothing and Non-Irritating Disposable Ear Wipes for Dogs. For Dogs Over 12 Weeks Ol`,
       price: 12.59,
-      url: `/assets/dogs/care/ear_wipes.jpg`,
+      image_url: `/assets/dogs/care/ear_wipes.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -211,7 +211,7 @@ db.once("open", async () => {
       description: `For Proper Use & Effectiveness: The medium MudBuster is perfectly sized for medium sized dogs with paws between 2 ½”to 3 ½” wide. Actual Mudbuster measures 6 inches tall and 4 inches wide
       To use, add a little water, insert the muddy paw, do the twist, dab the paw dry, repeat for 3 more paws`,
       price: 16.49,
-      url: `/assets/dogs/care/paw_cleaner.jpg`,
+      image_url: `/assets/dogs/care/paw_cleaner.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -221,7 +221,7 @@ db.once("open", async () => {
       description: `Rechargeable dog trimmer with built-in battery is good for exceptional flexibility and maneuverability. And the cllipper itself has 5 adjustable functions for the comb from 0.8mm to 2mm.
       High quality stainless steel fixed blade and ceramic moving blade provide excellent cutting performance. The blade sharp enough eventhough it after a long time using. Detachable blades for ease of changing and cleaning.`,
       price: 34.99,
-      url: `/assets/dogs/care/clippers.jpg`,
+      image_url: `/assets/dogs/care/clippers.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -232,7 +232,7 @@ db.once("open", async () => {
       description: `LIQUID FISH OIL FOR DOGS: Includes (1) 16 fl oz bottle of Natural Dog Company Wild Alaskan Salmon Oil that is formulated for dogs of any size, age, or breed and will support your dog's health from the inside out.
       SUPPORTS HEALTHY SKIN & SHINY COAT: Our oil softens skin and fur while relieving dry, itchy skin, reducing shedding, and minimizing skin allergy symptoms.`,
       price: 25.95,
-      url: `/assets/dogs/care/oil.jpg`,
+      image_url: `/assets/dogs/care/oil.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -242,7 +242,7 @@ db.once("open", async () => {
       description: `MOISTURIZING & SOOTHING FORMULA: It moisturizes, softens, and soothes dog paws for immediate relief. An ideal way to protect against extreme weather conditions, treating and healing scars, wounds, paw allergies, dry elbows, & more!
       EASY & QUICK TO APPLY: Clean paws before application. Gently rub onto paw pads. Paws will be slick right after application, allow time to dry. Best applied before bedtime. Repeat one to three times daily. Decrease application as the area improves.`,
       price: 5.99,
-      url: `/assets/dogs/care/paw_soother.jpg`,
+      image_url: `/assets/dogs/care/paw_soother.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -252,7 +252,7 @@ db.once("open", async () => {
       description: `FUN FOR ALL BIG OR SMALL Wobble Wag Giggle Ball is great for dogs of all ages and sizes! The 4 clutch pockets on the toy make it easy for your dog to pick up during playtime!
       WOBBLE WAG GIGGLE Ball With just the nudge of a nose, off the ball goes! Wobble Wag Giggle does not require batteries - the secret is the internal tube noisemaker inside of the ball, the enticing “play-with-me” giggle sounds are sure to engage your pup as the toy rolls around!`,
       price: 14.99,
-      url: `/assets/dogs/toys/ball.jpg`,
+      image_url: `/assets/dogs/toys/ball.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -262,7 +262,7 @@ db.once("open", async () => {
       description: `VARIETY TYPE of DOG TOYS:【Random Color】3 Packs of dog rope toys,2 Packs Stuffed Squeaky Plush Dog Toy,and 1 Pack No Stuffing Dog Squeaky Toys
       SAFE DOG CHEW TOYS: Our dog toys are made of natural and non-toxic material that ensures the safety of dogs. Thicker fabric and better stitching make these toys more durable for dogs. It's suitable for teeth cleaning and chewing`,
       price: 17.99,
-      url: `/assets/dogs/toys/toy_set.jpg`,
+      image_url: `/assets/dogs/toys/toy_set.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -271,7 +271,7 @@ db.once("open", async () => {
       name: `Interactive Dog Gator  Toy`,
       description: `This large dog toy is built to last. Hard nylon along with rubber are designed for aggressive chewers(except for very aggressive dogs). Ideal dog chew toys making it great for dogs who like to chew and gnaw, satisfies the dog’s natural urge to chew.No toy is indestructible, but this one is the closest.`,
       price: 13.99,
-      url: `/assets/dogs/toys/gator.jpg`,
+      image_url: `/assets/dogs/toys/gator.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -281,7 +281,7 @@ db.once("open", async () => {
       description: `Food Grade Material: Bite-resistant and environment friendly TPR materials corn,Non-toxic cotton rope.Safety for your lovely pet playing and teeth cleaning.
       Built-in Filling: Separate the corn product from the cotton rope, and put dog snacks / grits / peanut butter / Easy Treat / snacks / Ziggies stuffed toys in the middle aisle, which is more attractive to dogs for chewing and easy to clean.`,
       price: 13.69,
-      url: `/assets/dogs/toys/corn.jpg`,
+      image_url: `/assets/dogs/toys/corn.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -291,7 +291,7 @@ db.once("open", async () => {
       description: `Puppy Teething Chew Toys: This chew toy suitable for aggressive chewers small medium breed, playing with this toy regularly will relive dog's anxiety when they are at home by themselves, it come make dogs cleaning teeth by themselves.
       Effectively Clean Teeth: according to the features of dog's teeth, which can thoroughly clean dog's incisors, fangs and molars when playing the toy, calculus effectively, fully protecting dog's dental.`,
       price: 11.99,
-      url: `/assets/dogs/toys/chew.jpg`,
+      image_url: `/assets/dogs/toys/chew.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -304,7 +304,7 @@ db.once("open", async () => {
       Purina One Is Veterinarian Recommended
       100% Complete And Balanced Nutrition To Help Support Your Adult Cat'S Healthy Immune System`,
       price: 35.99,
-      url: `/assets/cats/food/purinajpg.jpeg`,
+      image_url: `/assets/cats/food/purinajpg.jpeg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -318,7 +318,7 @@ db.once("open", async () => {
       Meaty morsels deliver and appetizing texture
       Included Components: (24) 3 ounce Cans - Purina fancy feast wet cat food, medleys wild salmon Florentine with garden greens in delicate sauce`,
       price: 18.99,
-      url: `/assets/cats/food/fancy_feast.jpg`,
+      image_url: `/assets/cats/food/fancy_feast.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -328,7 +328,7 @@ db.once("open", async () => {
       description: `Contains twelve (12) 2.6 oz. twin pack trays (24 servings total) of SHEBA PERFECT PORTIONS Wet Cat Food Cuts in Gravy Variety Pack: (6) Roasted Chicken Entrée and (6) Tender Turkey Entrée
       Made with real protein, plus essential vitamins and minerals for any life stage, including mature cat maintenance and kitten growth`,
       price: 10.98,
-      url: `/assets/cats/food/sheba.jpg`,
+      image_url: `/assets/cats/food/sheba.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -340,7 +340,7 @@ db.once("open", async () => {
       Support your cat’s healthy digestion with natural fiber and prebiotics
       Promotes healthy skin and glossy coat with omega-6 and -3 fatty acids`,
       price: 29.42,
-      url: `/assets/cats/food/iams.jpg`,
+      image_url: `/assets/cats/food/iams.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -353,7 +353,7 @@ db.once("open", async () => {
       No artificial flavors
       Made without artificial preservatives`,
       price: 20.05,
-      url: `/assets/cats/food/friskies.jpg`,
+      image_url: `/assets/cats/food/friskies.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -363,7 +363,7 @@ db.once("open", async () => {
       description: `SIZE DETAILS - S: 12.6*12inch, M: 15*13.4inch,L: 15.8*16inch The tent bed can accommodate most of the cat's body and provide a good sleeping experience for the cat. It’s ideal for indoor & outdoor use. Arrives as a vacuum packed bed!
       CLEANING RECOMMENDATIONS - Our cat bed is made of very good pp cotton, but due to the uneven shape of the cat bed cave, many users will break it after washing it with a washing machine. Therefore, for long-term use, we still recommend you to wash them by hand.`,
       price: 16.99,
-      url: `/assets/cats/accessories/bed.jpg`,
+      image_url: `/assets/cats/accessories/bed.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -373,7 +373,7 @@ db.once("open", async () => {
       description: `Isolation of moisture and cold: The size is about 42x45x 23cm. Large enough to keep pets away from hot, cold or dirty floors while resting or sleeping.
       Simple maintenance: The lid can be removed. Drainage is also great. It dries quickly in the shade. It also has a higher drying speed than polyurethane and hard cotton.`,
       price: 29.99,
-      url: `/assets/cats/accessories/bed2.jpg`,
+      image_url: `/assets/cats/accessories/bed2.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -385,7 +385,7 @@ db.once("open", async () => {
       Excellent Ventilation: 9 large Ventilation Holes on both sides and front, left and right ventilation nets ensure fresh air for fur-kids. The back expandable anti-scratching net provides maximum breathability that your pet will enjoy the outdoor time with you.
 `,
       price: 45.99,
-      url: `/assets/cats/accessories/backpack.jpg`,
+      image_url: `/assets/cats/accessories/backpack.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -394,7 +394,7 @@ db.once("open", async () => {
       name: `Cat Harness`,
       description: `Cat Harness with Leash, Fits Large to XL Cats: Size measuring: Neck Girth: 11" - 13.7", Chest Girth: 18.0" - 20.0". Please Measure your cat carefully and refer to the size chart before order. (Tips: Your cat's head circumference should be at least 11 inches or your cat may slip out.) Package includes: 1x Small Cat Walking Vest and 1x Walking Nylon Leash (150cm)`,
       price: 15.99,
-      url: `/assets/cats/accessories/harness.jpg`,
+      image_url: `/assets/cats/accessories/harness.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -405,7 +405,7 @@ db.once("open", async () => {
       description: `ADJUSTABLE SIZE: Each cat collar measures adjustable 7.5" to 10.8", please measure your cat's neck girth before ordering, leave 2 fingers room when wearing for relaxation.
       SOFT POLYESTER COTTON: Made of soft and durable Polyester cotton material, makes your pet feel relaxed and comfortable when wearing, in addition, quick release buckle can provide more safety for your cat.`,
       price: 9.99,
-      url: `/assets/cats/accessories/collar.jpg`,
+      image_url: `/assets/cats/accessories/collar.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -416,7 +416,7 @@ db.once("open", async () => {
       Silent Motor: Quiet design can make sure that your pets would not be scared.Let you also have a quiet and comfortable environment.Great holiday gift for cat owners.Christmas gifts for cats
       Automatic Cat Toy: Make play and exercise moderate, It will automatically power off after 15 minutes of rotating, which can let your cat avoid to play and exercise excessively.It's a fun and playful way to keep cats healthy and active`,
       price: 19.99,
-      url: `/assets/cats/toys/toy.jpg`,
+      image_url: `/assets/cats/toys/toy.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -425,7 +425,7 @@ db.once("open", async () => {
       name: `Potaroma Chirping Cat Balls `,
       description: `Cats Go Nuts – Make play fantastic with the 3 fluffy plush ball toys. The cat toys make lifelike animal chirping sounds once playtime begins, beckoning every bat, bite, chew, and chase! The 3 animal sounds are frog, cricket and bird chirping respectively. The balls keep quiet when left alone to save battery power`,
       price: 14.99,
-      url: `/assets/cats/toys/catnip.jpg`,
+      image_url: `/assets/cats/toys/catnip.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -435,7 +435,7 @@ db.once("open", async () => {
       description: `Interactive Fun for Cats: every time your feline touches this cat kicker toy, the automatic built-in motion sensor kicks into action and the cat teaser fish moves in a wiggling way, intriguing your cat to kick and play. Perfect Thanksgiving, Christmas and New Year gift for pet owners or your own pets
       Realistic Fish Simulation: the vivid moving fish toy looks like a real fish, an eye-catcher for cats, keeping your kitty on her paws and engaged in real time, alleviating boredom and loneliness and promoting cat's exercise when you are away from home`,
       price: 12.99,
-      url: `/assets/cats/toys/fish_kit.jpg`,
+      image_url: `/assets/cats/toys/fish_kit.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -445,7 +445,7 @@ db.once("open", async () => {
       description: `3IN1 CAT TOY+ CAT BED+ CAT SCRATCHER : Cats will be happy to "play soccer"... Lazy lying on the toy... and they will put their energy on the cat scratcher in the middle of the toy instead of your furniture.
       STURDINESS AND DURABILIT: 100% high-quality and environmentally friendly corrugated paper - green, safe and made to last and will last long time`,
       price: 29.99,
-      url: `/assets/cats/toys/pad.jpg`,
+      image_url: `/assets/cats/toys/pad.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -455,7 +455,7 @@ db.once("open", async () => {
       description: `Interactive Cat Toy: The colorful cat toy teaser wand is a great way to attract your cat’s attention. Your cat will love the cat string toy.
        Premium Quality: The cat wand toy is made from soft, colorful satin fabric and high-elastic wand. Both materials are non-toxic and 100% safe for your cats.`,
       price: 19.99,
-      url: `/assets/cats/toys/teaser.jpg`,
+      image_url: `/assets/cats/toys/teaser.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -465,7 +465,7 @@ db.once("open", async () => {
       description: `Hair Remover: Perfect for long, short and curly haired dogs, cats, horses, and other pets, grooming the hair quickly, gently and effectively; The shedding hair sticks to the glove, making it easy to peel and throw hair away
       Bath Brush: Bathe the pets with this glove, which will clean the pet hair easily and give your pets a gentle massage without hurting their skin; Five finger design allows you to groom hard-to-reach places like tail or face`,
       price: 16.99,
-      url: `/assets/cats/care/gloves.jpg`,
+      image_url: `/assets/cats/care/gloves.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -475,7 +475,7 @@ db.once("open", async () => {
       description: `FOR SMALL PETS: Our claw scissors have been designed to be used on small animals, such as dogs, kittens, puppies, birds and bunny. Use them as kitten nail clippers or as general pet nail trimmers.
       SAFE & EASY TO USE: Fitted with razor sharp blades made out of stainless steel and an ergonomic grip made out of a top grade plastic the production of these clippers does not harm the environment.`,
       price: 12.99,
-      url: `/assets/cats/care/clips.jpg`,
+      image_url: `/assets/cats/care/clips.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -484,7 +484,7 @@ db.once("open", async () => {
       name: `Cat Brush for Shedding`,
       description: `One-click Cleaning Button: After brushing your pet, simply click the button. The shutter will pop out, separating the brushed hair from the metal needle, then wipe the hair off. The button of dog brush for shedding short hair on the handle saves time and energy when grooming and cleaning.`,
       price: 25.99,
-      url: `/assets/cats/care/brush.jpg`,
+      image_url: `/assets/cats/care/brush.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -494,7 +494,7 @@ db.once("open", async () => {
       description: `EFFECTIVELY ABSORBS EVEN THE STRONGEST LITTER BOX SMELLS Our proprietary blend of essential oils neutralizes odors at a molecular level, keeping your litter box smelling fresher, longer.
       SAFE FOR PEOPLE, PETS AND THE PLANET Non toxic. 100% plant-based. Made from all-natural, highly absorbent corncob granules that effectively wick moisture from urine and feces`,
       price: 11.92,
-      url: `/assets/cats/care/odor.jpg`,
+      image_url: `/assets/cats/care/odor.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -504,7 +504,7 @@ db.once("open", async () => {
       description: `SENSITIVE SKIN FORMULA - Approved and formulated by veterinarians, PetO’Cera cat shampoo features a blend of eleven botanical extracts. With allantoin and ceramide to enhance your cat’s healthy skin, our natural ingredients help to soothe and relieve your cat’s sensitive skin while calming irritations to stop scratching and deshedding.
       EASY TO USE - Simply apply this cat shampoo to your kitten’s wet coat and lightly work through from head to tail while avoiding the eyes. After bathing the cat, just rinse, towel, and dry. Fully enjoy the refreshing scent while playing with your cat!`,
       price: 23.70,
-      url: `/assets/cats//care/soap.jpg`,
+      image_url: `/assets/cats//care/soap.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -517,7 +517,7 @@ db.once("open", async () => {
       Cat treats with a crunchy texture your cat loves and also helps clean her teeth
       The unique shapes of these cat treats help keep her interes`,
       price: 8.99,
-      url: `/assets/cats/treats/gravy.jpg`,
+      image_url: `/assets/cats/treats/gravy.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -530,7 +530,7 @@ db.once("open", async () => {
       Under two calories per treat
       Delicious taste cats love`,
       price: 9.99,
-      url: `/assets/cats/treats/cheesy.jpg`,
+      image_url: `/assets/cats/treats/cheesy.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -543,7 +543,7 @@ db.once("open", async () => {
       Crunchy texture helps clean her teeth
       Complete and balanced treat formulated for adult cats`,
       price: 8.99,
-      url: `/assets/cats/treats/chicken.jpg`,
+      image_url: `/assets/cats/treats/chicken.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -556,7 +556,7 @@ db.once("open", async () => {
       Less than 2 calories per treat for guilt-free snacking
       Crunchy texture helps clean her teeth`,
       price: 8.99,
-      url: `/assets/cats/treats/crunch.jpg`,
+      image_url: `/assets/cats/treats/crunch.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -569,7 +569,7 @@ db.once("open", async () => {
       Made with real pumpkin and chicken for the taste cats love
       Fewer than 2 calories per treat for guilt-free snacking`,
       price: 18.99,
-      url: `/assets/cats/treats/pumpkin.jpg`,
+      image_url: `/assets/cats/treats/pumpkin.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
       quantity: 100,
@@ -582,7 +582,7 @@ db.once("open", async () => {
       Helps support a healthy immune system and bring out the true colors of your fish
       Feed in small amounts that fish will consume in under 2 minutes`,
       price: 4.96,
-      url: `/assets/fish/food/marine_flakes.jpeg`,
+      image_url: `/assets/fish/food/marine_flakes.jpeg`,
       category: categories[2]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -597,7 +597,7 @@ db.once("open", async () => {
       Highly digestible food
       `,
       price: 63.49,
-      url: `/assets/fish/food/koi_food.jpg`,
+      image_url: `/assets/fish/food/koi_food.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -611,7 +611,7 @@ db.once("open", async () => {
       Will not cloud water when fed as directed
       Ideal for Angelfish, Tetra Species, Barb Species, Rasboras, Danios, White Cloud Minnows, Rainbow Fish, Fancy Guppies, Platies, Swordtails, Corydoras Catfish, Most Loaches, Kribensis`,
       price: 4.99,
-      url: `/assets/fish/food/tropical_flakes.jpg`,
+      image_url: `/assets/fish/food/tropical_flakes.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -621,7 +621,7 @@ db.once("open", async () => {
       description: `Ultra Natural Coloration Ultra-enhanced formulation of natural seaweed, Australian spirulina, and premium fresh sword prawns enhances the natural coloration of your fish, presenting them in their most natural and vibrant colors.
       PET SUPERFOOD It's not only tasty, but it also keeps guppies healthy! Our food is jam-packed with vitamins (A, C, D3, E, B1, B2, B6, B12) great for reaching full potential in size, color, fins, and A+ immunity!`,
       price: 7.19,
-      url: `/assets/fish/food/royal_guppy.jpg`,
+      image_url: `/assets/fish/food/royal_guppy.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -632,7 +632,7 @@ db.once("open", async () => {
       OPTIMAL HEALTH: Made with exclusive low-heat process that preserves essential vitamins and nutrients – enhanced with biotin to support fish’s immune system.
       COLOR ENHANCING: High content of natural color enhancers promote the development of rich, beautiful coloration in tropical fish.`,
       price: 8.54,
-      url: `/assets/fish/food/tetra_pro.jpg`,
+      image_url: `/assets/fish/food/tetra_pro.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -642,7 +642,7 @@ db.once("open", async () => {
       description: `DURABLE, STRONG, AND SAFE: Each fish net features a vinyl covered, two-part braided handle that provides for an ergonomic grip, ensuring reliable operation with its strong design. Our aquarium fish nets won’t bend or become distorted over time, even with repetitive use. The mesh netting is appropriate for almost any type of aquarium fish, both freshwater and saltwater.
       MEASUREMENTS: The QN4 model of our Quick-Net line features a 4” x 3” net, with a handle length of 10”`,
       price: 3.99,
-      url: `/assets/fish/accessories/fish_net.jpg`,
+      image_url: `/assets/fish/accessories/fish_net.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -652,7 +652,7 @@ db.once("open", async () => {
       description: ` This 1.2 gallon semicircular fish tank can raise betta, angel fish, guppy and other ornamental fish. It is suitable for bedroom, living room, study and office, etc. The fish tank is equipped with 5W LED light and two decorative plastic aquatic plants. It will look great wherever you place it. Choose our fish tank, show your taste.
       This betta fish tank is made of impact-resistant acrylic with crystal-clear clarity. Beautiful arc design, both decoration and practicality. The one-piece construction providing superior strength and durability. Unlike glass tanks glued together with silicone, this small aquarium puts to rest any worries or concerns about possible leaks.`,
       price: 32.99,
-      url: `/assets/fish/accessories/aquarium.jpg`,
+      image_url: `/assets/fish/accessories/aquarium.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -661,7 +661,7 @@ db.once("open", async () => {
       name: `Fish Safe Floating Food Feeder `,
       description: `Feed the fish no longer need to turn off the skimmer pump, Put food in the circle, the fish the fish will eat in own plate, fish Don't need to chase food everywhere,Improve feeding efficiency,Reduce fish food waste.`,
       price: 6.99,
-      url: `/assets/fish/accessories/feed_ring.jpg`,
+      image_url: `/assets/fish/accessories/feed_ring.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -670,7 +670,7 @@ db.once("open", async () => {
       name: `Fish Tank Decorations Aquarium Plants`,
       description: `1 Pc resin castle(5.7*3.1*4.9 inch) aquarium decorations with holes for small fish to hide, 1 blue aquarium decor tree(11.1*11.1 inch) and 10Pcs small artificial fish tank plants(1.9*1.9*1.8 inch).`,
       price: 19.99,
-      url: `/assets/fish/accessories/plants.jpg`,
+      image_url: `/assets/fish/accessories/plants.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -682,7 +682,7 @@ db.once("open", async () => {
       Easy to use: Air stone can replace oxygen and reduce the content of carbon dioxide. You only need to manually connect the aviation pipe to the connection port of the air stone and deliver air, and it can be used normally.
       The package includes: 10 feet aviation pipe, 1 Groot bubble, 2 suction cups, 1 check valve, 1 T-connector and 1 air control valve. The whole set of accessories is enough to connect to the air pump.`,
       price: 13.99,
-      url: `/assets/fish/accessories/toy.jpg`,
+      image_url: `/assets/fish/accessories/toy.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -692,7 +692,7 @@ db.once("open", async () => {
       description: `Mufti-functional cleaning kit: Aquarium gravel vacuum cleaner kit is a mufti-functional aquarium cleaner that uses (adopts)the siphon design principle, which includes the aquarium, aquarium sand washing, algae scraping, fish excrement cleaning, aquarium residual debris, and aquarium water changing. Quick water change gives fisha clean and comfortable aquarium living environment.
       Easy to use and assemble: when the fish tank siphon is in use, hold the handle and press it continuously for several times to observe whether it will automatically pump the water out. If not, repeat the operation until the water flows out, then stop the pressure, and secure it on the top of the tank , you will see the water automatically flows out. The Aquarium gravel cleaner kit is designed to be attached to the tank and has a flow regulator `,
       price: 35.99,
-      url: `/assets/fish/care/tank_cleaner.jpg`,
+      image_url: `/assets/fish/care/tank_cleaner.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -703,7 +703,7 @@ db.once("open", async () => {
       DETOXIFIES & REMOVES HARMFUL CHEMICALS - Quick to remove harmful bacteria such as Ammonia, Nitrate, Chlorine, Chloramine, Heavy Metals, and more. Our 'Natural Choice' Dechlorinator and clarifier does all this plus is safer for your aquarium.
       ALL-IN-ONE CONDITIONER - Makes your tap water instantly safe by removing harsh chemicals and detoxifies heavy metals. is so effective and safe it is also recommended for aqua live reefs. From beta fish to exotics, our treatment is great for all.`,
       price: 13.99,
-      url: `/assets/fish/care/water_cond.jpg`,
+      image_url: `/assets/fish/care/water_cond.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -716,7 +716,7 @@ db.once("open", async () => {
       CONVENIENT: Use the cap to measure and dose.
       USAGE: Use monthly, or when setting up a new aquarium, after a water or filter change, or when adding new fish to ensure healthy water conditions.`,
       price: 5.78,
-      url: `/assets/fish/care/bacteria.jpg`,
+      image_url: `/assets/fish/care/bacteria.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -729,7 +729,7 @@ db.once("open", async () => {
       Helps prevent fish loss in freshwater and saltwater aquariums
       Use when starting a new aquarium, when adding new fish and when changing water and filter media`,
       price: 9.98,
-      url: `/assets/fish/care/API.jpg`,
+      image_url: `/assets/fish/care/API.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -738,7 +738,7 @@ db.once("open", async () => {
       name: `AQQA Magnetic Aquarium Cleaner Brush`,
       description: `Suitable 1/4 "~3/8 " Thickness Glass - the cleaner brush size is 10.3X5.5X6.8cm(4.05"*2.17"*2.7"),won't occupy a lot of space in the fish tank,The edges are very smooth and will not harm the fish.Please pay attention to your hands when using, do not put your hands in the middle of strong magnets.`,
       price: 29.99,
-      url: `/assets/fish/care/magnetic_brush.jpg`,
+      image_url: `/assets/fish/care/magnetic_brush.jpg`,
       category: categories[2]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -749,7 +749,7 @@ db.once("open", async () => {
       Triple baked for crunchiness and great taste
       Natural Wood stick center provides your bird with long lasting chewing fun`,
       price: 5.99,
-      url: `/assets/hamsters/food/stick.jpg`,
+      image_url: `/assets/hamsters/food/stick.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -762,7 +762,7 @@ db.once("open", async () => {
       A nutritionally complete diet for hamsters and gerbils
       All natural`,
       price: 5.99,
-      url: `/assets/hamsters/food/FortiDiet.jpg`,
+      image_url: `/assets/hamsters/food/FortiDiet.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -775,7 +775,7 @@ db.once("open", async () => {
       Added Vitamins For Health & Vitality
       Suitable For All Breeds Including Dwarf Hamsters`,
       price: 6.57,
-      url: `/assets/hamsters/food/farm.jpg`,
+      image_url: `/assets/hamsters/food/farm.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -787,7 +787,7 @@ db.once("open", async () => {
       IMPORTANT VARIETY: Unique mix of ingredients create an irresistible blend to replicate diets found in a natural habitat and encourage foraging behaviors.
       Less Mess Than Using Bags`,
       price: 9.97,
-      url: `/assets/hamsters/food/wild_harvest.jpg`,
+      image_url: `/assets/hamsters/food/wild_harvest.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -801,7 +801,7 @@ db.once("open", async () => {
       Single component extruded nuggets prevent selective feeding
       Age range description: All Life Stages`,
       price: 6.9,
-      url: `/assets/hamsters/food/complete.jpg`,
+      image_url: `/assets/hamsters/food/complete.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[0]._id,
       quantity: 100,
@@ -810,7 +810,7 @@ db.once("open", async () => {
       name: `4oz Small Pet Water Bottle with Bamboo Stand`,
       description: `ADJUSTABLE HEIGHT WATER BOTTLE HOLDER FOR GERBILS, HAMSTERS, AND RATS - With this adjustable bamboo stand, you can adjust the water bottle so that the sipper part can be between 1.2 inches to 3.7 inches off the ground. An easy to adjust butterfly nut at the back of the stand will ensure that you can customize the height of the water bottle and that the water bottle holder will securely lock in place.`,
       price: 21.99,
-      url: `/assets/hamsters/accessories/bottles.jpg`,
+      image_url: `/assets/hamsters/accessories/bottles.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -821,7 +821,7 @@ db.once("open", async () => {
       Easily Cleaning: Easy to remove the lid,arc design of the bottom can wash the dirty stuff away without effort
       Size: 5.7 inches long,3.9 inches wide,3.9 inches high. It's matched with a Sand Scoop which is random color. It's recommended for your dwarf hamsters gerbils mice or other small pets`,
       price: 11.99,
-      url: `/assets/hamsters/accessories/sand_bath.jpg`,
+      image_url: `/assets/hamsters/accessories/sand_bath.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -831,7 +831,7 @@ db.once("open", async () => {
       description: ` Size: 20 x 6 x 6cm; SUITABLE FOR SMALL Pet eg. Sugar glider, Squirrel, Hamster, Mouse and other small pets Pls check the size before you buy it.
       FUNCTION: It can be hung on the cage or used as a hammock.`,
       price: 8.79,
-      url: `/assets/hamsters/accessories/banana_bed.jpg`,
+      image_url: `/assets/hamsters/accessories/banana_bed.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -840,7 +840,7 @@ db.once("open", async () => {
       name: `Hamster Hiding House`,
       description: `Size: Rainbow house ( 5.9 x 5.9 x5.4 ), The snail house ( 6.3 x 3.9 x 3.9 ), Gym room（5.5x 3.1x 2.8），On the seesaw (5.7*2.6*1.5)perfect for hamsters, gerbils and mice and other small animal. Please check the size of your pet before ordering.`,
       price: 12.99,
-      url: `/assets/hamsters/accessories/house.jpg`,
+      image_url: `/assets/hamsters/accessories/house.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -850,7 +850,7 @@ db.once("open", async () => {
       description: `Crystal Ball For Hamsters: Size: 4.72 Inches，Pets can play in the Crystal Ball For Hamsters, and the owner can observe the pet's every move. So cute!This is a small hamster ball, not suitable for larger pets.
 Environmentally Friendly Materials: Hamster exercise balls select high-quality environmentally friendly plastic materials to protect the health of pets well. It is produced with brand-new PC material, with lock design, easy installation, convenient and fast!`,
       price: 7.99,
-      url: `/assets/hamsters/accessories/ball.jpg`,
+      image_url: `/assets/hamsters/accessories/ball.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[1]._id,
       quantity: 100,
@@ -859,7 +859,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       name: `18 Pcs Wooden Hamster Toy Set`,
       description: `Enriching 18 Pcs Hamster Toys Set - OVERTANG as a professional pet toy accessories brand manufacturer, aiming to provide fun and anxiety relief for your small animals, our latest 18 pcs wooden hamster cage accessories toy playset contains: pine cone, apple tree block with rope, rattan ball, seesaw, carrot, corn, loofah slices, dumbbell, unicycle, bell, timothy hay sticks, various fun toys to win their hearts.`,
       price: 19.99,
-      url: `/assets/hamsters/toys/toy_set.jpg`,
+      image_url: `/assets/hamsters/toys/toy_set.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -868,7 +868,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       name: `21PCS Hamster Activity Chew Toys`,
       description: `Hamster chew and exercise toy set to meet the needs of your small pets more, the package contains: 100% apple branch 10PCS, volcanic rock molar stone 1PCS,Pine cones 2pcs,squared molar block with rope 1pcs,ladder 1pcs,corn shreds carrot 1PCS,Roman column 1pcs,swing 1pcs,corn shreds ball 1pcs, brown silk ball 1pcs,barbell 1pcs.`,
       price: 12.99,
-      url: `/assets/hamsters/toys/chew_set.jpg`,
+      image_url: `/assets/hamsters/toys/chew_set.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -878,7 +878,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       description: `PACKAGE INCLUDE: Hamster Fun Tunnel*1, Apple Wood Skewer*1, Seagrass ball*1, Ranttan ball*1, Loofa toys*2, Carrot toys*1, Pinecone ball*2
       `,
       price: 12.99,
-      url: `/assets/hamsters/toys/toy_set2.jpg`,
+      image_url: `/assets/hamsters/toys/toy_set2.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -887,7 +887,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       name: `4.8 in Super-Silent Hamster Exercise Wheel`,
       description: `Silent 4.8 Inch Hamster Wheel - Silent spinner hedgehog wheel brings your little pet endless running happiness, also brings you a quiet night even if your hamster on the race track to run & hamster wheel is spinning.`,
       price: 9.99,
-      url: `/assets/hamsters/toys/wheel.jpg`,
+      image_url: `/assets/hamsters/toys/wheel.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -897,7 +897,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       description: `Package: 1 rattan ball,1 rattan ball with bells,1 rattan ball with grass cake,1 rattan ball with paper
       Funny Ball: The hamster toys provide excellent opportunities for small rodents to play and exercise, keep them healthy and active, reduce loneliness and the anxiety in the cage, makes them feel more fun in a limited space in novel and interesting ways.`,
       price: 5.69,
-      url: `/assets/hamsters/toys/play_balls.jpg`,
+      image_url: `/assets/hamsters/toys/play_balls.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[2]._id,
       quantity: 100,
@@ -909,7 +909,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       NO MASKING PERFUMES: Will not leave behind strong scents that can irritate small animal respiratory systems.
       SAFE TO USE AROUND PETS: As pet people, we believe it’s important to have products that are safe to use around pets.`,
       price: 7.99,
-      url: `/assets/hamsters/care/cage_cleaner.jpg`,
+      image_url: `/assets/hamsters/care/cage_cleaner.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -918,7 +918,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       name: `Pet Waste Odor Eliminator & Cleaner`,
       description: `NEW ADVANCED PROBIOTIC ODOR ELIMINATION solution designed to be 100% sustainable and contains ZERO harmful chemicals. Our eco-friendly based formula is designed to require less product and work longer than the competition while promoting a healthier living environment for your pets and family. While other products mask the offending odors with fragrances, ours targets the source of the odor and organically destroys the offending compounds on contact.`,
       price: 12.0,
-      url: `/assets/hamsters/care/no_scent.jpg`,
+      image_url: `/assets/hamsters/care/no_scent.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -931,7 +931,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       MAINTAIN PET HEALTH - With regular use, this brush can help you keep your pet’s coat healthier, all without irritating your pet’s skin, no matter their breed or coat type.
       EASY TO CLEAN – When you’re done brushing your pet, Can be washed with water, after drying, there is a transparent lid for storage, So it’s ready for the next time use.`,
       price: 5.99,
-      url: `/assets/hamsters/care/brush.jpg`,
+      image_url: `/assets/hamsters/care/brush.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -942,7 +942,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       Package Includes: 1 bag*2LB bathing sand. The sand is suitable for chinchilla guinea pig, gerbil, degus
       Keep Healt: Hamsters can bathe in sand to keep their bodies clean and fresh.Bath sand after multiple washing, screening, drying, dust removal and other treatments.`,
       price: 13.99,
-      url: `/assets/hamsters/care/bath_sand.jpg`,
+      image_url: `/assets/hamsters/care/bath_sand.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -953,7 +953,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       WICKS AWAY MOISTURE — Super absorbent inner layer wicks away moisture and odor
       CONTROL ODORS IN YOUR HOME — Keeps your home and critter friends smelling so fresh and so clean`,
       price: 6.98,
-      url: `/assets/hamsters/care/liners.jpg`,
+      image_url: `/assets/hamsters/care/liners.jpg`,
       category: categories[3]._id,
       subCategory: subCategories[3]._id,
       quantity: 100,
@@ -981,7 +981,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         name: products[0].name,
         description: products[0].description,
         price: products[0].price,
-        url: products[0].url,
+        image_url: products[0].image_url,
         quantity: 5,
         category: products[0].category,
         subCategory: products[0].subCategory,
@@ -991,7 +991,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         name: products[1].name,
         description: products[1].description,
         price: products[1].price,
-        url: products[1].url,
+        image_url: products[1].image_url,
         quantity: 5,
         category: products[1].category,
         subCategory: products[1].subCategory,
@@ -1003,7 +1003,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
   await User.create({
     first_name: "Olga",
     last_name: "Brailovska",
-    email: "olga@example.com.com",
+    email: "olga@example.com",
     password: "password",
   });
 

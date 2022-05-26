@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../redux/Store/storeSlice";
+import { useQuery } from "@apollo/client";
+import { GET_PRODUCTS, GET_CATEGORIES } from "../utils/queries";
 
 const categories = [
   {

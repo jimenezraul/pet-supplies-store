@@ -3,7 +3,7 @@ import React from "react";
 const SignUp = () => {
   return (
     <div className="bg-grey-lighter my-5 flex flex-col">
-      <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+      <div className="xl:ml-20 xl:w-4/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 mx-auto">
         <div className="bg-white px-6 py-8 rounded shadow-lg text-black w-full">
           <h1 className="font-semibold mb-8 text-3xl leading-snug uppercase text-center">
             Sign Up
@@ -11,21 +11,21 @@ const SignUp = () => {
           <form>
             <input
               type="text"
-              className="border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none w-full p-3 rounded mb-4"
+              className="border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none w-full p-3 rounded mb-4"
               name="fullname"
               placeholder="Full Name"
             />
 
             <input
               type="text"
-              className="border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none w-full p-3 rounded mb-4"
+              className="border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none w-full p-3 rounded mb-4"
               name="email"
               placeholder="Email"
             />
 
             <input
               type="password"
-              className="border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none w-full p-3 rounded mb-4"
+              className="border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none w-full p-3 rounded mb-4"
               name="password"
               placeholder="Password"
             />

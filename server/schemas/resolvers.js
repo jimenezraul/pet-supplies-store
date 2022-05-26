@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, Product, Category, SubCategory } = require("../models");
 const { signToken } = require("../utils/auth");
 const { GraphQLUpload } = require("graphql-upload");
 const generateRandomString = require("../utils/helpers");
@@ -32,6 +32,24 @@ const resolvers = {
           path: "orders.products",
           populate: "category",
         });
+    },
+    products: async () => {
+      return Product.find()
+        .select("-__v")
+        .populate("category")
+        .populate("subCategory");
+    },
+    product: async (parent, args) => {
+      return Product.findOne({ _id: args.id })
+        .select("-__v")
+        .populate("category")
+        .populate("subCategory");
+    },
+    categories: async () => {
+      return Category.find();
+    },
+    subcategories: async () => {
+      return SubCategory.find();
     },
   },
 
