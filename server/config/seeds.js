@@ -318,6 +318,284 @@ db.once("open", async () => {
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
     },
+    {
+      id: 26,
+      name: `Purina ONE Tender Selects Blend`,
+      description: `One (1) 22 Lb. Of Purina One Tender Selects With Real Salmon
+      Real Salmon Is The #1 Ingredient
+      High Protein Helps Support Strong Muscles
+      Purina One Is Veterinarian Recommended
+      100% Complete And Balanced Nutrition To Help Support Your Adult Cat'S Healthy Immune System`,
+      price: `$35.99`,
+      url: `/assets/cats/food/purinajpg.jpeg`,
+      category: categories[1]._id,
+      subCategory: subCategories[0]._id,
+    },
+    {
+      id: 27,
+      name: `Purina Fancy Feast Gravy Lovers
+      `,
+      description: `24 3 Ounce Cans Purina Fancy Feast Gravy Lovers Poultry and Beef Feast Collection Wet Cat Food Variety Pack
+      Chicken, Turkey And Beef Flavors Cats Love
+      100 percent complete and balanced nutrition
+      Tender, delicate bites for a tempting texture
+      Meaty morsels deliver and appetizing texture
+      Included Components: (24) 3 ounce Cans - Purina fancy feast wet cat food, medleys wild salmon Florentine with garden greens in delicate sauce`,
+      price: `$18.99`,
+      url: `/assets/cats/food/fancy_feast.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[0]._id,
+    },
+    {
+      id: 28,
+      name: `Sheba Perfect Portions Cuts in Gravy `,
+      description: `Contains twelve (12) 2.6 oz. twin pack trays (24 servings total) of SHEBA PERFECT PORTIONS Wet Cat Food Cuts in Gravy Variety Pack: (6) Roasted Chicken Entrée and (6) Tender Turkey Entrée
+      Made with real protein, plus essential vitamins and minerals for any life stage, including mature cat maintenance and kitten growth`,
+      price: `$10.98`,
+      url: `/assets/cats/food/sheba.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[0]._id,
+    },
+    {
+      id: 29,
+      name: `Iams Proactive Health Adult Dry Cat Food`,
+      description: `Contains one (1) 22 lb. bag of IAMS Proactie Healthy Adult Dry Cat Food with Chicken
+      Chicken is the ingredient in this nutrient-rich cat food designed for a healthy body for play
+      Support your cat’s healthy digestion with natural fiber and prebiotics
+      Promotes healthy skin and glossy coat with omega-6 and -3 fatty acids`,
+      price: `$29.42`,
+      url: `/assets/cats/food/iams.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[0]._id,
+    },
+    {
+      id: 30,
+      name: `Purina Friskies Dry Cat Food`,
+      description: `One (1) 22 lb. Bag - Purina Friskies Dry Cat Food, Farm Favorites With Chicken
+      Made with natural, farm-raised chicken
+      Flavors of carrots and spinach add flavorful variety
+      No artificial flavors
+      Made without artificial preservatives`,
+      price: `$20.05`,
+      url: `/assets/cats/food/friskies.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[0]._id,
+    },
+    {
+      id: 31,
+      name: `Cat Bed for Indoor with Anti-Slip Bottom,`,
+      description: `SIZE DETAILS - S: 12.6*12inch, M: 15*13.4inch,L: 15.8*16inch The tent bed can accommodate most of the cat's body and provide a good sleeping experience for the cat. It’s ideal for indoor & outdoor use. Arrives as a vacuum packed bed!
+      CLEANING RECOMMENDATIONS - Our cat bed is made of very good pp cotton, but due to the uneven shape of the cat bed cave, many users will break it after washing it with a washing machine. Therefore, for long-term use, we still recommend you to wash them by hand.`,
+      price: `$16.99`,
+      url: `/assets/cats/accessories/bed.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[1]._id,
+    },
+    {
+      id: 32,
+      name: `JUNSPOW Cat Bed`,
+      description: `Isolation of moisture and cold: The size is about 42x45x 23cm. Large enough to keep pets away from hot, cold or dirty floors while resting or sleeping.
+      Simple maintenance: The lid can be removed. Drainage is also great. It dries quickly in the shade. It also has a higher drying speed than polyurethane and hard cotton.`,
+      price: `$29.99`,
+      url: `/assets/cats/accessories/bed2.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[1]._id,
+    },
+    {
+      id: 33,
+      name: `Cat Carrier Backpack`,
+      description: `Item Dimensions: Folded size 13" L x 11" W x 16.5" H. Expanded size : 13" L x 27.5" W x 16.5" H. Suggested Weight: 0-13lbs for small to medium cats, 0-10lbs for Dogs and puppies. Most Airline Approved under seat. Important: Please Check your airline requirements before traveling.
+      Excellent Ventilation: 9 large Ventilation Holes on both sides and front, left and right ventilation nets ensure fresh air for fur-kids. The back expandable anti-scratching net provides maximum breathability that your pet will enjoy the outdoor time with you.
+`,
+      price: `$45.99`,
+      url: `/assets/cats/accessories/backpack.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[1]._id,
+    },
+    {
+      id: 34,
+      name: `Cat Harness`,
+      description: `Cat Harness with Leash, Fits Large to XL Cats: Size measuring: Neck Girth: 11" - 13.7", Chest Girth: 18.0" - 20.0". Please Measure your cat carefully and refer to the size chart before order. (Tips: Your cat's head circumference should be at least 11 inches or your cat may slip out.) Package includes: 1x Small Cat Walking Vest and 1x Walking Nylon Leash (150cm)`,
+      price: `$15.42`,
+      url: `/assets/cats/accessories/harness.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[1]._id,
+    },
+    {
+      id: 35,
+      name: `Cat Collar 
+      `,
+      description: `ADJUSTABLE SIZE: Each cat collar measures adjustable 7.5" to 10.8", please measure your cat's neck girth before ordering, leave 2 fingers room when wearing for relaxation.
+      SOFT POLYESTER COTTON: Made of soft and durable Polyester cotton material, makes your pet feel relaxed and comfortable when wearing, in addition, quick release buckle can provide more safety for your cat.`,
+      price: `$9.99`,
+      url: `/assets/cats/accessories/collar.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[1]._id,
+    },
+    {
+      id: 36,
+      name: `Interactive Cat Toy for Indoor`,
+      description: `【 Cat Exercise Toy: 360 degree random rotation,drive cats wild as it starts,Increasing cat's exercise while keeping cats entertained and stimulated,eliminate boredom.Help satisfy your cat’s need for exercise
+      Silent Motor: Quiet design can make sure that your pets would not be scared.Let you also have a quiet and comfortable environment.Great holiday gift for cat owners.Christmas gifts for cats
+      Automatic Cat Toy: Make play and exercise moderate, It will automatically power off after 15 minutes of rotating, which can let your cat avoid to play and exercise excessively.It's a fun and playful way to keep cats healthy and active`,
+      price: `$19.99`,
+      url: `/assets/cats/toys/toy.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[2]._id,
+    },
+    {
+      id: 37,
+      name: `Potaroma Chirping Cat Balls `,
+      description: `Cats Go Nuts – Make play fantastic with the 3 fluffy plush ball toys. The cat toys make lifelike animal chirping sounds once playtime begins, beckoning every bat, bite, chew, and chase! The 3 animal sounds are frog, cricket and bird chirping respectively. The balls keep quiet when left alone to save battery power`,
+      price: `$14.99`,
+      url: `/assets/cats/toys/catnip.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[2]._id,
+    },
+    {
+      id: 38,
+      name: `Potaroma Flopping Fish 10.5"`,
+      description: `Interactive Fun for Cats: every time your feline touches this cat kicker toy, the automatic built-in motion sensor kicks into action and the cat teaser fish moves in a wiggling way, intriguing your cat to kick and play. Perfect Thanksgiving, Christmas and New Year gift for pet owners or your own pets
+      Realistic Fish Simulation: the vivid moving fish toy looks like a real fish, an eye-catcher for cats, keeping your kitty on her paws and engaged in real time, alleviating boredom and loneliness and promoting cat's exercise when you are away from home`,
+      price: `$12.99`,
+      url: `/assets/cats/toys/fish_kit.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[2]._id,
+    },
+    {
+      id: 39,
+      name: `Cat Toy with Sturdy Scratching Pads`,
+      description: `3IN1 CAT TOY+ CAT BED+ CAT SCRATCHER : Cats will be happy to "play soccer"... Lazy lying on the toy... and they will put their energy on the cat scratcher in the middle of the toy instead of your furniture.
+      STURDINESS AND DURABILIT: 100% high-quality and environmentally friendly corrugated paper - green, safe and made to last and will last long time`,
+      price: `$29.99`,
+      url: `/assets/cats/toys/pad.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[2]._id,
+    },
+    {
+      id: 40,
+      name: `Interactive Cat Rainbow Wand Toy`,
+      description: `Interactive Cat Toy: The colorful cat toy teaser wand is a great way to attract your cat’s attention. Your cat will love the cat string toy.
+       Premium Quality: The cat wand toy is made from soft, colorful satin fabric and high-elastic wand. Both materials are non-toxic and 100% safe for your cats.`,
+      price: ``,
+      url: `/assets/cats/toys/teaser.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[2]._id,
+    },
+    {
+      id: 41,
+      name: `Cat Grooming Glove`,
+      description: `Hair Remover: Perfect for long, short and curly haired dogs, cats, horses, and other pets, grooming the hair quickly, gently and effectively; The shedding hair sticks to the glove, making it easy to peel and throw hair away
+      Bath Brush: Bathe the pets with this glove, which will clean the pet hair easily and give your pets a gentle massage without hurting their skin; Five finger design allows you to groom hard-to-reach places like tail or face`,
+      price: `$16.99`,
+      url: `/assets/cats/care/gloves.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[3]._id,
+    },
+    {
+      id: 42,
+      name: `Nail Clippers `,
+      description: `FOR SMALL PETS: Our claw scissors have been designed to be used on small animals, such as dogs, kittens, puppies, birds and bunny. Use them as kitten nail clippers or as general pet nail trimmers.
+      SAFE & EASY TO USE: Fitted with razor sharp blades made out of stainless steel and an ergonomic grip made out of a top grade plastic the production of these clippers does not harm the environment.`,
+      price: `$12.99`,
+      url: `/assets/cats/care/clips.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[3]._id,
+    },
+    {
+      id: 43,
+      name: `Cat Brush for Shedding`,
+      description: `One-click Cleaning Button: After brushing your pet, simply click the button. The shutter will pop out, separating the brushed hair from the metal needle, then wipe the hair off. The button of dog brush for shedding short hair on the handle saves time and energy when grooming and cleaning.`,
+      price: `$25.99`,
+      url: `/assets/cats/care/brush.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[3]._id,
+    },
+    {
+      id: 44,
+      name: `Rocco & Roxie Cat Litter Box Odor Eliminator`,
+      description: `EFFECTIVELY ABSORBS EVEN THE STRONGEST LITTER BOX SMELLS Our proprietary blend of essential oils neutralizes odors at a molecular level, keeping your litter box smelling fresher, longer.
+      SAFE FOR PEOPLE, PETS AND THE PLANET Non toxic. 100% plant-based. Made from all-natural, highly absorbent corncob granules that effectively wick moisture from urine and feces`,
+      price: `$11.92`,
+      url: `/assets/cats/care/odor.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[3]._id,
+    },
+    {
+      id: 45,
+      name: `Cat Shampoo`,
+      description: `SENSITIVE SKIN FORMULA - Approved and formulated by veterinarians, PetO’Cera cat shampoo features a blend of eleven botanical extracts. With allantoin and ceramide to enhance your cat’s healthy skin, our natural ingredients help to soothe and relieve your cat’s sensitive skin while calming irritations to stop scratching and deshedding.
+      EASY TO USE - Simply apply this cat shampoo to your kitten’s wet coat and lightly work through from head to tail while avoiding the eyes. After bathing the cat, just rinse, towel, and dry. Fully enjoy the refreshing scent while playing with your cat!`,
+      price: `$23.70`,
+      url: `/assets/cats//care/soap.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[3]._id,
+    },
+    {
+      id: 46,
+      name: `Purina Friskies Party Mix Gravy `,
+      description: `One (1) 20 oz. Pouch - Purina Friskies Made in USA Facilities Cat Treats, Party Mix Crunch Gravylicious Chicken & Gravy Flavors
+      Tasty chicken flavor helps satisfy your cat's poultry cravings
+      Savory gravy flavor pleases her palate
+      Cat treats with a crunchy texture your cat loves and also helps clean her teeth
+      The unique shapes of these cat treats help keep her interes`,
+      price: `$8.06`,
+      url: `/assets/cats/treats/gravy.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[4]._id,
+    },
+    {
+      id: 47,
+      name: `Purina Friskies Party Mix Cheesy Craze`,
+      description: `One (1) 20 oz. Pouch - Purina Friskies Made in USA Facilities Cat Treats, Party Mix Cheezy Craze Crunch
+      Made with real cheese in every bite
+      With a blend of Cheddar, Swiss and Monterey Jack cheeses
+      Under two calories per treat
+      Delicious taste cats love`,
+      price: `$9.08`,
+      url: `/assets/cats/treats/cheesy.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[4]._id,
+    },
+    {
+      id: 48,
+      name: `Purina Friskies Party Mix Chicken Lovers`,
+      description: `One (1) 20 oz. Pouch - Purina Friskies Made in USA Facilities Cat Treats, Party Mix Chicken Lovers Crunch
+      Real chicken is the number 1 ingredient
+      Just 2 calories per treat for guilt-free snacking
+      Crunchy texture helps clean her teeth
+      Complete and balanced treat formulated for adult cats`,
+      price: `$8.55`,
+      url: `/assets/cats/treats/chicken.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[4]._id,
+    },
+    {
+      id: 49,
+      name: `Purina Friskies Party Mix Beachside Crunch`,
+      description: `One (1) 20 oz. Pouch - Purina Friskies Made in USA Facilities Cat Treats, Party Mix Beachside Crunch
+      Real ocean whitefish is the number 1 ingredient
+      With shrimp, crab and tuna flavors
+      Less than 2 calories per treat for guilt-free snacking
+      Crunchy texture helps clean her teeth`,
+      price: `$8.06`,
+      url: `/assets/cats/treats/crunch.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[4]._id,
+    },
+    {
+      id: 50,
+      name: `Purina Friskies Party Mix Pumpkin `,
+      description: `One (1) 20 oz. Pouch - Purina Friskies Made in USA Facilities Natural Cat Treats, Party Mix Natural Yums With Pumpkin
+      No artificial colors, flavors or preservatives
+      Natural recipe with added vitamins, minerals and nutrients
+      Made with real pumpkin and chicken for the taste cats love
+      Fewer than 2 calories per treat for guilt-free snacking`,
+      price: `$18.40`,
+      url: `/assets/cats/treats/pumpkin.jpg`,
+      category: categories[1]._id,
+      subCategory: subCategories[4]._id,
+    },
   ]);
 
   process.exit();
