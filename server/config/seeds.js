@@ -503,7 +503,7 @@ db.once("open", async () => {
       name: `Cat Shampoo`,
       description: `SENSITIVE SKIN FORMULA - Approved and formulated by veterinarians, PetO’Cera cat shampoo features a blend of eleven botanical extracts. With allantoin and ceramide to enhance your cat’s healthy skin, our natural ingredients help to soothe and relieve your cat’s sensitive skin while calming irritations to stop scratching and deshedding.
       EASY TO USE - Simply apply this cat shampoo to your kitten’s wet coat and lightly work through from head to tail while avoiding the eyes. After bathing the cat, just rinse, towel, and dry. Fully enjoy the refreshing scent while playing with your cat!`,
-      price: 23.7,
+      price: 23.70,
       url: `/assets/cats//care/soap.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
