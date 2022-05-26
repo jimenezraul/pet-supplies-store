@@ -29,7 +29,7 @@ const productSchema = new Schema({
     ref: "Category",
     required: true,
   },
-  subcategory: {
+  subCategory: {
     type: Schema.Types.ObjectId,
     ref: "SubCategory",
     required: true,
