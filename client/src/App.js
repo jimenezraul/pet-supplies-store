@@ -8,6 +8,7 @@ import Store from "./pages/Store";
 import LogIn from "./pages/Login";
 import ProductDetails from "./pages/ProductDetails";
 import SignUp from "./pages/Signup";
+import Profile from "./pages/Profile";
 
 const uploadLink = createUploadLink({
   uri: "/graphql",
@@ -30,6 +31,7 @@ function App() {
             <Route path='/store/product/:id' element={<ProductDetails />} />
             <Route path='/login' element={<LogIn />} />
             <Route path='/signup' element={<SignUp />} />
+            <Route path='/profile' element={<Profile />} />
           </Routes>
           <Footer />
         </div>
