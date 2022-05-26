@@ -284,6 +284,7 @@ db.once("open", async () => {
       url: `/assets/dogs/toys/corn.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       name: `Puppy Teething Chew Toy`,
@@ -293,6 +294,7 @@ db.once("open", async () => {
       url: `/assets/dogs/toys/chew.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       name: `Purina ONE Tender Selects Blend`,
@@ -305,6 +307,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/purinajpg.jpeg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       name: `Purina Fancy Feast Gravy Lovers`,
@@ -318,6 +321,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/fancy_feast.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       name: `Sheba Perfect Portions Cuts in Gravy `,
@@ -327,6 +331,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/sheba.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       name: `Iams Proactive Health Adult Dry Cat Food`,
@@ -338,6 +343,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/iams.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       name: `Purina Friskies Dry Cat Food`,
@@ -350,6 +356,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/friskies.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       name: `Cat Bed for Indoor with Anti-Slip Bottom,`,
@@ -359,6 +366,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/bed.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       name: `JUNSPOW Cat Bed`,
@@ -368,6 +376,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/bed2.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       id: 33,
@@ -379,6 +388,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/backpack.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       name: `Cat Harness`,
@@ -387,6 +397,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/harness.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       name: `Cat Collar 
@@ -397,6 +408,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/collar.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       name: `Interactive Cat Toy for Indoor`,
@@ -407,6 +419,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/toy.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       name: `Potaroma Chirping Cat Balls `,
@@ -415,6 +428,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/catnip.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       name: `Potaroma Flopping Fish 10.5"`,
@@ -424,6 +438,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/fish_kit.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       name: `Cat Toy with Sturdy Scratching Pads`,
@@ -433,6 +448,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/pad.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       name: `Interactive Cat Rainbow Wand Toy`,
@@ -442,6 +458,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/teaser.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       name: `Cat Grooming Glove`,
@@ -451,6 +468,7 @@ db.once("open", async () => {
       url: `/assets/cats/care/gloves.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       name: `Nail Clippers `,
@@ -460,6 +478,7 @@ db.once("open", async () => {
       url: `/assets/cats/care/clips.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       name: `Cat Brush for Shedding`,
@@ -468,6 +487,7 @@ db.once("open", async () => {
       url: `/assets/cats/care/brush.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       name: `Rocco & Roxie Cat Litter Box Odor Eliminator`,
@@ -477,6 +497,7 @@ db.once("open", async () => {
       url: `/assets/cats/care/odor.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       name: `Cat Shampoo`,
@@ -486,6 +507,7 @@ db.once("open", async () => {
       url: `/assets/cats//care/soap.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       name: `Purina Friskies Party Mix Gravy `,
@@ -498,6 +520,7 @@ db.once("open", async () => {
       url: `/assets/cats/treats/gravy.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
     },
     {
       name: `Purina Friskies Party Mix Cheesy Craze`,
@@ -510,6 +533,7 @@ db.once("open", async () => {
       url: `/assets/cats/treats/cheesy.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
     },
     {
       name: `Purina Friskies Party Mix Chicken Lovers`,
@@ -522,6 +546,7 @@ db.once("open", async () => {
       url: `/assets/cats/treats/chicken.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
     },
     {
       name: `Purina Friskies Party Mix Beachside Crunch`,
@@ -534,6 +559,7 @@ db.once("open", async () => {
       url: `/assets/cats/treats/crunch.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
     },
     {
       name: `Purina Friskies Party Mix Pumpkin `,
@@ -546,6 +572,426 @@ db.once("open", async () => {
       url: `/assets/cats/treats/pumpkin.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
+    },
+    {
+      id: 51,
+      name: `Marine Flakes`,
+      description: `Provides balanced nutrition for daily feeding of fish living in a marine (saltwater) environment
+      Contains Chlorella algae, which provides essential vitamins, minerals, amino acids required by marine fish
+      Formulated with natural ingredients and colors with added vitamins, minerals and trace nutrients for a healthy diet
+      Helps support a healthy immune system and bring out the true colors of your fish
+      Feed in small amounts that fish will consume in under 2 minutes`,
+      price: `$4.96`,
+      url: `/assets/fish/food/marine_flakes.jpeg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 52,
+      name: `Kaytee Koi's Choice`,
+      description: `Provides necessary animal and vegetable proteins
+      With 35% protein, fish meal is the first ingredient and supports tissue and muscle development
+      Great for Koi, Goldfish and other pond fish
+      Floating pond fish food that's suitable for all seasons
+      Fish oil, wheat germ meal and alfalfa meal to enhance eye, heart and cognitive functions
+      Highly digestible food
+      `,
+      price: `$63.49`,
+      url: `/assets/fish/food/koi_food.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 53,
+      name: `Aqueon Tropical Flakes`,
+      description: `Natural ingredients and colors with added vitamins, minerals and trace nutrients
+      Nutritious food ingredients that fish are naturally attracted to
+      Formulated so that fish utilize more of what they eat and create less waste
+      Floating flakes for surface feeding
+      Will not cloud water when fed as directed
+      Ideal for Angelfish, Tetra Species, Barb Species, Rasboras, Danios, White Cloud Minnows, Rainbow Fish, Fancy Guppies, Platies, Swordtails, Corydoras Catfish, Most Loaches, Kribensis`,
+      price: `$4.99`,
+      url: `/assets/fish/food/tropical_flakes.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 54,
+      name: `Ultra Fresh - Royal Guppy Mignon Pellet`,
+      description: `Ultra Natural Coloration Ultra-enhanced formulation of natural seaweed, Australian spirulina, and premium fresh sword prawns enhances the natural coloration of your fish, presenting them in their most natural and vibrant colors.
+      PET SUPERFOOD It's not only tasty, but it also keeps guppies healthy! Our food is jam-packed with vitamins (A, C, D3, E, B1, B2, B6, B12) great for reaching full potential in size, color, fins, and A+ immunity!`,
+      price: `$7.19`,
+      url: `/assets/fish/food/royal_guppy.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 55,
+      name: `Tetra TetraPRO Tropical Color Crisps With Biotin`,
+      description: `TROPICAL FORMULATION: TetraPro Tropical Color Crisps provide advanced nutrition for the discerning tropical fish-keeper.
+      OPTIMAL HEALTH: Made with exclusive low-heat process that preserves essential vitamins and nutrients – enhanced with biotin to support fish’s immune system.
+      COLOR ENHANCING: High content of natural color enhancers promote the development of rich, beautiful coloration in tropical fish.`,
+      price: `$8.54`,
+      url: `/assets/fish/food/tetra_pro.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 56,
+      name: `PENN-PLAX Quick-Net Aquarium Fish Nets`,
+      description: `DURABLE, STRONG, AND SAFE: Each fish net features a vinyl covered, two-part braided handle that provides for an ergonomic grip, ensuring reliable operation with its strong design. Our aquarium fish nets won’t bend or become distorted over time, even with repetitive use. The mesh netting is appropriate for almost any type of aquarium fish, both freshwater and saltwater.
+      MEASUREMENTS: The QN4 model of our Quick-Net line features a 4” x 3” net, with a handle length of 10”`,
+      price: `$3.99`,
+      url: `/assets/fish/accessories/fish_net.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+      id: 57,
+      name: `1.2 Gallon Aquarium`,
+      description: ` This 1.2 gallon semicircular fish tank can raise betta, angel fish, guppy and other ornamental fish. It is suitable for bedroom, living room, study and office, etc. The fish tank is equipped with 5W LED light and two decorative plastic aquatic plants. It will look great wherever you place it. Choose our fish tank, show your taste.
+      This betta fish tank is made of impact-resistant acrylic with crystal-clear clarity. Beautiful arc design, both decoration and practicality. The one-piece construction providing superior strength and durability. Unlike glass tanks glued together with silicone, this small aquarium puts to rest any worries or concerns about possible leaks.`,
+      price: `$32.99`,
+      url: `/assets/fish/accessories/aquarium.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+      id: 58,
+      name: `Fish Safe Floating Food Feeder `,
+      description: `Feed the fish no longer need to turn off the skimmer pump, Put food in the circle, the fish the fish will eat in own plate, fish Don't need to chase food everywhere,Improve feeding efficiency,Reduce fish food waste.`,
+      price: `$6.99`,
+      url: `/assets/fish/accessories/feed_ring.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+      id: 59,
+      name: `Fish Tank Decorations Aquarium Plants`,
+      description: `1 Pc resin castle(5.7*3.1*4.9 inch) aquarium decorations with holes for small fish to hide, 1 blue aquarium decor tree(11.1*11.1 inch) and 10Pcs small artificial fish tank plants(1.9*1.9*1.8 inch).`,
+      price: `$19.99`,
+      url: `/assets/fish/accessories/plants.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+      id: 60,
+      name: `AnxunJim Aquarium Groot Air Bubbler`,
+      description: `Material: resin, non-toxic, will not harm your fish, will not fall off, will not fade, can be used in fresh water or salt water
+      Size: 2.6 * 2.36 * 4.33 inches, weight: 7 ounces, suitable for small and medium fish tanks.
+      Easy to use: Air stone can replace oxygen and reduce the content of carbon dioxide. You only need to manually connect the aviation pipe to the connection port of the air stone and deliver air, and it can be used normally.
+      The package includes: 10 feet aviation pipe, 1 Groot bubble, 2 suction cups, 1 check valve, 1 T-connector and 1 air control valve. The whole set of accessories is enough to connect to the air pump.`,
+      price: `$13.99`,
+      url: `/assets/fish/accessories/toy.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+      id: 61,
+      name: `QZQ Aquarium Gravel Cleaner`,
+      description: `Mufti-functional cleaning kit: Aquarium gravel vacuum cleaner kit is a mufti-functional aquarium cleaner that uses (adopts)the siphon design principle, which includes the aquarium, aquarium sand washing, algae scraping, fish excrement cleaning, aquarium residual debris, and aquarium water changing. Quick water change gives fisha clean and comfortable aquarium living environment.
+      Easy to use and assemble: when the fish tank siphon is in use, hold the handle and press it continuously for several times to observe whether it will automatically pump the water out. If not, repeat the operation until the water flows out, then stop the pressure, and secure it on the top of the tank , you will see the water automatically flows out. The Aquarium gravel cleaner kit is designed to be attached to the tank and has a flow regulator `,
+      price: `$35.99`,
+      url: `/assets/fish/care/tank_cleaner.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+      id: 62,
+      name: `Natural Rapport Aquarium Water Conditioner`,
+      description: `SALT & FRESHWATER - Treatments during changes will help your betta, goldfish, or others thrive as it balances pH, adds electrolytes, slime and stress coats for your fish. Also safer for saltwater marine invertebrates, plants and crustaceans.
+      DETOXIFIES & REMOVES HARMFUL CHEMICALS - Quick to remove harmful bacteria such as Ammonia, Nitrate, Chlorine, Chloramine, Heavy Metals, and more. Our 'Natural Choice' Dechlorinator and clarifier does all this plus is safer for your aquarium.
+      ALL-IN-ONE CONDITIONER - Makes your tap water instantly safe by removing harsh chemicals and detoxifies heavy metals. is so effective and safe it is also recommended for aqua live reefs. From beta fish to exotics, our treatment is great for all.`,
+      price: `$13.95`,
+      url: `/assets/fish/care/water_cond.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+      id: 63,
+      name: `Tetra Cleaning Bacteria`,
+      description: `BENEFICIAL BACTERIAL BLEND: Replenishes beneficial bacteria to help filter pollutants in aquarium water.
+      BIOLOGICAL BALANCE: Works to keep your aquarium healthy and biologically balanced.
+      FOR SUPERCHARGED FILTRATION: Cleans gravel and removes sludge and ammonia.
+      CONVENIENT: Use the cap to measure and dose.
+      USAGE: Use monthly, or when setting up a new aquarium, after a water or filter change, or when adding new fish to ensure healthy water conditions.`,
+      price: `$5.78`,
+      url: `/assets/fish/care/bacteria.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+      id: 64,
+      name: `API Quick Start Nitrifying Bacteria`,
+      description: `Contains one (1) API QUICK START Freshwater and Saltwater Aquarium Nitrifying Bacteria 8-Ounce Bottle
+      Allows instant addition of fish when starting a new aquarium
+      Reduces compounds harmful to fish when used routinely
+      Helps prevent fish loss in freshwater and saltwater aquariums
+      Use when starting a new aquarium, when adding new fish and when changing water and filter media`,
+      price: `$9.88`,
+      url: `/assets/fish/care/API.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+      id: 65,
+      name: `AQQA Magnetic Aquarium Cleaner Brush`,
+      description: `Suitable 1/4 "~3/8 " Thickness Glass - the cleaner brush size is 10.3X5.5X6.8cm(4.05"*2.17"*2.7"),won't occupy a lot of space in the fish tank,The edges are very smooth and will not harm the fish.Please pay attention to your hands when using, do not put your hands in the middle of strong magnets.`,
+      price: `$29.99`,
+      url: `/assets/fish/care/magnetic_brush.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+        id: 66,
+      name: `Vitakraft Crunch Sticks `,
+      description: `Tasty apple and honey treat sticks your hamsters will love
+      Triple baked for crunchiness and great taste
+      Natural Wood stick center provides your bird with long lasting chewing fun`,
+      price: `$5.99`,
+      url: `/assets/hamsters/food/stick.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 67,
+      name: `Kaytee Pro Health Hamster Food`,
+      description: `Larger, crunchy pieces supports dental health through natural chewing activity
+      Prebiotics and probiotics to support digestive health
+      Naturally preserved for ideal freshness
+      A nutritionally complete diet for hamsters and gerbils
+      All natural`,
+      price: `$5.99`,
+      url: `/assets/hamsters/food/FortiDiet.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 68,
+      name: `Supreme Tiny Friends Farm Hazel Hamster Tasty Mix `,
+      description: `A Nutritionally Balanced, Tasty Mix For Hamsters
+      Promotes Natural Foraging
+      Best Ever Taste - No Added Sugar
+      Added Vitamins For Health & Vitality
+      Suitable For All Breeds Including Dwarf Hamsters`,
+      price: `$6.57`,
+      url: `/assets/hamsters/food/farm.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 69,
+      name: `Wild Harvest Nutrition Diet`,
+      description: `Advanced Nutrition Diets In Flip Top Containers
+      More Convenient Than Screw Top Containers
+      IMPORTANT VARIETY: Unique mix of ingredients create an irresistible blend to replicate diets found in a natural habitat and encourage foraging behaviors.
+      Less Mess Than Using Bags`,
+      price: `$9.97`,
+      url: `/assets/hamsters/food/wild_harvest.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 70,
+      name: `Supreme Petfoods Science Selective Hamster Foods`,
+      description: `Daily diet for hamsters of all breeds, including dwarfs
+      Rich in natural ingredients
+      No added sugars
+      Helps support digestive wellbeing
+      Single component extruded nuggets prevent selective feeding
+      Age range description: All Life Stages`,
+      price: `$6.90`,
+      url: `/assets/hamsters/food/complete.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 71,
+      name: `4oz Small Pet Water Bottle with Bamboo Stand`,
+      description: `ADJUSTABLE HEIGHT WATER BOTTLE HOLDER FOR GERBILS, HAMSTERS, AND RATS - With this adjustable bamboo stand, you can adjust the water bottle so that the sipper part can be between 1.2 inches to 3.7 inches off the ground. An easy to adjust butterfly nut at the back of the stand will ensure that you can customize the height of the water bottle and that the water bottle holder will securely lock in place.`,
+      price: `$21.99`,
+      url: `/assets/hamsters/accessories/bottles.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 72,
+      name: `Large Hamster Sand Bath Container`,
+      description: `Side Entrance: Observe the hamster's life without hindrance. Enclosed design to increase the time of hamster bathing. Large internal space so taht your pets could move around freely
+      Easily Cleaning: Easy to remove the lid,arc design of the bottom can wash the dirty stuff away without effort
+      Size: 5.7 inches long,3.9 inches wide,3.9 inches high. It's matched with a Sand Scoop which is random color. It's recommended for your dwarf hamsters gerbils mice or other small pets`,
+      price: `$11.99`,
+      url: `/assets/hamsters/accessories/sand_bath.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 73,
+      name: `Banana Hamster Bed House Hammock`,
+      description: ` Size: 20 x 6 x 6cm; SUITABLE FOR SMALL Pet eg. Sugar glider, Squirrel, Hamster, Mouse and other small pets Pls check the size before you buy it.
+      FUNCTION: It can be hung on the cage or used as a hammock.`,
+      price: `$8.79`,
+      url: `/assets/hamsters/accessories/banana_bed.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 74,
+      name: `Hamster Hiding House`,
+      description: `Size: Rainbow house ( 5.9 x 5.9 x5.4 ), The snail house ( 6.3 x 3.9 x 3.9 ), Gym room（5.5x 3.1x 2.8），On the seesaw (5.7*2.6*1.5)perfect for hamsters, gerbils and mice and other small animal. Please check the size of your pet before ordering.`,
+      price: `$12.99`,
+      url: `/assets/hamsters/accessories/house.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 75,
+      name: `Hamster Running Ball`,
+      description: `Crystal Ball For Hamsters: Size: 4.72 Inches，Pets can play in the Crystal Ball For Hamsters, and the owner can observe the pet's every move. So cute!This is a small hamster ball, not suitable for larger pets.
+Environmentally Friendly Materials: Hamster exercise balls select high-quality environmentally friendly plastic materials to protect the health of pets well. It is produced with brand-new PC material, with lock design, easy installation, convenient and fast!`,
+      price: `$7.97`,
+      url: `/assets/hamsters/accessories/ball.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 76,
+      name: `18 Pcs Wooden Hamster Toy Set`,
+      description: `Enriching 18 Pcs Hamster Toys Set - OVERTANG as a professional pet toy accessories brand manufacturer, aiming to provide fun and anxiety relief for your small animals, our latest 18 pcs wooden hamster cage accessories toy playset contains: pine cone, apple tree block with rope, rattan ball, seesaw, carrot, corn, loofah slices, dumbbell, unicycle, bell, timothy hay sticks, various fun toys to win their hearts.`,
+      price: `$18.99`,
+      url: `/assets/hamsters/toys/toy_set.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 77,
+      name: `21PCS Hamster Activity Chew Toys`,
+      description: `Hamster chew and exercise toy set to meet the needs of your small pets more, the package contains: 100% apple branch 10PCS, volcanic rock molar stone 1PCS,Pine cones 2pcs,squared molar block with rope 1pcs,ladder 1pcs,corn shreds carrot 1PCS,Roman column 1pcs,swing 1pcs,corn shreds ball 1pcs, brown silk ball 1pcs,barbell 1pcs.`,
+      price: `$12.99`,
+      url: `/assets/hamsters/toys/chew_set.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 78,
+      name: `Hamster Fun Tunnel Toy Set`,
+      description: `PACKAGE INCLUDE: Hamster Fun Tunnel*1, Apple Wood Skewer*1, Seagrass ball*1, Ranttan ball*1, Loofa toys*2, Carrot toys*1, Pinecone ball*2
+      `,
+      price: `$12.99`,
+      url: `/assets/hamsters/toys/toy_set2.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 79,
+      name: `4.8 in Super-Silent Hamster Exercise Wheel`,
+      description: `Silent 4.8 Inch Hamster Wheel - Silent spinner hedgehog wheel brings your little pet endless running happiness, also brings you a quiet night even if your hamster on the race track to run & hamster wheel is spinning.`,
+      price: `$9.99`,
+      url: `/assets/hamsters/toys/wheel.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 80,
+      name: `9 Pcs Hamster Play Balls`,
+      description: `Package: 1 rattan ball,1 rattan ball with bells,1 rattan ball with grass cake,1 rattan ball with paper
+      Funny Ball: The hamster toys provide excellent opportunities for small rodents to play and exercise, keep them healthy and active, reduce loneliness and the anxiety in the cage, makes them feel more fun in a limited space in novel and interesting ways.`,
+      price: `$5.69`,
+      url: `/assets/hamsters/toys/play_balls.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 81,
+      name: `Nature’s Miracle Cage Cleaner`,
+      description: `SMALL ANIMAL FORMULA: Cleans and deodorizes small animal cages.
+      BIO-ENZYMATIC FORMULA: Penetrates to eliminate embedded cage odors.
+      NO MASKING PERFUMES: Will not leave behind strong scents that can irritate small animal respiratory systems.
+      SAFE TO USE AROUND PETS: As pet people, we believe it’s important to have products that are safe to use around pets.`,
+      price: `$7.99`,
+      url: `/assets/hamsters/care/cage_cleaner.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+        id: 82,
+      name: `Pet Waste Odor Eliminator & Cleaner`,
+      description: `NEW ADVANCED PROBIOTIC ODOR ELIMINATION solution designed to be 100% sustainable and contains ZERO harmful chemicals. Our eco-friendly based formula is designed to require less product and work longer than the competition while promoting a healthier living environment for your pets and family. While other products mask the offending odors with fragrances, ours targets the source of the odor and organically destroys the offending compounds on contact.`,
+      price: `$12.00`,
+      url: `/assets/hamsters/care/no_scent.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+        id: 83,
+      name: `2 Pack Hamster Brush`,
+      description: `GOOD DESIGN - Ergonomic handles design for a better bristles experience of you and more effective bristles with your pet.your pet will love this new massage!
+      BEAUTIFY PETS - The perfect selection of necessary grooming tools for small pets, Helps you create a special bonding experience while you groom your furry friend.Fit Hamster, Sugar Gliders, Bunny, Ferrets, Rats, Chinchilla, Guinea Pig, Hedgehog.
+      PERFECT BRUSH – Brush gently removes Loose Hair, and eliminates Tangles, Knots, Dander and trapped Dirt.
+      MAINTAIN PET HEALTH - With regular use, this brush can help you keep your pet’s coat healthier, all without irritating your pet’s skin, no matter their breed or coat type.
+      EASY TO CLEAN – When you’re done brushing your pet, Can be washed with water, after drying, there is a transparent lid for storage, So it’s ready for the next time use.`,
+      price: `$5.99`,
+      url: `/assets/hamsters/care/brush.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+        id: 84,
+      name: `Calymmny Hamster Bath Sand`,
+      description: `100% natural sand: natural bath sand, 100% natural sand and is free from bacteria. clean and odorless. absorb odor and deodorize. It removes the oil from the hamster.
+      Package Includes: 1 bag*2LB bathing sand. The sand is suitable for chinchilla guinea pig, gerbil, degus
+      Keep Healt: Hamsters can bathe in sand to keep their bodies clean and fresh.Bath sand after multiple washing, screening, drying, dust removal and other treatments.`,
+      price: `$13.99`,
+      url: `/assets/hamsters/care/bath_sand.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+        id: 85,
+      name: `Cage Liners`,
+      description: `PREVENT WASTE FROM SOILING TRAY — Cage liners for small animals prevent wet waste from soiling the tray
+      WICKS AWAY MOISTURE — Super absorbent inner layer wicks away moisture and odor
+      CONTROL ODORS IN YOUR HOME — Keeps your home and critter friends smelling so fresh and so clean`,
+      price: `$6.98`,
+      url: `/assets/hamsters/care/liners.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
     },
   ]);
 
