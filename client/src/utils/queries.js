@@ -40,3 +40,33 @@ export const GET_USER = gql`
     }
   }
 `;
+
+export const GET_CATEGORIES = gql`
+  query Categories {
+    subcategories {
+      _id
+      name
+    }
+  }
+`;
+
+export const GET_PRODUCTS = gql`
+  query Query {
+    products {
+      _id
+      name
+      description
+      image_url
+      price
+      quantity
+      category {
+        _id
+        name
+      }
+      subCategory {
+        _id
+        name
+      }
+    }
+  }
+`;
