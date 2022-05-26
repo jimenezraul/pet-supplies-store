@@ -307,6 +307,7 @@ db.once("open", async () => {
       url: `/assets/dogs/toys/corn.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       id: 25,
@@ -317,6 +318,7 @@ db.once("open", async () => {
       url: `/assets/dogs/toys/chew.jpg`,
       category: categories[0]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       id: 26,
@@ -330,6 +332,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/purinajpg.jpeg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       id: 27,
@@ -345,6 +348,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/fancy_feast.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       id: 28,
@@ -355,6 +359,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/sheba.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       id: 29,
@@ -367,6 +372,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/iams.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       id: 30,
@@ -380,6 +386,7 @@ db.once("open", async () => {
       url: `/assets/cats/food/friskies.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[0]._id,
+      quantity: 100,
     },
     {
       id: 31,
@@ -390,6 +397,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/bed.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       id: 32,
@@ -400,6 +408,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/bed2.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       id: 33,
@@ -411,6 +420,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/backpack.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       id: 34,
@@ -420,6 +430,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/harness.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       id: 35,
@@ -431,6 +442,7 @@ db.once("open", async () => {
       url: `/assets/cats/accessories/collar.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[1]._id,
+      quantity: 100,
     },
     {
       id: 36,
@@ -442,6 +454,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/toy.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       id: 37,
@@ -451,6 +464,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/catnip.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       id: 38,
@@ -461,6 +475,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/fish_kit.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       id: 39,
@@ -471,6 +486,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/pad.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       id: 40,
@@ -481,6 +497,7 @@ db.once("open", async () => {
       url: `/assets/cats/toys/teaser.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[2]._id,
+      quantity: 100,
     },
     {
       id: 41,
@@ -491,6 +508,7 @@ db.once("open", async () => {
       url: `/assets/cats/care/gloves.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       id: 42,
@@ -501,6 +519,7 @@ db.once("open", async () => {
       url: `/assets/cats/care/clips.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       id: 43,
@@ -510,6 +529,7 @@ db.once("open", async () => {
       url: `/assets/cats/care/brush.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       id: 44,
@@ -520,6 +540,7 @@ db.once("open", async () => {
       url: `/assets/cats/care/odor.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       id: 45,
@@ -530,6 +551,7 @@ db.once("open", async () => {
       url: `/assets/cats//care/soap.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[3]._id,
+      quantity: 100,
     },
     {
       id: 46,
@@ -543,6 +565,7 @@ db.once("open", async () => {
       url: `/assets/cats/treats/gravy.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
     },
     {
       id: 47,
@@ -556,6 +579,7 @@ db.once("open", async () => {
       url: `/assets/cats/treats/cheesy.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
     },
     {
       id: 48,
@@ -569,6 +593,7 @@ db.once("open", async () => {
       url: `/assets/cats/treats/chicken.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
     },
     {
       id: 49,
@@ -582,6 +607,7 @@ db.once("open", async () => {
       url: `/assets/cats/treats/crunch.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
     },
     {
       id: 50,
@@ -595,6 +621,130 @@ db.once("open", async () => {
       url: `/assets/cats/treats/pumpkin.jpg`,
       category: categories[1]._id,
       subCategory: subCategories[4]._id,
+      quantity: 100,
+    },
+    {
+      id: 51,
+      name: `Marine Flakes`,
+      description: `Provides balanced nutrition for daily feeding of fish living in a marine (saltwater) environment
+      Contains Chlorella algae, which provides essential vitamins, minerals, amino acids required by marine fish
+      Formulated with natural ingredients and colors with added vitamins, minerals and trace nutrients for a healthy diet
+      Helps support a healthy immune system and bring out the true colors of your fish
+      Feed in small amounts that fish will consume in under 2 minutes`,
+      price: `$4.96`,
+      url: `/assets/fish/food/marine_flakes.jpeg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 52,
+      name: `Kaytee Koi's Choice`,
+      description: `Provides necessary animal and vegetable proteins
+      With 35% protein, fish meal is the first ingredient and supports tissue and muscle development
+      Great for Koi, Goldfish and other pond fish
+      Floating pond fish food that's suitable for all seasons
+      Fish oil, wheat germ meal and alfalfa meal to enhance eye, heart and cognitive functions
+      Highly digestible food
+      `,
+      price: `$63.49`,
+      url: `/assets/fish/food/koi_food.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 53,
+      name: `Aqueon Tropical Flakes`,
+      description: `Natural ingredients and colors with added vitamins, minerals and trace nutrients
+      Nutritious food ingredients that fish are naturally attracted to
+      Formulated so that fish utilize more of what they eat and create less waste
+      Floating flakes for surface feeding
+      Will not cloud water when fed as directed
+      Ideal for Angelfish, Tetra Species, Barb Species, Rasboras, Danios, White Cloud Minnows, Rainbow Fish, Fancy Guppies, Platies, Swordtails, Corydoras Catfish, Most Loaches, Kribensis`,
+      price: `$4.99`,
+      url: `/assets/fish/food/tropical_flakes.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 54,
+      name: `Ultra Fresh - Royal Guppy Mignon Pellet`,
+      description: `Ultra Natural Coloration Ultra-enhanced formulation of natural seaweed, Australian spirulina, and premium fresh sword prawns enhances the natural coloration of your fish, presenting them in their most natural and vibrant colors.
+      PET SUPERFOOD It's not only tasty, but it also keeps guppies healthy! Our food is jam-packed with vitamins (A, C, D3, E, B1, B2, B6, B12) great for reaching full potential in size, color, fins, and A+ immunity!`,
+      price: `$7.19`,
+      url: `/assets/fish/food/royal_guppy.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 55,
+      name: `Tetra TetraPRO Tropical Color Crisps With Biotin`,
+      description: `TROPICAL FORMULATION: TetraPro Tropical Color Crisps provide advanced nutrition for the discerning tropical fish-keeper.
+      OPTIMAL HEALTH: Made with exclusive low-heat process that preserves essential vitamins and nutrients – enhanced with biotin to support fish’s immune system.
+      COLOR ENHANCING: High content of natural color enhancers promote the development of rich, beautiful coloration in tropical fish.`,
+      price: `$8.54`,
+      url: `/assets/fish/food/tetra_pro.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+      id: 56,
+      name: `PENN-PLAX Quick-Net Aquarium Fish Nets`,
+      description: `DURABLE, STRONG, AND SAFE: Each fish net features a vinyl covered, two-part braided handle that provides for an ergonomic grip, ensuring reliable operation with its strong design. Our aquarium fish nets won’t bend or become distorted over time, even with repetitive use. The mesh netting is appropriate for almost any type of aquarium fish, both freshwater and saltwater.
+      MEASUREMENTS: The QN4 model of our Quick-Net line features a 4” x 3” net, with a handle length of 10”`,
+      price: `$3.99`,
+      url: `/assets/fish/accessories/fish_net.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+      id: 57,
+      name: `1.2 Gallon Aquarium`,
+      description: ` This 1.2 gallon semicircular fish tank can raise betta, angel fish, guppy and other ornamental fish. It is suitable for bedroom, living room, study and office, etc. The fish tank is equipped with 5W LED light and two decorative plastic aquatic plants. It will look great wherever you place it. Choose our fish tank, show your taste.
+      This betta fish tank is made of impact-resistant acrylic with crystal-clear clarity. Beautiful arc design, both decoration and practicality. The one-piece construction providing superior strength and durability. Unlike glass tanks glued together with silicone, this small aquarium puts to rest any worries or concerns about possible leaks.`,
+      price: `$32.99`,
+      url: `/assets/fish/accessories/aquarium.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+      id: 58,
+      name: `Fish Safe Floating Food Feeder `,
+      description: `Feed the fish no longer need to turn off the skimmer pump, Put food in the circle, the fish the fish will eat in own plate, fish Don't need to chase food everywhere,Improve feeding efficiency,Reduce fish food waste.`,
+      price: `$6.99`,
+      url: `/assets/fish/accessories/feed_ring.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+      id: 59,
+      name: `Fish Tank Decorations Aquarium Plants`,
+      description: `1 Pc resin castle(5.7*3.1*4.9 inch) aquarium decorations with holes for small fish to hide, 1 blue aquarium decor tree(11.1*11.1 inch) and 10Pcs small artificial fish tank plants(1.9*1.9*1.8 inch).`,
+      price: `$19.99`,
+      url: `/assets/fish/accessories/plants.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+      id: 60,
+      name: `AnxunJim Aquarium Groot Air Bubbler`,
+      description: `Material: resin, non-toxic, will not harm your fish, will not fall off, will not fade, can be used in fresh water or salt water
+      Size: 2.6 * 2.36 * 4.33 inches, weight: 7 ounces, suitable for small and medium fish tanks.
+      Easy to use: Air stone can replace oxygen and reduce the content of carbon dioxide. You only need to manually connect the aviation pipe to the connection port of the air stone and deliver air, and it can be used normally.
+      The package includes: 10 feet aviation pipe, 1 Groot bubble, 2 suction cups, 1 check valve, 1 T-connector and 1 air control valve. The whole set of accessories is enough to connect to the air pump.`,
+      price: `$13.99`,
+      url: `/assets/fish/accessories/toy.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
     },
   ]);
 
