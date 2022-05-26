@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import pic1 from "../../assets/categories/dogs/accessories/bandanas.jpg";
-import pic2 from "../../assets/categories/dogs/accessories/food_bottle.jpg";
-import pic3 from "../../assets/categories/dogs/accessories/out_set.jpg";
-import pic4 from "../../assets/categories/dogs/accessories/portable.jpg";
-import pic5 from "../../assets/categories/dogs/accessories/towel.jpg";
-import pic6 from "../../assets/categories/dogs/care/clippers.jpg";
-import pic7 from "../../assets/categories/dogs/care/ear_wipes.jpg";
-import pic8 from "../../assets/categories/dogs/care/oil.jpg";
-import pic9 from "../../assets/categories/dogs/care/paw_cleaner.jpg";
+const pic1 = "/assets/categories/dogs/accessories/bandanas.jpg";
+const pic2 = "/assets/categories/dogs/accessories/food_bottle.jpg";
+const pic3 = "/assets/categories/dogs/accessories/out_set.jpg";
+const pic4 = "/assets/categories/dogs/accessories/portable.jpg";
+const pic5 = "/assets/categories/dogs/accessories/towel.jpg";
+const pic6 = "/assets/categories/dogs/care/clippers.jpg";
+const pic7 = "/assets/categories/dogs/care/ear_wipes.jpg";
+const pic8 = "/assets/categories/dogs/care/oil.jpg";
+const pic9 = "/assets/categories/dogs/care/paw_cleaner.jpg";
 
 export const storeSlice = createSlice({
   name: "ProPet",

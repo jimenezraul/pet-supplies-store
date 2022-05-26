@@ -2,56 +2,48 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import imgCat from "../assets/homepage/cat.jpeg";
-import imgParrots from "../assets/homepage/parrots.jpeg";
-import imgDog from "../assets/homepage/dog.jpeg";
-import categoryDog from "../assets/categories/dogs/dog.jpeg";
-import categoryCat from "../assets/categories/cats/cat.jpeg";
-import categoryFish from "../assets/categories/fish/fish.jpeg";
-import categoryHamster from "../assets/categories/hamsters/hamster.jpeg";
-import categoryParrot from "../assets/categories/parrots/parrot.jpeg";
 import "./home.css";
 import { useDispatch } from "react-redux";
 import { updateCurrentPage } from "../redux/Store/storeSlice";
 
 const slideImages = [
   {
-    url: imgCat,
+    url: "/assets/homepage/cat.jpeg",
     caption: "Cat",
   },
   {
-    url: imgParrots,
+    url: "/assets/homepage/parrots.jpeg",
     caption: "Parrot",
   },
   {
-    url: imgDog,
+    url: "/assets/homepage/dog.jpeg",
     caption: "Dog",
   },
 ];
 
 const categories = [
   {
-    url: categoryDog,
+    url: "/assets/categories/dogs/dog.jpeg",
     name: "Dog",
     path: "/store/dog",
   },
   {
-    url: categoryCat,
+    url: "/assets/categories/cats/cat.jpeg",
     name: "Cat",
     path: "/store/cat",
   },
   {
-    url: categoryFish,
+    url: "/assets/categories/fish/fish.jpeg",
     name: "Fish",
     path: "/store/fish",
   },
   {
-    url: categoryHamster,
+    url: "/assets/categories/hamsters/hamster.jpeg",
     name: "Hamster",
     path: "/store/hamster",
   },
   {
-    url: categoryParrot,
+    url: "/assets/categories/parrots/parrot.jpeg",
     name: "Bird",
     path: "/store/bird",
   },

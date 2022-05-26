@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
-import logo from "../../assets/logo/logo.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { updateCurrentPage } from "../../redux/Store/storeSlice";
+
+import Auth from "../../utils/auth";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -25,9 +26,10 @@ const Navbar = () => {
     document.title = `ProPet | ${currentPage}`;
   }, [currentPathName, dispatch]);
 
-  const isAdmin = true;
+  const isAdmin = false;
+  const loggedIn = Auth.loggedIn();
 
-  let pages = [
+  const pages = [
     {
       name: "Home",
       path: "/",
@@ -50,13 +52,6 @@ const Navbar = () => {
     },
   ];
 
-  pages = pages.filter((page) => {
-    if (isAdmin) {
-      return page.name;
-    }
-    return page.name !== "Admin";
-  });
-
   return (
     <nav className='bg-blue-700 border-gray-200 px-2 sm:px-4 py-2.5'>
       <div className='container flex flex-wrap justify-between items-center mx-auto'>
@@ -65,7 +60,11 @@ const Navbar = () => {
           to='/'
           className='flex items-center'
         >
-          <img src={logo} className='text-2xl h-12' alt='Logo' />
+          <img
+            src='/assets/logo/logo.svg'
+            className='text-2xl h-12'
+            alt='Logo'
+          />
           <div className='relative flex flex-col p-4'>
             <h1 className='relative logo text-3xl text-white'>ProPet</h1>
             <p className='absolute text-sm top-11 left-12 text-white'>
@@ -112,25 +111,39 @@ const Navbar = () => {
           id='mobile-menu'
         >
           <ul className='flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium'>
-            {pages.map((page) => (
-              <Link key={page.name} to={page.path}>
-                <li
-                  className={`${
-                    currentPage === "" && page.path === "/"
-                      ? "text-white bg-blue-600"
-                      : currentPage === page.name
-                      ? "text-white bg-blue-600"
-                      : "text-white"
-                  } hover:text-white hover:bg-blue-600 py-2 px-4`}
-                  onClick={() => {
-                    setIsOpen(false);
-                    dispatch(updateCurrentPage(page.name));
-                  }}
-                >
-                  {page.name}
-                </li>
-              </Link>
-            ))}
+            {pages.map((page) => {
+              if (page.name === "Admin" && !isAdmin) {
+                return null;
+              }
+              if (page.name === "Login" && loggedIn) {
+                return (
+                  <Link to='/logout' className='text-white'>
+                    <li className='text-white hover:bg-blue-600 py-2 px-4'>
+                      Logout
+                    </li>
+                  </Link>
+                );
+              }
+              return (
+                <Link key={page.name} to={page.path}>
+                  <li
+                    className={`${
+                      currentPage === "" && page.path === "/"
+                        ? "text-white bg-blue-600"
+                        : currentPage === page.name
+                        ? "text-white bg-blue-600"
+                        : "text-white"
+                    } hover:text-white hover:bg-blue-600 py-2 px-4`}
+                    onClick={() => {
+                      setIsOpen(false);
+                      dispatch(updateCurrentPage(page.name));
+                    }}
+                  >
+                    {page.name}
+                  </li>
+                </Link>
+              );
+            })}
             <Link to='/cart' className='flex items-center'>
               <i className='relative text-white fa-solid fa-cart-shopping text-xl'>
                 {cart.length > 0 && (
