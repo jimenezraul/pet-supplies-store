@@ -807,6 +807,241 @@ db.once("open", async () => {
       subCategory: subCategories[3]._id,
       quantity: 100,
     },
+    {
+        id: 66,
+      name: `Vitakraft Crunch Sticks `,
+      description: `Tasty apple and honey treat sticks your hamsters will love
+      Triple baked for crunchiness and great taste
+      Natural Wood stick center provides your bird with long lasting chewing fun`,
+      price: `$5.99`,
+      url: `/assets/hamsters/food/stick.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 67,
+      name: `Kaytee Pro Health Hamster Food`,
+      description: `Larger, crunchy pieces supports dental health through natural chewing activity
+      Prebiotics and probiotics to support digestive health
+      Naturally preserved for ideal freshness
+      A nutritionally complete diet for hamsters and gerbils
+      All natural`,
+      price: `$5.99`,
+      url: `/assets/hamsters/food/FortiDiet.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 68,
+      name: `Supreme Tiny Friends Farm Hazel Hamster Tasty Mix `,
+      description: `A Nutritionally Balanced, Tasty Mix For Hamsters
+      Promotes Natural Foraging
+      Best Ever Taste - No Added Sugar
+      Added Vitamins For Health & Vitality
+      Suitable For All Breeds Including Dwarf Hamsters`,
+      price: `$6.57`,
+      url: `/assets/hamsters/food/farm.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 69,
+      name: `Wild Harvest Nutrition Diet`,
+      description: `Advanced Nutrition Diets In Flip Top Containers
+      More Convenient Than Screw Top Containers
+      IMPORTANT VARIETY: Unique mix of ingredients create an irresistible blend to replicate diets found in a natural habitat and encourage foraging behaviors.
+      Less Mess Than Using Bags`,
+      price: `$9.97`,
+      url: `/assets/hamsters/food/wild_harvest.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 70,
+      name: `Supreme Petfoods Science Selective Hamster Foods`,
+      description: `Daily diet for hamsters of all breeds, including dwarfs
+      Rich in natural ingredients
+      No added sugars
+      Helps support digestive wellbeing
+      Single component extruded nuggets prevent selective feeding
+      Age range description: All Life Stages`,
+      price: `$6.90`,
+      url: `/assets/hamsters/food/complete.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[0]._id,
+      quantity: 100,
+    },
+    {
+        id: 71,
+      name: `4oz Small Pet Water Bottle with Bamboo Stand`,
+      description: `ADJUSTABLE HEIGHT WATER BOTTLE HOLDER FOR GERBILS, HAMSTERS, AND RATS - With this adjustable bamboo stand, you can adjust the water bottle so that the sipper part can be between 1.2 inches to 3.7 inches off the ground. An easy to adjust butterfly nut at the back of the stand will ensure that you can customize the height of the water bottle and that the water bottle holder will securely lock in place.`,
+      price: `$21.99`,
+      url: `/assets/hamsters/accessories/bottles.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 72,
+      name: `Large Hamster Sand Bath Container`,
+      description: `Side Entrance: Observe the hamster's life without hindrance. Enclosed design to increase the time of hamster bathing. Large internal space so taht your pets could move around freely
+      Easily Cleaning: Easy to remove the lid,arc design of the bottom can wash the dirty stuff away without effort
+      Size: 5.7 inches long,3.9 inches wide,3.9 inches high. It's matched with a Sand Scoop which is random color. It's recommended for your dwarf hamsters gerbils mice or other small pets`,
+      price: `$11.99`,
+      url: `/assets/hamsters/accessories/sand_bath.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 73,
+      name: `Banana Hamster Bed House Hammock`,
+      description: ` Size: 20 x 6 x 6cm; SUITABLE FOR SMALL Pet eg. Sugar glider, Squirrel, Hamster, Mouse and other small pets Pls check the size before you buy it.
+      FUNCTION: It can be hung on the cage or used as a hammock.`,
+      price: `$8.79`,
+      url: `/assets/hamsters/accessories/banana_bed.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 74,
+      name: `Hamster Hiding House`,
+      description: `Size: Rainbow house ( 5.9 x 5.9 x5.4 ), The snail house ( 6.3 x 3.9 x 3.9 ), Gym room（5.5x 3.1x 2.8），On the seesaw (5.7*2.6*1.5)perfect for hamsters, gerbils and mice and other small animal. Please check the size of your pet before ordering.`,
+      price: `$12.99`,
+      url: `/assets/hamsters/accessories/house.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 75,
+      name: `Hamster Running Ball`,
+      description: `Crystal Ball For Hamsters: Size: 4.72 Inches，Pets can play in the Crystal Ball For Hamsters, and the owner can observe the pet's every move. So cute!This is a small hamster ball, not suitable for larger pets.
+Environmentally Friendly Materials: Hamster exercise balls select high-quality environmentally friendly plastic materials to protect the health of pets well. It is produced with brand-new PC material, with lock design, easy installation, convenient and fast!`,
+      price: `$7.97`,
+      url: `/assets/hamsters/accessories/ball.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[1]._id,
+      quantity: 100,
+    },
+    {
+        id: 76,
+      name: `18 Pcs Wooden Hamster Toy Set`,
+      description: `Enriching 18 Pcs Hamster Toys Set - OVERTANG as a professional pet toy accessories brand manufacturer, aiming to provide fun and anxiety relief for your small animals, our latest 18 pcs wooden hamster cage accessories toy playset contains: pine cone, apple tree block with rope, rattan ball, seesaw, carrot, corn, loofah slices, dumbbell, unicycle, bell, timothy hay sticks, various fun toys to win their hearts.`,
+      price: `$18.99`,
+      url: `/assets/hamsters/toys/toy_set.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 77,
+      name: `21PCS Hamster Activity Chew Toys`,
+      description: `Hamster chew and exercise toy set to meet the needs of your small pets more, the package contains: 100% apple branch 10PCS, volcanic rock molar stone 1PCS,Pine cones 2pcs,squared molar block with rope 1pcs,ladder 1pcs,corn shreds carrot 1PCS,Roman column 1pcs,swing 1pcs,corn shreds ball 1pcs, brown silk ball 1pcs,barbell 1pcs.`,
+      price: `$12.99`,
+      url: `/assets/hamsters/toys/chew_set.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 78,
+      name: `Hamster Fun Tunnel Toy Set`,
+      description: `PACKAGE INCLUDE: Hamster Fun Tunnel*1, Apple Wood Skewer*1, Seagrass ball*1, Ranttan ball*1, Loofa toys*2, Carrot toys*1, Pinecone ball*2
+      `,
+      price: `$12.99`,
+      url: `/assets/hamsters/toys/toy_set2.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 79,
+      name: `4.8 in Super-Silent Hamster Exercise Wheel`,
+      description: `Silent 4.8 Inch Hamster Wheel - Silent spinner hedgehog wheel brings your little pet endless running happiness, also brings you a quiet night even if your hamster on the race track to run & hamster wheel is spinning.`,
+      price: `$9.99`,
+      url: `/assets/hamsters/toys/wheel.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 80,
+      name: `9 Pcs Hamster Play Balls`,
+      description: `Package: 1 rattan ball,1 rattan ball with bells,1 rattan ball with grass cake,1 rattan ball with paper
+      Funny Ball: The hamster toys provide excellent opportunities for small rodents to play and exercise, keep them healthy and active, reduce loneliness and the anxiety in the cage, makes them feel more fun in a limited space in novel and interesting ways.`,
+      price: `$5.69`,
+      url: `/assets/hamsters/toys/play_balls.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[2]._id,
+      quantity: 100,
+    },
+    {
+        id: 81,
+      name: `Nature’s Miracle Cage Cleaner`,
+      description: `SMALL ANIMAL FORMULA: Cleans and deodorizes small animal cages.
+      BIO-ENZYMATIC FORMULA: Penetrates to eliminate embedded cage odors.
+      NO MASKING PERFUMES: Will not leave behind strong scents that can irritate small animal respiratory systems.
+      SAFE TO USE AROUND PETS: As pet people, we believe it’s important to have products that are safe to use around pets.`,
+      price: `$7.99`,
+      url: `/assets/hamsters/care/cage_cleaner.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+        id: 82,
+      name: `Pet Waste Odor Eliminator & Cleaner`,
+      description: `NEW ADVANCED PROBIOTIC ODOR ELIMINATION solution designed to be 100% sustainable and contains ZERO harmful chemicals. Our eco-friendly based formula is designed to require less product and work longer than the competition while promoting a healthier living environment for your pets and family. While other products mask the offending odors with fragrances, ours targets the source of the odor and organically destroys the offending compounds on contact.`,
+      price: `$12.00`,
+      url: `/assets/hamsters/care/no_scent.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+        id: 83,
+      name: `2 Pack Hamster Brush`,
+      description: `GOOD DESIGN - Ergonomic handles design for a better bristles experience of you and more effective bristles with your pet.your pet will love this new massage!
+      BEAUTIFY PETS - The perfect selection of necessary grooming tools for small pets, Helps you create a special bonding experience while you groom your furry friend.Fit Hamster, Sugar Gliders, Bunny, Ferrets, Rats, Chinchilla, Guinea Pig, Hedgehog.
+      PERFECT BRUSH – Brush gently removes Loose Hair, and eliminates Tangles, Knots, Dander and trapped Dirt.
+      MAINTAIN PET HEALTH - With regular use, this brush can help you keep your pet’s coat healthier, all without irritating your pet’s skin, no matter their breed or coat type.
+      EASY TO CLEAN – When you’re done brushing your pet, Can be washed with water, after drying, there is a transparent lid for storage, So it’s ready for the next time use.`,
+      price: `$5.99`,
+      url: `/assets/hamsters/care/brush.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+        id: 84,
+      name: `Calymmny Hamster Bath Sand`,
+      description: `100% natural sand: natural bath sand, 100% natural sand and is free from bacteria. clean and odorless. absorb odor and deodorize. It removes the oil from the hamster.
+      Package Includes: 1 bag*2LB bathing sand. The sand is suitable for chinchilla guinea pig, gerbil, degus
+      Keep Healt: Hamsters can bathe in sand to keep their bodies clean and fresh.Bath sand after multiple washing, screening, drying, dust removal and other treatments.`,
+      price: `$13.99`,
+      url: `/assets/hamsters/care/bath_sand.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+        id: 85,
+      name: `Cage Liners`,
+      description: `PREVENT WASTE FROM SOILING TRAY — Cage liners for small animals prevent wet waste from soiling the tray
+      WICKS AWAY MOISTURE — Super absorbent inner layer wicks away moisture and odor
+      CONTROL ODORS IN YOUR HOME — Keeps your home and critter friends smelling so fresh and so clean`,
+      price: `$6.98`,
+      url: `/assets/hamsters/care/liners.jpg`,
+      category: categories[3]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
   ]);
 
   process.exit();
