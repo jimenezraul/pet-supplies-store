@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { GET_USER } from "../utils/queries";
 
 const Profile = () => {
+  const { data } = useQuery(GET_USER);
+  console.log(data);
   return (
     <div className='flex-1'>
       <div className='container mx-auto my-3 md:my-5'>
@@ -29,7 +32,7 @@ const Profile = () => {
                   <img
                     className='mb-3 w-24 h-24 rounded-full shadow-lg'
                     src='/images/user.png'
-                    alt='Bonnie'
+                    alt='user'
                   />
                   <button onClick={() => console.log("hello")}>
                     <i className='absolute top-14 right-0 text-lg bg-white px-2 py-1 border rounded-full fa-solid fa-camera'></i>
