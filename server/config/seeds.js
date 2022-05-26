@@ -746,6 +746,67 @@ db.once("open", async () => {
       subCategory: subCategories[1]._id,
       quantity: 100,
     },
+    {
+      id: 61,
+      name: `QZQ Aquarium Gravel Cleaner`,
+      description: `Mufti-functional cleaning kit: Aquarium gravel vacuum cleaner kit is a mufti-functional aquarium cleaner that uses (adopts)the siphon design principle, which includes the aquarium, aquarium sand washing, algae scraping, fish excrement cleaning, aquarium residual debris, and aquarium water changing. Quick water change gives fisha clean and comfortable aquarium living environment.
+      Easy to use and assemble: when the fish tank siphon is in use, hold the handle and press it continuously for several times to observe whether it will automatically pump the water out. If not, repeat the operation until the water flows out, then stop the pressure, and secure it on the top of the tank , you will see the water automatically flows out. The Aquarium gravel cleaner kit is designed to be attached to the tank and has a flow regulator `,
+      price: `$35.99`,
+      url: `/assets/fish/care/tank_cleaner.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+      id: 62,
+      name: `Natural Rapport Aquarium Water Conditioner`,
+      description: `SALT & FRESHWATER - Treatments during changes will help your betta, goldfish, or others thrive as it balances pH, adds electrolytes, slime and stress coats for your fish. Also safer for saltwater marine invertebrates, plants and crustaceans.
+      DETOXIFIES & REMOVES HARMFUL CHEMICALS - Quick to remove harmful bacteria such as Ammonia, Nitrate, Chlorine, Chloramine, Heavy Metals, and more. Our 'Natural Choice' Dechlorinator and clarifier does all this plus is safer for your aquarium.
+      ALL-IN-ONE CONDITIONER - Makes your tap water instantly safe by removing harsh chemicals and detoxifies heavy metals. is so effective and safe it is also recommended for aqua live reefs. From beta fish to exotics, our treatment is great for all.`,
+      price: `$13.95`,
+      url: `/assets/fish/care/water_cond.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+      id: 63,
+      name: `Tetra Cleaning Bacteria`,
+      description: `BENEFICIAL BACTERIAL BLEND: Replenishes beneficial bacteria to help filter pollutants in aquarium water.
+      BIOLOGICAL BALANCE: Works to keep your aquarium healthy and biologically balanced.
+      FOR SUPERCHARGED FILTRATION: Cleans gravel and removes sludge and ammonia.
+      CONVENIENT: Use the cap to measure and dose.
+      USAGE: Use monthly, or when setting up a new aquarium, after a water or filter change, or when adding new fish to ensure healthy water conditions.`,
+      price: `$5.78`,
+      url: `/assets/fish/care/bacteria.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+      id: 64,
+      name: `API Quick Start Nitrifying Bacteria`,
+      description: `Contains one (1) API QUICK START Freshwater and Saltwater Aquarium Nitrifying Bacteria 8-Ounce Bottle
+      Allows instant addition of fish when starting a new aquarium
+      Reduces compounds harmful to fish when used routinely
+      Helps prevent fish loss in freshwater and saltwater aquariums
+      Use when starting a new aquarium, when adding new fish and when changing water and filter media`,
+      price: `$9.88`,
+      url: `/assets/fish/care/API.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
+    {
+      id: 65,
+      name: `AQQA Magnetic Aquarium Cleaner Brush`,
+      description: `Suitable 1/4 "~3/8 " Thickness Glass - the cleaner brush size is 10.3X5.5X6.8cm(4.05"*2.17"*2.7"),won't occupy a lot of space in the fish tank,The edges are very smooth and will not harm the fish.Please pay attention to your hands when using, do not put your hands in the middle of strong magnets.`,
+      price: `$29.99`,
+      url: `/assets/fish/care/magnetic_brush.jpg`,
+      category: categories[2]._id,
+      subCategory: subCategories[3]._id,
+      quantity: 100,
+    },
   ]);
 
   process.exit();
