@@ -967,7 +967,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         Enhances skin & feather health for vibrant, healthy plumage
         Contains fruits, nuts, veggies and textures for nutritional variety`,
         price: 63.99,
-        image_url: `/assets/parrots/food/fiesta.jpg`,
+        image_url: `/assets/categories/parrots/food/fiesta.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[0]._id,
         quantity: 100,
@@ -980,7 +980,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         High quality ingredients
         Naturally preserved for ideal freshness`,
         price: 59.99,
-        image_url: `/assets/parrots/food/supreme.jpg`,
+        image_url: `/assets/categories/parrots/food/supreme.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[0]._id,
         quantity: 100,
@@ -994,7 +994,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         100% consumable extruded nutrition with no shells or seed hulls
         Naturally Preserved for ideal freshness`,
         price: 42.90,
-        image_url: `/assets/parrots/food/exact.jpg`,
+        image_url: `/assets/categories/parrots/food/exact.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[0]._id,
         quantity: 100,
@@ -1005,7 +1005,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         SUPERIOR SHAPE FOR FORAGING: the round Nutri-Berrie shape offers important beak play and exercise, which helps prevent bird boredom and feather picking
         NON-GMO AND HUMAN-GRADE INGREDIENTS: no artificial colors, flavors, or preservatives`,
         price: 32.99,
-        image_url: `/assets/parrots/food/berries.jpg`,
+        image_url: `/assets/categories/parrots/food/berries.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[0]._id,
         quantity: 100,
@@ -1015,7 +1015,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `Premium & Clean Recipe: Uses all-natural ingredients. 100% natural with no fillers, sugars, or sulfites. Includes freeze dried fruits, organic whole grains, air dried vegetables, savory & healthy spices.
         Heath Benefits: Provides excellent health benefits to parrots Pearled barley has hearty increments of niacin, thiamine, and potassium. A substance that inhibits cholesterol production in the blood has been traced to the nonfibrous portion of the grain. Hulled Millet is rich in phosphorus, iron, calcium, riboflavin, the nutritional value of cooked millet.`,
         price: 19.94,
-        image_url: `/assets/parrots/food/bird_street.jpg`,
+        image_url: `/assets/categories/parrots/food/bird_street.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[0]._id,
         quantity: 100,
@@ -1026,7 +1026,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         Easy, set-up out of the box, ready to go on to the next adventure. This bird carrier has a double sided transparent window for your bird to enjoy the travel and for you to check on your bird on the go! With great ventilation, double zipper design, shoulder strap, handle and multiple perch placement for ease of use and safety for your bird. And, its super easy to clean.
         17'' inches long, 10'' inches wide, 12'' inches high.`,
         price: 33.99,
-        image_url: `/assets/parrots/accessories/travel_bag.jpg`,
+        image_url: `/assets/categories/parrots/accessories/travel_bag.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[1]._id,
         quantity: 100,
@@ -1036,7 +1036,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `Suitable Animals: The bird parrot nest hammock measures is about 9.8" x 11" and the diameter of the opening is 6.7", which is ideal for medium to large birds such as African Grey Cockatoos, budgerigars, cockatiel or various young Macaws. Besides, most small pets such as hamsters, bunnies, hedgehogs, etc. can also use it as a hiding place.
         High-quanlity Material: Made of soft and comfortable plush, it is safe enough for your pets. You can safely place them inside for warmth in the winter, and it's also great for when they have babies, without hurting their paws.`,
         price: 16.99,
-        image_url: `/assets/parrots/accessories/hammock.jpg`,
+        image_url: `/assets/categories/parrots/accessories/hammock.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[1]._id,
         quantity: 100,
@@ -1046,7 +1046,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `Package contains: you will get 1 pieces bird cage net cover in white color, which measures approx. 118 x 15 inch/ 300 x 37 cm in circumference and width, suitable for medium and small birdcages; Not recommend to be applied for large birdcages or extra large birdcages; Please confirm whether the size is suitable for your birdcage before buying
         Keep your house clean: the birdcage seed feather catcher can be applied for your bird cages, which can prevent the messy seeds and floating feathers from scattering on your house, keeping your house clean and tidy`,
         price: 19.99,
-        image_url: `/assets/parrots/accessories/cage.jpg`,
+        image_url: `/assets/categories/parrots/accessories/cage.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[1]._id,
         quantity: 100,
@@ -1055,7 +1055,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         name: `Parrot Cage Snuggle Hut`,
         description: `Comfort Corner:Create a hidden corner where birds can hide. While your birds are warm, they can also reduce the pressure of birds, provide them with a sense of security, and enjoy the fun of playing hide and seek with their owners.`,
         price: 12.99,
-        image_url: `/assets/parrots/accessories/corner.jpg`,
+        image_url: `/assets/categories/parrots/accessories/corner.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[1]._id,
         quantity: 100,
@@ -1065,7 +1065,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `Large size: The size of our parrot nest is 11 × 11 × 11 inches. With huge cube design and circular opening, this large hanging bird house is very suitable for most large birds such as Amazon Parrot, African Gray, Cockatoo, Macaws and so on.
         Well Made : The big bird snuggle hut is made of high-quality thick coral fleece and cotton, which is soft , comfortable, cold-proof and warm-keeping. Parrot bed will keep the shape after wash.`,
         price: 19.99,
-        image_url: `/assets/parrots/accessories/box.jpg`,
+        image_url: `/assets/categories/parrots/accessories/box.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[1]._id,
         quantity: 100,
@@ -1075,7 +1075,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `FOR LARGE BIRDS – The Bagel Cascade bird toy by Super Bird Creations is the perfect size for Amazons, African Greys, Eclectus, Small Cockatoos, Mini Macaws and similarly sized pet birds.
         DESIGN FEATURES – The Bagel Cascade bird toy is a favorite of many large birds. The durable plastic support core is packed with 24 fun to peel and chew compressed cardboard bagels this toy can easily be refilled with more bagels making it an economical and long lasting purchase.`,
         price: 16.62,
-        image_url: `/assets/parrots/toys/toy1.jpg`,
+        image_url: `/assets/categories/parrots/toys/toy1.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[2]._id,
         quantity: 100,
@@ -1085,7 +1085,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `What you get :Package include 10 pieces difference type bird entertaining toys to meet your various needs for bird parrots,perfect size for parrotlets, parakeets, cockatiels, lovebirds and etc.
         Multi-function bird toy: they are designed to let your bird's feet have rest while also offer exercise opportunities for your birds to keep healthy and fit. Provides your little bird an ideal elevated place to swing, chew and climb.`,
         price: 18.99,
-        image_url: `/assets/parrots/toys/toy_set.jpg`,
+        image_url: `/assets/categories/parrots/toys/toy_set.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[2]._id,
         quantity: 100,
@@ -1095,7 +1095,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `Safe To Play: Made of wood & rattan which is safe to chew.
         Keep Active: Chewing and shredding is a natural behavior that is associated with foraging and nest building, which promotes your bird’s physical and emotional active as well giving you piece of mind.`,
         price: 12.99,
-        image_url: `/assets/parrots/toys/toy2.jpg`,
+        image_url: `/assets/categories/parrots/toys/toy2.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[2]._id,
         quantity: 100,
@@ -1105,7 +1105,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `ENRICHMENT: Designed to promote play, the rod spins smoothly, traveling along the threaded rod, clockwise and counterclockwise from one side to the other.
         DURABLE: Constructed of solid, anodized aluminum and stainless steel, our toys are safe, chemical-free, durable, and lightweight.`,
         price: 21.79,
-        image_url: `/assets/parrots/toys/spinner.jpg`,
+        image_url: `/assets/categories/parrots/toys/spinner.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[2]._id,
         quantity: 100,
@@ -1115,7 +1115,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `The natural half-coconut shell material is safe and environmentally friendly. When you hide your food, use the half natural coconut shell decoration of the mini sneakers Ring Chew Toy to play the role of a foraging toy.
         Colorful things are liked by parrots, and safe and chewable toys are they will not refuse. You can put some of its favorite foods or pieces of paper in its shoes, and it will quickly become familiar with its new toy.`,
         price: 12.98,
-        image_url: `/assets/parrots/toys/coco.jpg`,
+        image_url: `/assets/categories/parrots/toys/coco.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[2]._id,
         quantity: 100,
@@ -1125,7 +1125,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `PROMOTES RELAXATION by reducing destructive behavior such as feather plucking and bird screaming. Calms hyperactive birds and may help with trainability and temper tantrums. Hemp has natural calming effects and can deliver relaxation to birds struggling with inflammation and joint pain. Supports senior bird health.
         IMPROVES SKIN AND FEATHER HEALTH hemp oil strengthens and maintains the luster and shine of your bird’s feathers and skin. Can be administered orally or topically.`,
         price: 16.18,
-        image_url: `/assets/parrots/care/hemp.jpg`,
+        image_url: `/assets/categories/parrots/care/hemp.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[3]._id,
         quantity: 100,
@@ -1135,7 +1135,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `FAST-ACTING FORMULA: This natural based liquid formula is incredibly fast-acting and does not leave behind greasy, sticky, or filmy residue like other cleaners or soaps. Once this bird cage cleaning formula has been applied, your bird’s habitat can be wiped down, making it stain-free and smelling fresh in no time.
         FAST-ACTING FORMULA: This natural based liquid formula is incredibly fast-acting and does not leave behind greasy, sticky, or filmy residue like other cleaners or soaps. Once this bird cage cleaning formula has been applied, your bird’s habitat can be wiped down, making it stain-free and smelling fresh in no time.`,
         price: 22.99,
-        image_url: `/assets/parrots/care/cleaner.jpg`,
+        image_url: `/assets/categories/parrots/care/cleaner.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[3]._id,
         quantity: 100,
@@ -1147,7 +1147,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         The only product safe enough to use that does NOT cause dust when cleaning the cage
         Removes droppings from all types of avian diets including seed fruit nuts meat vegetables nectar bugs grains formulated diet and greens`,
         price: 15.59,
-        image_url: `/assets/parrots/care/poop.jpg`,
+        image_url: `/assets/categories/parrots/care/poop.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[3]._id,
         quantity: 100,
@@ -1158,7 +1158,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         Cleans, beautifies and invigorates feathers and skin.
         For use on all caged birds.`,
         price: 9.50,
-        image_url: `/assets/parrots/care/bath_spray.jpg`,
+        image_url: `/assets/categories/parrots/care/bath_spray.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[3]._id,
         quantity: 100,
@@ -1170,7 +1170,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         REDUCES ODOR: Keeps your home, and your pet bird’s home, smelling fresh and clean.
         - 20" X 18"`,
         price: 5.99,
-        image_url: `/assets/parrots/care/liners.jpg`,
+        image_url: `/assets/categories/parrots/care/liners.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[3]._id,
         quantity: 100,
@@ -1183,7 +1183,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         Great Tasting Flavor Your Bird Will Love
         Increases Stimulation To Combat Boredom.`,
         price: 7.49,
-        image_url: `/assets/parrots/treats/honey_sticks.jpg`,
+        image_url: `/assets/categories/parrots/treats/honey_sticks.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[4]._id,
         quantity: 100,
@@ -1193,7 +1193,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `Bundle includes four, 10 oz bags of LAFEBER’S Gourmet Nutri-Berries for Parrots in a factory sealed box: 1 Tropical Fruit, 1 El Paso, 1 Sunny Orchard and 1 Garden Veggie. **If your items do not come in a box showing the specifics of the case contents on the LAFEBER'S label as shown on the photos, you are not receiving quality LAFEBER’S products**
         All varieties are nutritionally complete foraging parrot foods formulated by top avian veterinarians and avian nutritionists.`,
         price: 37.96,
-        image_url: `/assets/parrots/treats/mix.jpg`,
+        image_url: `/assets/categories/parrots/treats/mix.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[4]._id,
         quantity: 100,
@@ -1204,7 +1204,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         The Taste, Texture and Flavor Birds Love: No added sugar, no artificial flavors or colors, and of course no chemical preservatives; Birds love Oven Fresh Bites Natural Baked Treats
         Better Ingredients: Oven Fresh Bites Natural Baked Treats are oven baked and use wholesome ingredients that offer a variety of nutrients and textures such as oatmeal and sunflower meal`,
         price: 10.99,
-        image_url: `/assets/parrots/treats/baked.jpg`,
+        image_url: `/assets/categories/parrots/treats/baked.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[4]._id,
         quantity: 100,
@@ -1216,7 +1216,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         Increases Variety In Your Bird’S Diet For Appetite Stimulation And To Combat Boredom.
         Hand-Feed Your Bird With These Delicious Treats`,
         price: 5.99,
-        image_url: `/assets/parrots/treats/papaya.jpg`,
+        image_url: `/assets/categories/parrots/treats/papaya.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[4]._id,
         quantity: 100,
@@ -1226,7 +1226,7 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
         description: `Oven Fresh Bites Natural Baked Treats, Bird Treat Parrot Cookies: Birds love the texture and taste of Oven Fresh Bites Natural Baked Treats, the only oven baked, all-natural avian diet treat
         The Taste, Texture and Flavor Birds Love: No added sugar, no artificial flavors or colors, and of course no chemical preservatives; Birds love Oven Fresh Bites Natural Baked Treats`,
         price: 5.09,
-        image_url: `/assets/parrots/treats/oatmeal_cookie.jpg`,
+        image_url: `/assets/categories/parrots/treats/oatmeal_cookie.jpg`,
         category: categories[4]._id,
         subCategory: subCategories[4]._id,
         quantity: 100,
