@@ -117,13 +117,17 @@ const Navbar = () => {
               }
               if (page.name === "Login" && loggedIn) {
                 return (
-                  <Link key={index} to='/logout' className='text-white'>
+                  <Link key={index} to='/' onClick={() => Auth.logout()} className='text-white'>
                     <li className='text-white hover:bg-blue-600 py-2 px-4'>
                       Logout
                     </li>
                   </Link>
                 );
               }
+              if (page.name === "Profile" && !loggedIn) {
+                return null;
+              }
+
               return (
                 <Link key={page.name} to={page.path}>
                   <li

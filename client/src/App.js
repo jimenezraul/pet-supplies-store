@@ -9,13 +9,24 @@ import LogIn from "./pages/Login";
 import ProductDetails from "./pages/ProductDetails";
 import SignUp from "./pages/Signup";
 import Profile from "./pages/Profile";
+import { setContext } from "@apollo/client/link/context";
 
 const uploadLink = createUploadLink({
   uri: "/graphql",
 });
 
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
 const client = new ApolloClient({
-  link: uploadLink,
+  link: authLink.concat(uploadLink),
   cache: new InMemoryCache(),
 });
 

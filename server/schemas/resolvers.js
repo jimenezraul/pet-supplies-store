@@ -15,7 +15,7 @@ const resolvers = {
           .populate("cart")
           .populate("wishlist")
           .populate({
-            path: "orders.product",
+            path: "orders.products",
             populate: "category",
           });
 
