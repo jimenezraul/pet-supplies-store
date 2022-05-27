@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
 import { useSelector, useDispatch } from "react-redux";
-import { updateCurrentPage } from "../../redux/Store/storeSlice";
+import { updateCurrentPage, updateUser, updateWishlist } from "../../redux/Store/storeSlice";
+import { useQuery } from "@apollo/client";
+import { GET_USER } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 
@@ -12,6 +14,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const currentPath = window.location.pathname;
   const currentPathName = currentPath.split("/")[1];
+  const loggedIn = Auth.loggedIn();
+  const user = useSelector((state) => state.store.user);
+  const isAdmin = user.isAdmin;
+
+  const { loading, error, data } = useQuery(GET_USER);
+
+  useEffect(() => {
+    if (data) {
+      dispatch(updateUser(data.user));
+      dispatch(updateWishlist(data.user.wishlist));
+    }
+  }, [data, dispatch]);
 
   useEffect(() => {
     if (currentPathName === "") {
@@ -25,9 +39,6 @@ const Navbar = () => {
 
     document.title = `ProPet | ${currentPage}`;
   }, [currentPathName, dispatch]);
-
-  const isAdmin = false;
-  const loggedIn = Auth.loggedIn();
 
   const pages = [
     {
@@ -117,7 +128,12 @@ const Navbar = () => {
               }
               if (page.name === "Login" && loggedIn) {
                 return (
-                  <Link key={index} to='/' onClick={() => Auth.logout()} className='text-white'>
+                  <Link
+                    key={index}
+                    to='/'
+                    onClick={() => Auth.logout()}
+                    className='text-white'
+                  >
                     <li className='text-white hover:bg-blue-600 py-2 px-4'>
                       Logout
                     </li>

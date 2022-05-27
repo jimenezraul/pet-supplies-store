@@ -9,7 +9,9 @@ export const storeSlice = createSlice({
     categories: [],
     currentCategory: "",
     currentPage: "",
-    user: {},
+    user: {
+      isAdmin: false,
+    },
     wishlist: [],
   },
   reducers: {
