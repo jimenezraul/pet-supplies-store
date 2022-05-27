@@ -34,8 +34,8 @@ const LogIn = () => {
   };
   return (
     <section>
-      <div className="px-6 h-full text-gray-800 flex justify-center">
-        <div className="xl:ml-20 xl:w-4/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
+      <div className="h-full text-gray-800 flex justify-center">
+        <div className="xl:w-4/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
           <form
             className="bg-white p-10 border-solid border-2 border-grey-600 shadow-lg"
             onSubmit={handleFormSubmit}

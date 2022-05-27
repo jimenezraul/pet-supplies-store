@@ -19,15 +19,15 @@ const Store = () => {
     if (data) {
       dispatch(updateProduct(data.products));
     }
-    if (dataCategories) {
-      dispatch(updateCategory(dataCategories.categories));
-    }
-    if (id) {
+    if (id && data) {
       // filter products by category
       const filteredProducts = data.products.filter(
         (product) => product.category._id === id
       );
       dispatch(updateProduct(filteredProducts));
+    }
+    if (dataCategories) {
+      dispatch(updateCategory(dataCategories.categories));
     }
   }, [data, loading, dispatch, dataCategories, id]);
 
