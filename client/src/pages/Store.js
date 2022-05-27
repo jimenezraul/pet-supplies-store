@@ -1,105 +1,70 @@
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../redux/Store/storeSlice";
+import { useDispatch } from "react-redux";
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCTS, GET_CATEGORIES } from "../utils/queries";
-
-const categories = [
-  {
-    name: "Dog",
-    path: "/store/dog",
-  },
-  {
-    name: "Cat",
-    path: "/store/cat",
-  },
-  {
-    name: "Fish",
-    path: "/store/fish",
-  },
-  {
-    name: "Hamster",
-    path: "/store/hamster",
-  },
-  {
-    name: "Bird",
-    path: "/store/bird",
-  },
-];
+import { updateCategory, updateProduct } from "../redux/Store/storeSlice";
+import { useEffect } from "react";
+import CategoriesCard from "../components/CategoriesCard";
+import ProductList from "../components/ProductList";
+import { useParams } from "react-router-dom";
 
 const Store = () => {
-  const products = useSelector((state) => state.store.products);
   const dispatch = useDispatch();
-  const addToCartHandler = (e) => {
-    const quantity = 1;
-    dispatch(addToCart({ ...e, quantity }));
+  const { id } = useParams();
+
+  const { loading, data } = useQuery(GET_PRODUCTS);
+  const { loading: loadingCategories, data: dataCategories } =
+    useQuery(GET_CATEGORIES);
+
+  useEffect(() => {
+    if (data) {
+      dispatch(updateProduct(data.products));
+    }
+    if (dataCategories) {
+      dispatch(updateCategory(dataCategories.categories));
+    }
+    if (id) {
+      // filter products by category
+      const filteredProducts = data.products.filter(
+        (product) => product.category._id === id
+      );
+      dispatch(updateProduct(filteredProducts));
+    }
+  }, [data, loading, dispatch, dataCategories, id]);
+
+  const searchHandler = (e) => {
+    const searchValue = e.target.value;
+    const filteredProducts = data.products.filter(
+      (product) =>
+        product.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    dispatch(updateProduct(filteredProducts));
   };
+
   return (
-    <div className="mt-4 flex-1">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap justify-center md:space-x-2">
-          <div className="w-full md:w-3/12">
-            <div className="bg-white rounded border p-3 shadow-lg mb-4 md:mb-0">
-              <h2 className="text-2xl border-b-2 font-semibold pb-4">
-                Categories
-              </h2>
-              <ul className="list-reset">
-                {categories.map((category, index) => {
-                  let last = false;
-                  if (index === categories.length - 1) {
-                    last = true;
-                  }
-                  return (
-                    <Link key={index} to={category.path}>
-                      <li
-                        className={`${
-                          !last && "border-b-2"
-                        } p-2 hover:bg-gray-100 font-medium`}
-                      >
-                        {category.name}
-                      </li>
-                    </Link>
-                  );
-                })}
-              </ul>
+    <div className='mt-3 flex-1'>
+      <div className='container mx-auto'>
+        <div className='flex flex-wrap justify-center md:space-x-2'>
+          <div className='flex justify-end w-11/12'>
+            <div className='xl:w-96'>
+              <div className='input-group relative flex flex-wrap items-stretch w-fullrounded'>
+                <input
+                  onChange={searchHandler}
+                  type='search'
+                  className='form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
+                  placeholder='Search'
+                  aria-label='Search'
+                  aria-describedby='button-addon2'
+                />
+                <span
+                  className='input-group-text flex items-center px-3 py-1.5 text-base font-normal text-gray-700 text-center whitespace-nowrap rounded'
+                  id='basic-addon2'
+                ></span>
+              </div>
             </div>
           </div>
-          <div className="w-full md:w-8/12 mb-5">
-            <div className="bg-white border rounded shadow-lg flex flex-wrap">
-              {products.map((product, index) => (
-                <div
-                  className="w-6/12 lg:w-4/12 flex justify-center p-2"
-                  key={index}
-                >
-                  <div className="max-w-sm rounded overflow-hidden">
-                    <img
-                      className="h-52 mx-auto"
-                      src={product.url}
-                      alt={product.name}
-                    />
-                    <div className="px-6 py-4">
-                      <Link to={`/store/product/${product.id}`}>
-                        <div className="font-bold text-xl mb-2 hover:text-blue-700 hover:underline">
-                          {product.name}
-                        </div>
-                      </Link>
-                      <p className="text-gray-700 font-semibold">
-                        ${product.price}
-                      </p>
-                    </div>
-                    <div className="px-6 pt-4 pb-2">
-                      <button
-                        onClick={() => addToCartHandler(product)}
-                        className="ml-1 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent"
-                      >
-                        Add To Cart
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <CategoriesCard />
+          <ProductList />
         </div>
       </div>
     </div>

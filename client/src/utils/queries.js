@@ -43,7 +43,7 @@ export const GET_USER = gql`
 
 export const GET_CATEGORIES = gql`
   query Categories {
-    subcategories {
+    categories {
       _id
       name
     }
