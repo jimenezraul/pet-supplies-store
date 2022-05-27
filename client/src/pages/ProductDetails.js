@@ -8,7 +8,6 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.store.products);
   const { id } = useParams();
-  console.log(id);
   const product = products.find((product) => product._id === id);
 
   const options = [];

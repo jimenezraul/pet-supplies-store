@@ -9,8 +9,13 @@ export const storeSlice = createSlice({
     categories: [],
     currentCategory: "",
     currentPage: "",
+    user: {},
+    wishlist: [],
   },
   reducers: {
+    updateUser: (state, action) => {
+      state.user = action.payload;
+    },
     updateProduct: (state, action) => {
       state.products = action.payload;
     },
@@ -29,6 +34,9 @@ export const storeSlice = createSlice({
     },
     addMultipleToCart: (state, action) => {
       state.cart.push(...action.payload);
+    },
+    updateWishlist: (state, action) => {
+      state.wishlist = action.payload;
     },
     deleteFromCart: (state, action) => {
       let newState = state.cart.filter((product) => {
@@ -67,6 +75,8 @@ export const {
   clearCart,
   toggle_Cart,
   updateCurrentPage,
+  updateUser,
+  updateWishlist,
 } = storeSlice.actions;
 
 export default storeSlice.reducer;

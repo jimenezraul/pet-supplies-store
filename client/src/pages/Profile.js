@@ -1,9 +1,23 @@
 import { useQuery } from "@apollo/client";
 import { GET_USER } from "../utils/queries";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { updateUser,updateWishlist } from "../redux/Store/storeSlice";
+import Wishlist from "../components/Wishlist";
 
 const Profile = () => {
-  const { data } = useQuery(GET_USER);
-  console.log(data);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.store.user);
+
+  const { loading, error, data } = useQuery(GET_USER);
+
+  useEffect(() => {
+    if (data) {
+        dispatch(updateUser(data.user));
+        dispatch(updateWishlist(data.user.wishlist));
+    }
+  }, [data, dispatch]);
+
   return (
     <div className='flex-1'>
       <div className='container mx-auto my-3 md:my-5'>
@@ -39,10 +53,10 @@ const Profile = () => {
                   </button>
                 </div>
                 <h5 className='mb-1 text-xl font-medium text-gray-900 dark:text-white'>
-                  Name LastName
+                  {user.first_name} {user.last_name}
                 </h5>
                 <span className='text-sm text-gray-500 dark:text-gray-400'>
-                  email@example.com
+                  {user.email}
                 </span>
                 <div className='flex mt-4 space-x-3 lg:mt-6'></div>
               </div>
@@ -53,6 +67,7 @@ const Profile = () => {
                   <h5 className='mb-1 text-xl font-medium text-gray-900 dark:text-white'>
                     Wishlist
                   </h5>
+                  <Wishlist />
                 </div>
                 <div className='flex mt-4 space-x-3 lg:mt-6'></div>
               </div>
