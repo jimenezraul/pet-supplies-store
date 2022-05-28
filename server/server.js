@@ -15,10 +15,12 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-const dir = "./public/images";
+const profile = "./public/images/profile";
+const products = "./public/images/products";
 
-if (!fs.existsSync(dir)) {
-  fs.mkdirSync(dir, { recursive: true });
+if (!fs.existsSync(profile) || !fs.existsSync(products)) {
+  fs.mkdirSync(profile);
+  fs.mkdirSync(products);
 }
 
 const app = express();

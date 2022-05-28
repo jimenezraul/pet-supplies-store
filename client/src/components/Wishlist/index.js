@@ -7,11 +7,12 @@ const Wishlist = () => {
   const wishlist = useSelector((state) => state.store.wishlist);
 
   return (
-    <div className='flex flex-col p-5'>
+    <div className='flex flex-col px-5'>
       <div className='w-full'>
-        {wishlist.map((product) => {
+        {wishlist.map((product, index) => {
+          const border = index !== wishlist.length - 1 && "border-b";
           return (
-            <div key={product._id} className='flex flex-col py-2'>
+            <div key={product._id} className='flex flex-col py-3'>
               <div className='flex flex-wrap'>
                 <div className='w-4/12'>
                   <img
@@ -34,7 +35,9 @@ const Wishlist = () => {
                   <div className='flex flex-col'>
                     <div className='flex flex-row'></div>
                     <div>
-                      <div className='w-full flex justify-center py-3 border-b'>
+                      <div
+                        className={`w-full flex justify-center py-4 ${border}`}
+                      >
                         <button
                           onClick={() => dispatch(addToCart(product))}
                           className='ml-1 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent'
