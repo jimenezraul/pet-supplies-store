@@ -10,3 +10,13 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const UPDATE_PROFILE_PICTURE = gql`
+  mutation Mutation($image: Upload!) {
+    updateProfilePicture(image: $image) {
+      user {
+        image_url
+      }
+    }
+  }
+`;

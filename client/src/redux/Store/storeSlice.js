@@ -13,10 +13,14 @@ export const storeSlice = createSlice({
       isAdmin: false,
     },
     wishlist: [],
+    modal: false,
   },
   reducers: {
     updateUser: (state, action) => {
-      state.user = action.payload;
+      state.user = {
+        ...state.user,
+        ...action.payload,
+      };
     },
     updateProduct: (state, action) => {
       state.products = action.payload;
@@ -63,6 +67,12 @@ export const storeSlice = createSlice({
     toggle_Cart: (state, action) => {
       state.cartOpen = !state.cartOpen;
     },
+    toggle_Modal: (state, action) => {
+      state.modal = !state.modal;
+    },
+    updateFile: (state, action) => {
+      state.file = action.payload;
+    },
   },
 });
 
@@ -79,6 +89,8 @@ export const {
   updateCurrentPage,
   updateUser,
   updateWishlist,
+  toggle_Modal,
+  updateFile,
 } = storeSlice.actions;
 
 export default storeSlice.reducer;

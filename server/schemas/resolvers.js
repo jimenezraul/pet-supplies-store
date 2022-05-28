@@ -3,6 +3,8 @@ const { User, Product, Category, SubCategory } = require("../models");
 const { signToken } = require("../utils/auth");
 const { GraphQLUpload } = require("graphql-upload");
 const generateRandomString = require("../utils/helpers");
+const path = require("node:path");
+const fs = require("node:fs");
 
 const resolvers = {
   Upload: GraphQLUpload,
@@ -62,31 +64,17 @@ const resolvers = {
     },
 
     updateUser: async (parent, args, context) => {
-      const file = args.file;
-      let newFile = "";
-      if (file) {
-        const { createReadStream, filename } = await file;
-
-        const { ext } = path.parse(filename);
-        const randomString = generateRandomString(10);
-        const fileName = `${randomString}${ext}`;
-
-        const stream = createReadStream();
-        const pathName = path.join(__dirname, `../public/images/${fileName}`);
-        await stream.pipe(fs.createWriteStream(pathName));
-        newFile = fileName;
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
       }
 
-      if (context.user) {
-        const user = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { ...args, image_url: newFile },
-          { new: true }
-        );
+      const user = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        args,
+        { new: true }
+      );
 
-        return user;
-      }
-      throw new AuthenticationError("Not logged in");
+      return user;
     },
 
     login: async (parent, { email, password }) => {
@@ -123,6 +111,27 @@ const resolvers = {
 
       await user.save();
 
+      return user;
+    },
+
+    updateProfilePicture: async (parent, { image }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      const { createReadStream, filename } = await image;
+      const { ext } = path.parse(filename);
+      const randomString = generateRandomString(10);
+      const fileName = `${randomString}${ext}`;
+
+      const stream = createReadStream();
+      const pathName = path.join(__dirname, `../public/images/profile/${fileName}`);
+      await stream.pipe(fs.createWriteStream(pathName));
+
+      const user = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { image_url: `/images/profile/${fileName}` },
+        { new: true }
+      );
       return user;
     },
   },

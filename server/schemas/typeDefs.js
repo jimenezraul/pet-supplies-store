@@ -70,8 +70,8 @@ const typeDefs = gql`
       last_name: String
       email: String
       password: String
-      file: Upload
     ): Auth
+    updateProfilePicture(image: Upload!): Auth
     addToCart(productId: ID!): User
   }
 `;
