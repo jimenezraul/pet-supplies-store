@@ -41,6 +41,21 @@ export const storeSlice = createSlice({
     addMultipleToCart: (state, action) => {
       state.cart.push(...action.payload);
     },
+    addToWishlist: (state, action) => {
+      // if product is already in wishlist, remove it
+      const index = state.wishlist.findIndex(
+        (product) => product._id === action.payload._id
+      );
+      if (index) {
+        state.wishlist.push(action.payload);
+      }
+    },
+    removeFromWishlist: (state, action) => {
+      console.log(action.payload);
+      state.wishlist = state.wishlist.filter(
+        (product) => product._id !== action.payload
+      );
+    },
     updateWishlist: (state, action) => {
       state.wishlist = action.payload;
     },
@@ -88,9 +103,11 @@ export const {
   toggle_Cart,
   updateCurrentPage,
   updateUser,
-  updateWishlist,
+  addToWishlist,
+  removeFromWishlist,
   toggle_Modal,
   updateFile,
+  updateWishlist,
 } = storeSlice.actions;
 
 export default storeSlice.reducer;

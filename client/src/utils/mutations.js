@@ -20,3 +20,20 @@ export const UPDATE_PROFILE_PICTURE = gql`
     }
   }
 `;
+
+export const REMOVE_FROM_WISHLIST = gql`
+  mutation Mutation($productId: ID!) {
+    removeFromWishlist(productId: $productId) {
+      _id
+      name
+    }
+  }
+`;
+
+export const ADD_TO_WISHLIST = gql`
+  mutation Mutation($productId: ID!) {
+    addToWishlist(productId: $productId) {
+      _id
+    }
+  }
+`;

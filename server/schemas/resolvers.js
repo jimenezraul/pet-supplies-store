@@ -41,8 +41,8 @@ const resolvers = {
         .populate("category")
         .populate("subCategory");
     },
-    product: async (parent, args) => {
-      return Product.findOne({ _id: args.id })
+    product: async (parent, { id }) => {
+      return Product.findOne({ _id: id })
         .select("-__v")
         .populate("category")
         .populate("subCategory");
@@ -124,14 +124,40 @@ const resolvers = {
       const fileName = `${randomString}${ext}`;
 
       const stream = createReadStream();
-      const pathName = path.join(__dirname, `../public/images/profile/${fileName}`);
+      const pathName = path.join(
+        __dirname,
+        `../public/images/profile/${fileName}`
+      );
       await stream.pipe(fs.createWriteStream(pathName));
 
       const user = await User.findOneAndUpdate(
         { _id: context.user._id },
-        { image_url: `/images/profile/${fileName}` },
-        { new: true }
+        { image_url: `/images/profile/${fileName}` }
       );
+      return user;
+    },
+    addToWishlist: async (parent, { productId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      const user = await User.findOne({ _id: context.user._id });
+
+      user.wishlist.addToSet(productId);
+
+      await user.save();
+
+      return user;
+    },
+    removeFromWishlist: async (parent, { productId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      const user = await User.findOne({ _id: context.user._id });
+      // remove from wishlist
+      user.wishlist.pull(productId);
+      console.log(user.wishlist);
+      await user.save();
+
       return user;
     },
   },
