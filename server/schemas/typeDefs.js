@@ -73,6 +73,8 @@ const typeDefs = gql`
     ): Auth
     updateProfilePicture(image: Upload!): Auth
     addToCart(productId: ID!): User
+    addToWishlist(productId: ID!): Product
+    removeFromWishlist(productId: ID!): Product
   }
 `;
 

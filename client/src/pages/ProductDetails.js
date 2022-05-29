@@ -1,14 +1,57 @@
+import { useQuery, useMutation } from "@apollo/client";
+import { GET_PRODUCT_BY_ID } from "../utils/queries";
 import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../redux/Store/storeSlice";
-import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, addToWishlist } from "../redux/Store/storeSlice";
+import { useRef, useEffect, useState, Children } from "react";
+import Auth from "../utils/auth";
+import { ADD_TO_WISHLIST } from "../utils/mutations";
 
 const ProductDetails = () => {
   const quantity = useRef(null);
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.store.products);
+  const [inWishlist, setInWishlist] = useState(false);
+  const [product, setProduct] = useState({ wishlist: false });
+  const auth = Auth.loggedIn();
   const { id } = useParams();
-  const product = products.find((product) => product._id === id);
+  const [addToWishList] = useMutation(ADD_TO_WISHLIST);
+  let data = useQuery(GET_PRODUCT_BY_ID, {
+    variables: {
+      productId: id,
+    },
+  });
+
+  let wishlist = useSelector((state) => state.store.user.wishlist);
+
+  useEffect(() => {
+    if (data.data) {
+      setProduct(data.data.product);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (wishlist?.length > 0) {
+      wishlist.forEach((item) => {
+        if (item._id === id) {
+          setInWishlist(true);
+        }
+      });
+    }
+  }, [wishlist, id]);
+
+  const addToWishlistHandler = async (product) => {
+    dispatch(addToWishlist(product));
+    wishlist = wishlist?.find((item) => item._id === id);
+    setInWishlist(!inWishlist);
+    if (auth) {
+      await addToWishList({
+        variables: {
+          productId: product._id,
+        },
+      });
+      dispatch(addToWishlist(product));
+    }
+  };
 
   const options = [];
   for (let i = 1; i <= 10; i++) {
@@ -20,7 +63,6 @@ const ProductDetails = () => {
   }
 
   const addToCartHandler = () => {
-    console.log(quantity.current.value);
     dispatch(
       addToCart({ ...product, quantity: parseInt(quantity.current.value) })
     );
@@ -79,9 +121,16 @@ const ProductDetails = () => {
                   >
                     Add To Cart
                   </button>
-                  <button className='rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4'>
-                    <i className='fa-solid fa-bookmark'></i>
-                  </button>
+                  {auth && (
+                    <button
+                      onClick={() => addToWishlistHandler(product)}
+                      className={`rounded-full w-10 h-10 bg-gray-200 p-0 hover:border hover:bg-gray-300 hover:border-red-500 inline-flex items-center justify-center ${
+                        inWishlist ? "text-red-500" : "text-gray-500"
+                      }  ml-4`}
+                    >
+                      <i className='fa-solid fa-bookmark'></i>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
