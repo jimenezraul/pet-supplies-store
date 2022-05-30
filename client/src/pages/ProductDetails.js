@@ -3,15 +3,14 @@ import { GET_PRODUCT_BY_ID } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, addToWishlist } from "../redux/Store/storeSlice";
-import { useRef, useEffect, useState, Children } from "react";
+import { useRef, useEffect, useState } from "react";
 import Auth from "../utils/auth";
 import { ADD_TO_WISHLIST } from "../utils/mutations";
 
 const ProductDetails = () => {
   const quantity = useRef(null);
   const dispatch = useDispatch();
-  const [inWishlist, setInWishlist] = useState(false);
-  const [product, setProduct] = useState({ wishlist: false });
+  const [product, setProduct] = useState({ inWishlist: false });
   const auth = Auth.loggedIn();
   const { id } = useParams();
   const [addToWishList] = useMutation(ADD_TO_WISHLIST);
@@ -21,28 +20,22 @@ const ProductDetails = () => {
     },
   });
 
-  let wishlist = useSelector((state) => state.store.user.wishlist);
+  let wishlist = useSelector((state) => state.store.wishlist);
 
   useEffect(() => {
     if (data.data) {
       setProduct(data.data.product);
     }
-  }, [data]);
-
-  useEffect(() => {
-    if (wishlist?.length > 0) {
+    if (wishlist.length > 0) {
       wishlist.forEach((item) => {
         if (item._id === id) {
-          setInWishlist(true);
+          setProduct({ ...data.data.product, inWishlist: true });
         }
       });
     }
-  }, [wishlist, id]);
+  }, [data, id, wishlist]);
 
   const addToWishlistHandler = async (product) => {
-    dispatch(addToWishlist(product));
-    wishlist = wishlist?.find((item) => item._id === id);
-    setInWishlist(!inWishlist);
     if (auth) {
       await addToWishList({
         variables: {
@@ -125,7 +118,7 @@ const ProductDetails = () => {
                     <button
                       onClick={() => addToWishlistHandler(product)}
                       className={`rounded-full w-10 h-10 bg-gray-200 p-0 hover:border hover:bg-gray-300 hover:border-red-500 inline-flex items-center justify-center ${
-                        inWishlist ? "text-red-500" : "text-gray-500"
+                        product.inWishlist ? "text-red-500" : "text-gray-500"
                       }  ml-4`}
                     >
                       <i className='fa-solid fa-bookmark'></i>

@@ -1,9 +1,11 @@
+import { Navigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import ImageCropper from "../components/ImageCropper";
 import OrderHistory from "../components/OrderHistory";
 import Wishlist from "../components/Wishlist";
 import { toggle_Modal } from "../redux/Store/storeSlice";
+import Auth from "../utils/auth";
 
 const Profile = () => {
   const acceptedFileTypes = "image/jpg, image/jpeg, image/png";
@@ -17,6 +19,11 @@ const Profile = () => {
       dispatch(toggle_Modal());
     }
   }, [inputFile, dispatch]);
+
+  const isLoggined = Auth.loggedIn();
+  if (!isLoggined) {
+    return <Navigate to='/login' />;
+  }
 
   return (
     <>
@@ -85,7 +92,7 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-            <div className='w-full md:w-7/12 lg:w-8/12 px-2'>
+            <div className='w-full md:w-7/12 lg:w-8/12 px-2 mt-2 md:mt-0'>
               <div className='mx-auto w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 p-6'>
                 <div className='w-full'>
                   <OrderHistory />
