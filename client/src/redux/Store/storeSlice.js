@@ -42,16 +42,9 @@ export const storeSlice = createSlice({
       state.cart.push(...action.payload);
     },
     addToWishlist: (state, action) => {
-      // if product is already in wishlist, remove it
-      const index = state.wishlist.findIndex(
-        (product) => product._id === action.payload._id
-      );
-      if (index) {
-        state.wishlist.push(action.payload);
-      }
+      state.wishlist.push(action.payload);
     },
     removeFromWishlist: (state, action) => {
-      console.log(action.payload);
       state.wishlist = state.wishlist.filter(
         (product) => product._id !== action.payload
       );
