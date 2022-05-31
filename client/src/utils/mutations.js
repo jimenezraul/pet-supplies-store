@@ -37,3 +37,33 @@ export const ADD_TO_WISHLIST = gql`
     }
   }
 `;
+
+export const ADD_TO_CART = gql`
+  mutation Mutation(
+    $id: ID!
+    $name: String!
+    $description: String!
+    $imageUrl: String!
+    $price: Float!
+    $quantity: Int!
+  ) {
+    add2Cart(
+      _id: $id
+      name: $name
+      description: $description
+      image_url: $imageUrl
+      price: $price
+      quantity: $quantity
+    ) {
+      _id
+    }
+  }
+`;
+
+export const DELETE_FROM_CART = gql`
+  mutation Mutation($productId: ID!) {
+    deleteFromCart(productId: $productId) {
+      _id
+    }
+  }
+`;

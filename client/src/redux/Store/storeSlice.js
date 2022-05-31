@@ -5,7 +5,6 @@ export const storeSlice = createSlice({
   initialState: {
     products: [],
     cart: [],
-    cartOpen: false,
     categories: [],
     currentCategory: "",
     currentPage: "",
@@ -35,8 +34,11 @@ export const storeSlice = createSlice({
       state.currentPage = action.payload;
     },
     addToCart: (state, action) => {
-      state.cartOpen = true;
       state.cart.push(action.payload);
+    },
+
+    updateCart: (state, action) => {
+      state.cart = action.payload;
     },
     addMultipleToCart: (state, action) => {
       state.cart.push(...action.payload);
@@ -54,16 +56,14 @@ export const storeSlice = createSlice({
     },
     deleteFromCart: (state, action) => {
       let newState = state.cart.filter((product) => {
-        return product._id !== action.payload._id;
+        return product._id.toString() !== action.payload.toString();
       });
-      state.cartOpen = newState.length > 0;
       state.cart = newState;
     },
     updateCartQuantity: (state, action) => {
-      state.cartOpen = true;
       state.cart = state.cart.map((product) => {
         if (action.payload._id === product._id) {
-          product.purchaseQuantity = action.payload.purchaseQuantity;
+          product.quantity = action.payload.quantity;
         }
         return product;
       });
@@ -101,6 +101,7 @@ export const {
   toggle_Modal,
   updateFile,
   updateWishlist,
+  updateCart,
 } = storeSlice.actions;
 
 export default storeSlice.reducer;

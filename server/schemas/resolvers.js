@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Product, Category, SubCategory } = require("../models");
+const { User, Product, Category, SubCategory, Cart } = require("../models");
 const { signToken } = require("../utils/auth");
 const { GraphQLUpload } = require("graphql-upload");
 const generateRandomString = require("../utils/helpers");
@@ -14,7 +14,7 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("cart")
+          .populate("cart.product")
           .populate("wishlist")
           .populate({
             path: "orders.products",
@@ -28,13 +28,25 @@ const resolvers = {
     users: async () => {
       return User.find()
         .select("-__v -password")
-        .populate("cart")
+        .populate("cart.product")
         .populate("wishlist")
         .populate({
           path: "orders.products",
           populate: "category",
         });
     },
+
+    get_cart: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      const cart = await User.find(
+        { user: context.user._id }.select("-__v -password").populate("cart")
+      );
+      
+      return cart;
+    },
+
     products: async () => {
       return Product.find()
         .select("-__v")
@@ -94,20 +106,41 @@ const resolvers = {
       return { token, user };
     },
 
-    addToCart: async (parent, args, context) => {
+    add2Cart: async (parent, args, context) => {
       if (!context.user) {
         throw new AuthenticationError("Not logged in");
       }
-      // if id is in cart, increment quantity
-      // else add to cart
+      // if args._id already exists in cart, update quantity
       const user = await User.findOne({ _id: context.user._id });
-
-      if (user.cart.includes(args._id)) {
-        const productIndex = user.cart.indexOf(args._id);
-        user.cart[productIndex].quantity += args.quantity;
-      } else {
-        user.cart.push(args);
+      const cartProduct = user.cart.find(
+        (item) => item.product._id.toString() === args._id.toString()
+      );
+      
+      if (cartProduct) {
+        cartProduct.quantity = args.quantity;
+        await user.save();
+        return user;
       }
+      // if args._id does not exist in cart, add to cart
+      user.cart.push({ product: args._id, quantity: args.quantity });
+      await user.save();
+      return user;
+    },
+
+    deleteFromCart: async (parent, { productId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+
+      const user = await User.findOne({ _id: context.user._id })
+        .select("-__v -password")
+        .populate("cart.product");
+
+      const cart = user.cart.filter((item) => {
+        return item.product._id.toString() !== productId.toString();
+      });
+
+      user.cart = cart;
 
       await user.save();
 
@@ -155,7 +188,6 @@ const resolvers = {
       const user = await User.findOne({ _id: context.user._id });
       // remove from wishlist
       user.wishlist.pull(productId);
-      console.log(user.wishlist);
       await user.save();
 
       return user;
