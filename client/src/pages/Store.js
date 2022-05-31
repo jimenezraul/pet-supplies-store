@@ -31,6 +31,10 @@ const Store = () => {
     }
   }, [data, loading, dispatch, dataCategories, id]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const searchHandler = (e) => {
     const searchValue = e.target.value;
     const filteredProducts = data.products.filter(
