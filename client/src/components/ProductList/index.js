@@ -1,14 +1,53 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../../redux/Store/storeSlice";
+import { addToCart, updateCartQuantity } from "../../redux/Store/storeSlice";
+import { useMutation } from "@apollo/client";
+import { ADD_TO_CART } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 const ProductList = () => {
+  const auth = Auth.loggedIn();
+  const [add2Cart] = useMutation(ADD_TO_CART);
   const products = useSelector((state) => state.store.products);
+  const cart = useSelector((state) => state.store.cart);
   const dispatch = useDispatch();
 
   const addToCartHandler = (e) => {
-    const quantity = 1;
-    dispatch(addToCart({ ...e, quantity }));
+    //check if the product is already in the cart
+    const inCart = cart.find((p) => p._id === e._id);
+
+    if (inCart) {
+      add2Cart({
+        variables: {
+          ...e,
+          id: e._id,
+          quantity: inCart.quantity + 1,
+          imageUrl: e.image_url,
+        },
+      }).then(() => {
+        dispatch(
+          updateCartQuantity({
+            _id: e._id,
+            quantity: inCart.quantity + 1,
+          })
+        );
+      });
+    } else {
+      if (auth) {
+        add2Cart({
+          variables: {
+            ...e,
+            id: e._id,
+            quantity: 1,
+            imageUrl: e.image_url,
+          },
+        }).then(() => {
+          dispatch(addToCart({ ...e, quantity: 1 }));
+        });
+      } else {
+        dispatch(addToCart({ ...e, quantity: 1 }));
+      }
+    }
   };
   return (
     <div className='w-full md:w-8/12 mb-5'>

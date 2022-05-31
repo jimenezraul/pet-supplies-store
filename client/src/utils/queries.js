@@ -23,10 +23,13 @@ export const GET_USER = gql`
       }
       cart {
         _id
-        name
-        description
-        image_url
-        price
+        product {
+          name
+          description
+          _id
+          image_url
+          price
+        }
         quantity
       }
       wishlist {
@@ -79,6 +82,22 @@ export const GET_PRODUCT_BY_ID = gql`
       description
       image_url
       price
+      quantity
+    }
+  }
+`;
+
+export const GET_CART = gql`
+  query Query {
+    get_cart {
+      _id
+      products {
+        _id
+        name
+        description
+        image_url
+        price
+      }
       quantity
     }
   }

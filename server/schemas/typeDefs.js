@@ -30,6 +30,12 @@ const typeDefs = gql`
     products: [Product]
   }
 
+  type Cart {
+    _id: ID
+    product: Product
+    quantity: Int
+  }
+
   type User {
     _id: ID
     first_name: String
@@ -39,7 +45,7 @@ const typeDefs = gql`
     password: String
     isAdmin: Boolean
     orders: [Order]
-    cart: [Product]
+    cart: [Cart]
     wishlist: [Product]
   }
 
@@ -55,6 +61,7 @@ const typeDefs = gql`
     product(id: ID!): Product
     categories: [Category]
     subcategories: [SubCategory]
+    get_cart: [Cart]
   }
 
   type Mutation {
@@ -72,9 +79,17 @@ const typeDefs = gql`
       password: String
     ): Auth
     updateProfilePicture(image: Upload!): Auth
-    addToCart(productId: ID!): User
+    add2Cart(
+      _id: ID!
+      name: String!
+      description: String!
+      image_url: String!
+      price: Float!
+      quantity: Int!
+    ): Product
     addToWishlist(productId: ID!): Product
     removeFromWishlist(productId: ID!): Product
+    deleteFromCart(productId: ID!): Cart
   }
 `;
 

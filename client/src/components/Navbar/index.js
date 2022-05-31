@@ -2,9 +2,14 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
 import { useSelector, useDispatch } from "react-redux";
-import { updateCurrentPage, updateUser, updateWishlist } from "../../redux/Store/storeSlice";
+import {
+  updateCurrentPage,
+  updateUser,
+  updateWishlist,
+  updateCart,
+} from "../../redux/Store/storeSlice";
 import { useQuery } from "@apollo/client";
-import { GET_USER } from "../../utils/queries";
+import { GET_USER, GET_CART } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 
@@ -24,6 +29,13 @@ const Navbar = () => {
     if (data) {
       dispatch(updateUser(data.user));
       dispatch(updateWishlist(data.user.wishlist));
+      const cart = data.user.cart.map((item) => {
+        return {
+          ...item.product,
+          quantity: item.quantity,
+        };
+      });
+      dispatch(updateCart(cart));
     }
   }, [data, dispatch]);
 
@@ -132,7 +144,7 @@ const Navbar = () => {
                     key={index}
                     to='/'
                     onClick={() => Auth.logout()}
-                    className='text-white'
+                    className='flex flex-col justify-center'
                   >
                     <li className='text-white hover:bg-blue-600 py-2 px-4'>
                       Logout
@@ -145,7 +157,11 @@ const Navbar = () => {
               }
 
               return (
-                <Link key={page.name} to={page.path}>
+                <Link
+                  key={page.name}
+                  to={page.path}
+                  className='flex flex-col justify-center'
+                >
                   <li
                     className={`${
                       currentPage === "" && page.path === "/"
@@ -164,8 +180,19 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <Link to='/cart' className='flex items-center'>
-              <i className='relative text-white fa-solid fa-cart-shopping text-xl'>
+            <Link
+              to='/cart'
+              onClick={() => {
+                setIsOpen(false);
+                dispatch(updateCurrentPage("Cart"));
+              }}
+              className='flex items-center'
+            >
+              <i
+                className={`relative text-white fa-solid fa-cart-shopping text-xl ${
+                  currentPage === "Cart" && "bg-blue-600"
+                } p-2`}
+              >
                 {cart.length > 0 && (
                   <span className='absolute badge inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full'>
                     {cart.length}
