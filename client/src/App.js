@@ -8,9 +8,9 @@ import Footer from "./components/Footer";
 import Store from "./pages/Store";
 import LogIn from "./pages/Login";
 import Cart from "./pages/Cart";
-
 import SignUp from "./pages/Signup";
 import Profile from "./pages/Profile";
+import Admin from "./pages/Admin";
 
 import ProductDetails from "./pages/ProductDetails";
 import { setContext } from "@apollo/client/link/context";
@@ -49,6 +49,7 @@ function App() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/admin' element={<Admin />} />
           </Routes>
           <Footer />
         </div>
