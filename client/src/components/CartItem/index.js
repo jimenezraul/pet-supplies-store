@@ -66,7 +66,7 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
     >
       <div className='flex w-2/5'>
         <div className='w-20'>
-          <img className='h-24' src={item.image_url} alt='' />
+          <img className='w-24' src={item.image_url} alt='' />
         </div>
         <div className='flex flex-col justify-between ml-4 flex-grow'>
           <span className='font-bold text-sm'>{item.name}</span>

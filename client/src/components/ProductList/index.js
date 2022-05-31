@@ -51,7 +51,7 @@ const ProductList = () => {
   };
   return (
     <div className='w-full md:w-8/12 mb-5'>
-      <div className='bg-white border rounded shadow-lg flex flex-wrap'>
+      <div className='bg-white border rounded shadow-lg flex flex-wrap py-5'>
         {products.map((product) => (
           <div
             className='w-6/12 lg:w-4/12 flex justify-center p-2'
