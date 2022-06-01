@@ -9,7 +9,6 @@ const ProductList = () => {
   const auth = Auth.loggedIn();
   const [add2Cart] = useMutation(ADD_TO_CART);
   const products = useSelector((state) => state.store.products);
-  console.log("HELOOO", products);
   const cart = useSelector((state) => state.store.cart);
   const dispatch = useDispatch();
 

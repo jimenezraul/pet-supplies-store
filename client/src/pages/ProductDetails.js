@@ -56,9 +56,7 @@ const ProductDetails = () => {
   }
 
   const addToCartHandler = () => {
-    dispatch(
-      addToCart({ ...product, quantity: parseInt(quantity.current.value) })
-    );
+    dispatch(addToCart({ ...product, quantity: 1 }));
   };
 
   return (
@@ -118,7 +116,7 @@ const ProductDetails = () => {
                     <button
                       onClick={() => addToWishlistHandler(product)}
                       className={`rounded-full w-10 h-10 bg-gray-200 p-0 hover:border hover:bg-gray-300 hover:border-red-500 inline-flex items-center justify-center ${
-                        product.inWishlist ? "text-red-500" : "text-gray-500"
+                        product?.inWishlist ? "text-red-500" : "text-gray-500"
                       }  ml-4`}
                     >
                       <i className='fa-solid fa-bookmark'></i>

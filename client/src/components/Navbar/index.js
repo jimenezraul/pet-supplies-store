@@ -26,6 +26,7 @@ const Navbar = () => {
   const { loading, error, data } = useQuery(GET_USER);
 
   useEffect(() => {
+    console.log(data.user);
     if (data) {
       dispatch(updateUser(data.user));
       dispatch(updateWishlist(data.user.wishlist));
