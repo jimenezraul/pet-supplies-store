@@ -23,13 +23,13 @@ const ProductDetails = () => {
   let wishlist = useSelector((state) => state.store.wishlist);
 
   useEffect(() => {
-    if (data.data) {
-      setProduct(data.data.product);
+    if (data?.data) {
+      setProduct(data.data?.product);
     }
     if (wishlist.length > 0) {
       wishlist.forEach((item) => {
         if (item._id === id) {
-          setProduct({ ...data.data.product, inWishlist: true });
+          setProduct({ ...data.data?.product, inWishlist: true });
         }
       });
     }
