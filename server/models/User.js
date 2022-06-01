@@ -8,14 +8,12 @@ const userSchema = new Schema({
   first_name: {
     type: String,
     required: true,
-    unique: true,
-    trim: true,
+    trim: true
   },
   last_name: {
     type: String,
     required: true,
-    unique: true,
-    trim: true,
+    trim: true
   },
   image_url: {
     type: String,
