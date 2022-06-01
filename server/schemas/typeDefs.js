@@ -72,6 +72,12 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): Auth
+    signup(
+      first_name: String!
+      last_name: String!
+      email: String!
+      password: String!
+    ): Auth
     updateUser(
       first_name: String
       last_name: String

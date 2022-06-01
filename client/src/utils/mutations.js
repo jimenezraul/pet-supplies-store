@@ -11,6 +11,24 @@ export const LOGIN = gql`
   }
 `;
 
+export const SIGNUP = gql`
+  mutation Mutation(
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+  ) {
+    signup(
+      first_name: $firstName
+      last_name: $lastName
+      email: $email
+      password: $password
+    ) {
+      token
+    }
+  }
+`;
+
 export const UPDATE_PROFILE_PICTURE = gql`
   mutation Mutation($image: Upload!) {
     updateProfilePicture(image: $image) {

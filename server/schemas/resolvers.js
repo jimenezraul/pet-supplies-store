@@ -43,7 +43,7 @@ const resolvers = {
       const cart = await User.find(
         { user: context.user._id }.select("-__v -password").populate("cart")
       );
-      
+
       return cart;
     },
 
@@ -106,6 +106,14 @@ const resolvers = {
       return { token, user };
     },
 
+    signup: async (parent, args) => {
+      console.log(args);
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      return { token, user };
+    },
+
     add2Cart: async (parent, args, context) => {
       if (!context.user) {
         throw new AuthenticationError("Not logged in");
@@ -115,7 +123,7 @@ const resolvers = {
       const cartProduct = user.cart.find(
         (item) => item.product._id.toString() === args._id.toString()
       );
-      
+
       if (cartProduct) {
         cartProduct.quantity = args.quantity;
         await user.save();
