@@ -1,8 +1,16 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { updateCategory } from "../../redux/Store/storeSlice";
+import { useQuery } from "@apollo/client";
+import { GET_CATEGORIES } from "../../utils/queries";
 
 const CategoriesCard = () => {
+  const dispatch = useDispatch();
+  const { loading, error, data } = useQuery(GET_CATEGORIES);
   let categories = useSelector((state) => state.store.categories);
+  
   categories = categories.map((category) => {
     return {
       name: category.name,
@@ -10,9 +18,15 @@ const CategoriesCard = () => {
     };
   });
 
+  useEffect(() => {
+    if (data) {
+      dispatch(updateCategory(data.categories));
+    }
+  }, [data, dispatch]);
+
   return (
     <div className='w-full md:w-3/12'>
-      <div className='bg-white rounded border p-3 shadow-lg mb-4 md:mb-0'>
+      <div className='bg-white border p-3 shadow-lg mb-4 md:mb-0'>
         <h2 className='text-2xl border-b-2 font-semibold pb-4'>Categories</h2>
         <ul className='list-reset'>
           {categories.map((category, index) => {

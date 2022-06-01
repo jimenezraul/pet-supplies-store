@@ -12,8 +12,6 @@ const Store = () => {
   const { id } = useParams();
 
   const { loading, data } = useQuery(GET_PRODUCTS);
-  const { loading: loadingCategories, data: dataCategories } =
-    useQuery(GET_CATEGORIES);
 
   useEffect(() => {
     if (data) {
@@ -26,10 +24,7 @@ const Store = () => {
       );
       dispatch(updateProduct(filteredProducts));
     }
-    if (dataCategories) {
-      dispatch(updateCategory(dataCategories.categories));
-    }
-  }, [data, loading, dispatch, dataCategories, id]);
+  }, [data, loading, dispatch, id]);
 
   useEffect(() => {
     window.scrollTo(0, 0);

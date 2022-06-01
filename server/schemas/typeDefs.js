@@ -8,11 +8,6 @@ const typeDefs = gql`
     name: String
   }
 
-  type SubCategory {
-    _id: ID
-    name: String
-  }
-
   type Product {
     _id: ID
     name: String
@@ -21,7 +16,6 @@ const typeDefs = gql`
     price: Float
     quantity: Int
     category: Category
-    subCategory: SubCategory
   }
 
   type Order {
@@ -60,7 +54,6 @@ const typeDefs = gql`
     products: [Product]
     product(id: ID!): Product
     categories: [Category]
-    subcategories: [SubCategory]
     get_cart: [Cart]
   }
 
@@ -96,6 +89,17 @@ const typeDefs = gql`
     addToWishlist(productId: ID!): Product
     removeFromWishlist(productId: ID!): Product
     deleteFromCart(productId: ID!): Cart
+    addCategory(name: String!): Category
+    deleteCategory(id: ID!): Category
+    updateCategory(id: ID!, name: String!): Category
+    addProduct(
+      image: Upload!
+      name: String!
+      description: String!
+      price: Float!
+      quantity: Int!
+      categoryId: ID!
+    ): Product
   }
 `;
 

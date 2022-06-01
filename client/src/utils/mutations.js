@@ -85,3 +85,43 @@ export const DELETE_FROM_CART = gql`
     }
   }
 `;
+
+export const ADD_CATEGORY = gql`
+  mutation Mutation($name: String!) {
+    addCategory(name: $name) {
+      _id
+      name
+    }
+  }
+`;
+
+export const DELETE_CATEGORY = gql`
+  mutation Mutation($deleteCategoryId: ID!) {
+    deleteCategory(id: $deleteCategoryId) {
+      _id
+    }
+  }
+`;
+
+export const ADD_PRODUCT = gql`
+  mutation Mutation(
+    $image: Upload!
+    $name: String!
+    $description: String!
+    $price: Float!
+    $categoryId: ID!
+    $quantity: Int!
+  ) {
+    addProduct(
+      image: $image
+      name: $name
+      description: $description
+      price: $price
+      categoryId: $categoryId
+      quantity: $quantity
+    ) {
+      _id
+      name
+    }
+  }
+`;

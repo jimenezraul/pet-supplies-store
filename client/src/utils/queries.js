@@ -66,10 +66,6 @@ export const GET_PRODUCTS = gql`
         _id
         name
       }
-      subCategory {
-        _id
-        name
-      }
     }
   }
 `;

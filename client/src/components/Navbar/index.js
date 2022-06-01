@@ -9,7 +9,7 @@ import {
   updateCart,
 } from "../../redux/Store/storeSlice";
 import { useQuery } from "@apollo/client";
-import { GET_USER, GET_CART } from "../../utils/queries";
+import { GET_USER } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 
