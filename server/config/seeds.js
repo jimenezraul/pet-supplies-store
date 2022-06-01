@@ -1249,26 +1249,6 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
       },
     ],
     cart: [
-      {
-        _id: products[0]._id,
-        name: products[0].name,
-        description: products[0].description,
-        price: products[0].price,
-        image_url: products[0].image_url,
-        quantity: 5,
-        category: products[0].category,
-        subCategory: products[0].subCategory,
-      },
-      {
-        _id: products[1]._id,
-        name: products[1].name,
-        description: products[1].description,
-        price: products[1].price,
-        image_url: products[1].image_url,
-        quantity: 5,
-        category: products[1].category,
-        subCategory: products[1].subCategory,
-      },
     ],
     wishlist: [products[0]._id, products[1]._id],
   });
