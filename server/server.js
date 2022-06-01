@@ -1,7 +1,6 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
-const fs = require("node:fs");
 const { graphqlUploadExpress } = require("graphql-upload");
 
 const { typeDefs, resolvers } = require("./schemas");
@@ -14,14 +13,6 @@ const server = new ApolloServer({
   resolvers,
   context: authMiddleware,
 });
-
-const profile = "./public/images/profile";
-const products = "./public/images/products";
-
-if (!fs.existsSync(profile) || !fs.existsSync(products)) {
-  fs.mkdirSync(profile);
-  fs.mkdirSync(products);
-}
 
 const app = express();
 
