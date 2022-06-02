@@ -2,8 +2,25 @@ import CartItems from "../components/CartItems";
 import { useSelector } from "react-redux";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
+import { useLazyQuery } from "@apollo/client";
+import { loadStripe } from "@stripe/stripe-js";
+import { QUERY_CHECKOUT } from "../utils/queries";
+import { useEffect } from "react";
+
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Cart = () => {
+  const cart = useSelector((state) => state.store.cart);
+  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+
+  useEffect(() => {
+    if (data) {
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
+
   const auth = Auth.loggedIn();
   const total = useSelector((state) =>
     state.store.cart
@@ -16,6 +33,21 @@ const Cart = () => {
   let item = "item";
   if (total_items > 1) {
     item = "items";
+  }
+
+  function submitCheckout() {
+    const productIds = [];
+    
+    cart.forEach((item) => {
+     
+      for (let i = 0; i < item.quantity; i++) {
+        productIds.push(item._id);
+      }
+    });
+   
+    getCheckout({
+      variables: { products: productIds },
+    });
   }
 
   return (
@@ -74,7 +106,10 @@ const Cart = () => {
               <span>${total}</span>
             </div>
             {auth ? (
-              <button className='bg-blue-700 font-semibold hover:bg-blue-800 py-3 text-sm text-white uppercase w-full'>
+              <button
+                onClick={submitCheckout}
+                className='bg-blue-700 font-semibold hover:bg-blue-800 py-3 text-sm text-white uppercase w-full'
+              >
                 Checkout
               </button>
             ) : (

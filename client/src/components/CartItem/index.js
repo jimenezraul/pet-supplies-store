@@ -6,8 +6,10 @@ import {
   updateCartQuantity,
   deleteFromCart,
 } from "../../redux/Store/storeSlice";
+import Auth from "../../utils/auth";
 
 const CartItem = ({ item, increaseAndDecreaseHandler }) => {
+  const auth = Auth.loggedIn();
   const dispatch = useDispatch();
   const [value, setValue] = useState(item.quantity);
   const total = (item.quantity * item.price).toFixed(2);
@@ -50,13 +52,17 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
   }, [value, item._id, dispatch, deleteFromUserCart]);
 
   const removeItemHandler = () => {
-    deleteFromUserCart({
-      variables: {
-        productId: item._id,
-      },
-    }).then(() => {
-      dispatch(deleteFromCart(item._id));
-    });
+    if (auth) {
+      deleteFromUserCart({
+        variables: {
+          productId: item._id,
+        },
+      }).then(() => {
+        dispatch(deleteFromCart(item._id));
+      });
+      return;
+    }
+    dispatch(deleteFromCart(item._id));
   };
 
   return (
@@ -81,7 +87,7 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
       <div className='flex justify-center w-2/5'>
         <svg
           onClick={() => increaseAndDecreaseHandler("decrease", item)}
-          className='fill-current text-gray-600 w-3'
+          className='fill-current text-gray-600 w-3 cursor-pointer'
           viewBox='0 0 448 512'
         >
           <path d='M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z' />
@@ -97,7 +103,7 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
         <svg
           onClick={() => increaseAndDecreaseHandler("increase", item)}
           name='increase'
-          className='fill-current text-gray-600 w-3'
+          className='fill-current text-gray-600 w-3 cursor-pointer'
           viewBox='0 0 448 512'
         >
           <path d='M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z' />

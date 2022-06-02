@@ -6,8 +6,10 @@ import {
   deleteFromCart,
 } from "../../redux/Store/storeSlice";
 import CartSingleItem from "../CartItem";
+import Auth from "../../utils/auth";
 
 const CartItem = () => {
+  const auth = Auth.loggedIn();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.store.cart);
   const [add2Cart] = useMutation(ADD_TO_CART);
@@ -25,47 +27,69 @@ const CartItem = () => {
 
   const increaseAndDecreaseHandler = (action, item) => {
     if (action === "increase") {
-      add2Cart({
-        variables: {
-          ...item,
-          id: item._id,
-          quantity: item.quantity + 1,
-          imageUrl: item.image_url,
-        },
-      }).then(() => {
+      if (auth) {
+        add2Cart({
+          variables: {
+            ...item,
+            id: item._id,
+            quantity: item.quantity + 1,
+            imageUrl: item.image_url,
+          },
+        }).then(() => {
+          dispatch(
+            updateCartQuantity({
+              _id: item._id,
+              quantity: item.quantity + 1,
+            })
+          );
+        });
+      } else {
         dispatch(
           updateCartQuantity({
             _id: item._id,
             quantity: item.quantity + 1,
           })
         );
-      });
+      }
     } else {
       if (item.quantity === 1) {
-        deleteFromUserCart({
+        if (auth) {
+          deleteFromUserCart({
+            variables: {
+              productId: item._id,
+            },
+          }).then(() => {
+            dispatch(deleteFromCart(item._id));
+          });
+          return;
+        } else {
+          dispatch(deleteFromCart(item._id));
+        }
+      }
+      if (auth) {
+        add2Cart({
           variables: {
-            productId: item._id,
+            ...item,
+            id: item._id,
+            quantity: item.quantity - 1,
+            imageUrl: item.image_url,
           },
         }).then(() => {
-          dispatch(deleteFromCart(item._id));
+          dispatch(
+            updateCartQuantity({
+              _id: item._id,
+              quantity: item.quantity - 1,
+            })
+          );
         });
-        return;
-      }
-      add2Cart({
-        variables: {
-          ...item,
-          id: item._id,
-          quantity: item.quantity - 1,
-          imageUrl: item.image_url,
-        },
-      }).then(() => {
+      } else {
         dispatch(
           updateCartQuantity({
             _id: item._id,
             quantity: item.quantity - 1,
           })
         );
-      });
+      }
     }
   };
 
