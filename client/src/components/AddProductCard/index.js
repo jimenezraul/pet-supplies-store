@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_PRODUCT } from "../../utils/mutations";
 import { useDispatch, useSelector } from "react-redux";
 import ProductImageCropper from "../ProductImageCropper";
+import { GET_PRODUCTS } from "../../utils/queries";
 
 const AddCategoryModal = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -45,6 +46,16 @@ const AddCategoryModal = () => {
           price: parseFloat(price),
           quantity: parseInt(quantity),
           categoryId: category,
+        },
+        update: (cache, { data: { addProduct } }) => {
+          console.log(addProduct);
+          const { products } = cache.readQuery({
+            query: GET_PRODUCTS,
+          });
+          cache.writeQuery({
+            query: GET_PRODUCTS,
+            data: { products: products.concat([addProduct]) },
+          });
         },
       });
       setMessage(`${name} added successfully`);

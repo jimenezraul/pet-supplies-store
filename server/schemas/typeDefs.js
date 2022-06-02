@@ -100,6 +100,16 @@ const typeDefs = gql`
       quantity: Int!
       categoryId: ID!
     ): Product
+    updateProduct(
+      id: ID!
+      image: Upload
+      name: String
+      description: String
+      price: Float
+      quantity: Int
+      category: ID
+    ): Product
+    deleteProduct(id: ID!): Product
   }
 `;
 

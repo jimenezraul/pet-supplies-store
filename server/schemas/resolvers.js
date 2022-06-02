@@ -264,7 +264,6 @@ const resolvers = {
         `../public/images/products/${fileName}`
       );
       await stream.pipe(fs.createWriteStream(pathName));
-      console.log(categoryId);
       // create product and return new product
       const product = await Product.create({
         image_url: `/images/products/${fileName}`,
@@ -274,6 +273,37 @@ const resolvers = {
         quantity: quantity,
         category: categoryId,
       });
+      const newProduct = await Product.findOne({ _id: product._id }).populate(
+        "category"
+      );
+
+      return newProduct;
+    },
+
+    updateProduct: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      if (!context.user.isAdmin) {
+        throw new AuthenticationError("Not authorized");
+      }
+
+      const product = await Product.findOneAndUpdate({ _id: args.id }, args, {
+        new: true,
+      });
+
+      return product;
+    },
+
+    deleteProduct: async (parent, { id }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      if (!context.user.isAdmin) {
+        throw new AuthenticationError("Not authorized");
+      }
+
+      const product = await Product.findOneAndDelete({ _id: id });
 
       return product;
     },

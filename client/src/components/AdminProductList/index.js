@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { GET_PRODUCTS } from "../../utils/queries";
-import { updateProduct } from "../../redux/Store/storeSlice";
+import { DELETE_PRODUCT } from "../../utils/mutations";
+import UpdateProductModal from "../Modals/UpdateProductModal";
 
 const AdminProductList = () => {
   const [filteredData, setFilteredData] = useState([]);
   const { loading, error, data } = useQuery(GET_PRODUCTS);
+  const [deleteProduct] = useMutation(DELETE_PRODUCT);
+  const [productData, setProductData] = useState({});
+
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
 
   useEffect(() => {
     if (data) {
@@ -23,9 +28,36 @@ const AdminProductList = () => {
     setFilteredData(filteredProducts);
   };
 
+  const deleteHandler = (id) => {
+    deleteProduct({
+      variables: {
+        deleteProductId: id,
+      },
+      update(cache, { data: { deleteProduct } }) {
+        const { products } = cache.readQuery({ query: GET_PRODUCTS });
+        cache.writeQuery({
+          query: GET_PRODUCTS,
+          data: { products: products.filter((product) => product._id !== id) },
+        });
+      },
+    });
+  };
+
+  const modalHandler = (product) => {
+    setProductData(product);
+    setShowUpdateModal(true);
+  };
+
   return (
     <>
       <div className='flex flex-wrap justify-center space-x-2 bg-white w-full shadow-lg'>
+        {showUpdateModal && (
+          <UpdateProductModal
+            setShowUpdateModal={setShowUpdateModal}
+            product={productData}
+          />
+        )}
+
         <div className='w-full text-center border-b-2 flex flex-col'>
           <h2 className='text-2xl font-semibold p-5'>Products</h2>
           <div className='w-full flex justify-center'>
@@ -52,8 +84,14 @@ const AdminProductList = () => {
                 <p className='text-gray-700 text-base'>{product.price}</p>
               </div>
               <div className='w-3/12 flex space-x-6 justify-center'>
-                <i className='text-2xl cursor-pointer fa-solid fa-pen-to-square hover:text-blue-600'></i>
-                <i className='text-2xl cursor-pointer fa-solid fa-trash hover:text-red-500'></i>
+                <i
+                  onClick={modalHandler.bind(this, product)}
+                  className='text-2xl cursor-pointer fa-solid fa-pen-to-square hover:text-blue-600'
+                ></i>
+                <i
+                  onClick={() => deleteHandler(product._id)}
+                  className='text-2xl cursor-pointer fa-solid fa-trash hover:text-red-600'
+                ></i>
               </div>
             </div>
           ))}

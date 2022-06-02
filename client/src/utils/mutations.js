@@ -122,6 +122,55 @@ export const ADD_PRODUCT = gql`
     ) {
       _id
       name
+      description
+      image_url
+      price
+      quantity
+      category {
+        _id
+        name
+      }
+    }
+  }
+`;
+
+export const UPDATE_PRODUCT = gql`
+  mutation Mutation(
+    $_id: ID!
+    $image: Upload
+    $name: String
+    $description: String
+    $price: Float
+    $quantity: Int
+    $category: ID
+  ) {
+    updateProduct(
+      id: $_id
+      image: $image
+      name: $name
+      description: $description
+      price: $price
+      quantity: $quantity
+      category: $category
+    ) {
+      _id
+      name
+      description
+      image_url
+      price
+      quantity
+      category {
+        _id
+        name
+      }
+    }
+  }
+`;
+
+export const DELETE_PRODUCT = gql`
+  mutation Mutation($deleteProductId: ID!) {
+    deleteProduct(id: $deleteProductId) {
+      _id
     }
   }
 `;

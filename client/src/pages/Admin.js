@@ -7,8 +7,10 @@ import { GET_CATEGORIES } from "../utils/queries";
 import { updateCategory } from "../redux/Store/storeSlice";
 import { DELETE_CATEGORY } from "../utils/mutations";
 import AdminProductList from "../components/AdminProductList";
+import Auth from "../utils/auth";
 
 const Admin = () => {
+    const auth = Auth.loggedIn();
   const { categories } = useSelector((state) => state.store);
   const [showCategoryModal, setShowCategoryModal] = useState(false);
   const dispatch = useDispatch();
@@ -47,6 +49,10 @@ const Admin = () => {
       })
       .catch((err) => console.log(err));
   };
+    
+    if (!auth) {
+        window.location.href = "/";
+    }
 
   return (
     <div className='flex-1 flex'>

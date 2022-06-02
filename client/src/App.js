@@ -40,6 +40,11 @@ const client = new ApolloClient({
               return incoming;
             },
           },
+          products: {
+            merge(_, incoming) {
+              return incoming;
+            },
+          },
         },
       },
     },
