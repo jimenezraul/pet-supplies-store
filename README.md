@@ -37,15 +37,24 @@ ProPet is an online store that allows buyers to log in, browse through multiple 
 
 ## Screenshots
 
-Main Page:
+## Main Page:
+
 ![screenshot](/main.JPG)
-Sign Up Page:
+
+## Sign Up Page:
+
 ![screenshot](/signup.png)
-Log In Page:
+
+## Log In Page:
+
 ![screenshot](/login.png)
-Cart Page:
+
+## Cart Page:
+
 ![screenshot](/cart.png)
-Store Page:
+
+## Store Page:
+
 ![screenshot](/store.png)
 
 ## Instalation
