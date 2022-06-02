@@ -180,18 +180,6 @@ export const ADD_ORDER = gql`
   mutation Mutation($products: [ID]!) {
     addOrder(products: $products) {
       _id
-      purchasedDate
-      products {
-        _id
-        name
-        description
-        image_url
-        price
-        quantity
-        category {
-          name
-        }
-      }
     }
   }
 `;
