@@ -65,7 +65,7 @@ const resolvers = {
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
-      
+
       const order = new Order({ products: args.products });
       const line_items = [];
 
@@ -77,13 +77,13 @@ const resolvers = {
           description: products[i].description.substring(0, 20),
           images: [`${url}${products[i].image_url}`],
         });
-        
+
         const price = await stripe.prices.create({
           product: product.id,
           unit_amount: products[i].price * 100,
           currency: "usd",
         });
-        
+
         line_items.push({
           price: price.id,
           quantity: 1,
@@ -142,7 +142,7 @@ const resolvers = {
     },
 
     signup: async (parent, args) => {
-      console.log(args);
+      
       const user = await User.create(args);
       const token = signToken(user);
 
@@ -237,7 +237,7 @@ const resolvers = {
     },
 
     addCategory: async (parent, args, context) => {
-      console.log(args);
+      
       if (!context.user) {
         throw new AuthenticationError("Not logged in");
       }
@@ -319,6 +319,7 @@ const resolvers = {
     },
 
     updateProduct: async (parent, args, context) => {
+      
       if (!context.user) {
         throw new AuthenticationError("Not logged in");
       }
@@ -330,7 +331,11 @@ const resolvers = {
         new: true,
       });
 
-      return product;
+      const newProduct = await Product.findOne({ _id: product._id }).populate(
+        "category"
+      );
+
+      return newProduct;
     },
 
     deleteProduct: async (parent, { id }, context) => {

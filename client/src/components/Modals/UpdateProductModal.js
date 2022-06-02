@@ -19,7 +19,7 @@ const UpdateProductModal = (props) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-  
+
     if (name === "price") {
       setFormState({ ...formState, [name]: parseFloat(value) });
       return;
@@ -33,6 +33,7 @@ const UpdateProductModal = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const data = {};
     for (let key in formState) {
       if (formState[key] !== "") {
@@ -43,6 +44,7 @@ const UpdateProductModal = (props) => {
         }
       }
     }
+
     await updateProduct({
       variables: {
         _id: data._id,
@@ -56,16 +58,21 @@ const UpdateProductModal = (props) => {
         const { products } = cache.readQuery({
           query: GET_PRODUCTS,
         });
-        const index = products.findIndex(
-          (product) => product._id === updateProduct._id
-        );
-        products[index] = updateProduct;
+
+        const newProducts = products.map((product) => {
+          if (product._id === updateProduct._id) {
+            return updateProduct;
+          }
+          return product;
+        });
+      
         cache.writeQuery({
           query: GET_PRODUCTS,
-          data: { products },
+          data: { products: newProducts },
         });
-      }
+      },
     });
+    props.setShowUpdateModal(false);
   };
 
   return (
@@ -125,12 +132,14 @@ const UpdateProductModal = (props) => {
                       <option value={formState.category._id}>
                         {formState.category.name}
                       </option>
-                      {categories.map((category) => (category._id !== formState.category._id&&(
+                      {categories.map(
+                        (category) =>
+                          category._id !== formState.category._id && (
                             <option key={category._id} value={category._id}>
                               {category.name}
                             </option>
-                      )
-                      ))}
+                          )
+                      )}
                     </select>
                     {newFile ? (
                       <div
