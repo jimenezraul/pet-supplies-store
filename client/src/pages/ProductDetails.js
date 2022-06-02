@@ -11,6 +11,7 @@ import { useRef, useEffect, useState } from "react";
 import Auth from "../utils/auth";
 import { ADD_TO_WISHLIST } from "../utils/mutations";
 import { ADD_TO_CART } from "../utils/mutations";
+import { idbPromise } from "../utils/helpers";
 
 const ProductDetails = () => {
   const quantity = useRef(null);
@@ -94,10 +95,12 @@ const ProductDetails = () => {
             },
           }).then(() => {
             dispatch(updateCart(newCart));
+            idbPromise("cart", "put", { ...product, quantity: quantityInCart });
           });
           return;
         }
         dispatch(updateCart(newCart));
+        idbPromise("cart", "put", { ...product, quantity: quantityInCart });
         return;
       }
     }
@@ -112,9 +115,11 @@ const ProductDetails = () => {
         },
       }).then(() => {
         dispatch(addToCart({ ...product, quantity: quantity.current.value }));
+        idbPromise("cart", "put", { ...product, quantity: quantity.current.value });
       });
     } else {
       dispatch(addToCart({ ...product, quantity: quantity.current.value }));
+      idbPromise("cart", "put", { ...product, quantity: quantity.current.value });
     }
   };
 

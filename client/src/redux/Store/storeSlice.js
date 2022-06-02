@@ -36,7 +36,6 @@ export const storeSlice = createSlice({
     addToCart: (state, action) => {
       state.cart.push(action.payload);
     },
-
     updateCart: (state, action) => {
       state.cart = action.payload;
     },
@@ -55,18 +54,20 @@ export const storeSlice = createSlice({
       state.wishlist = action.payload;
     },
     deleteFromCart: (state, action) => {
+      console.log(action.payload);
       let newState = state.cart.filter((product) => {
         return product._id.toString() !== action.payload.toString();
       });
       state.cart = newState;
     },
     updateCartQuantity: (state, action) => {
-      state.cart = state.cart.map((product) => {
+      const newCart = state.cart.map((product) => {
         if (action.payload._id === product._id) {
           product.quantity = action.payload.quantity;
         }
         return product;
       });
+      state.cart = newCart;
     },
     clearCart: (state, action) => {
       state.cartOpen = false;

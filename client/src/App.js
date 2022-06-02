@@ -15,7 +15,7 @@ import PageNotFound from "./pages/PageNotFound";
 
 import ProductDetails from "./pages/ProductDetails";
 import { setContext } from "@apollo/client/link/context";
-import Success from "./pages/Success";
+import Success from "./pages/Sucess";
 
 const uploadLink = createUploadLink({
   uri: "/graphql",
@@ -43,6 +43,16 @@ const client = new ApolloClient({
             },
           },
           products: {
+            merge(_, incoming) {
+              return incoming;
+            },
+          },
+          product: {
+            merge(_, incoming) {
+              return incoming;
+            },
+          },
+          get_cart: {
             merge(_, incoming) {
               return incoming;
             },

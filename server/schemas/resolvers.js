@@ -21,6 +21,9 @@ const resolvers = {
             path: "orders.products",
             populate: "category",
           });
+        const user = await User.findOne({ _id: context.user._id }).populate(
+          "orders"
+        );
 
         return userData;
       }
@@ -37,15 +40,26 @@ const resolvers = {
         });
     },
 
+    get_orders: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id }).populate(
+          "orders"
+        );
+        return user.orders;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
+
     get_cart: async (parent, args, context) => {
       if (!context.user) {
         throw new AuthenticationError("Not logged in");
       }
-      const cart = await User.find(
-        { user: context.user._id }.select("-__v -password").populate("cart")
+      
+      const user = await User.findOne({ _id: context.user._id }).populate(
+        "cart.product"
       );
-
-      return cart;
+      console.log(user.cart)
+      return user.cart;
     },
 
     products: async () => {
@@ -68,7 +82,7 @@ const resolvers = {
 
       const order = new Order({ products: args.products });
       const line_items = [];
-      console.log(order);
+
       const { products } = await order.populate("products");
 
       for (let i = 0; i < products.length; i++) {

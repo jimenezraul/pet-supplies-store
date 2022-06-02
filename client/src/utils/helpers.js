@@ -8,7 +8,7 @@ export function pluralize(name, count) {
 export function idbPromise(storeName, method, object) {
   return new Promise((resolve, reject) => {
     // open connection to the database `shop-shop` with the version of 1
-    const request = window.indexedDB.open("shop-shop", 1);
+    const request = window.indexedDB.open("pet-store", 1);
 
     // create variables to hold reference to the database, transaction (tx), and object store
     let db, tx, store;

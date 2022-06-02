@@ -11,10 +11,11 @@ const OrderHistory = () => {
       <div className='flex flex-col items-center'>
         {orders?.length > 0 ? (
           orders.map((order, index) => {
+            
             return (
               <div key={index} className='flex flex-col w-full'>
                 <h6 className='text-md mt-3 font-medium text-gray-900 dark:text-white border-b pb-5'>
-                  Purchased Date: {order.purchasedDate}
+                  Purchased Date: {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
                 </h6>
                 <div className='w-full flex flex-col'>
                   {order.products.map((product, index) => {

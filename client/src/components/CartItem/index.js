@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useMutation } from "@apollo/client";
 import { DELETE_FROM_CART } from "../../utils/mutations";
 import {
@@ -7,6 +7,7 @@ import {
   deleteFromCart,
 } from "../../redux/Store/storeSlice";
 import Auth from "../../utils/auth";
+import { idbPromise } from "../../utils/helpers";
 
 const CartItem = ({ item, increaseAndDecreaseHandler }) => {
   const auth = Auth.loggedIn();
@@ -30,13 +31,14 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
   };
 
   useEffect(() => {
-    if (value === 0) {
+    if (value === 0 || value === "0") {
       deleteFromUserCart({
         variables: {
           productId: item._id,
         },
       }).then(() => {
         dispatch(deleteFromCart(item._id));
+        idbPromise("cart", "delete", { ...item });
       });
     }
 
@@ -48,8 +50,9 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
           quantity: newValue,
         })
       );
+      idbPromise("cart", "put", { ...item, quantity: newValue });
     }
-  }, [value, item._id, dispatch, deleteFromUserCart]);
+  }, [value, item._id, item, dispatch, deleteFromUserCart]);
 
   const removeItemHandler = () => {
     if (auth) {
@@ -59,12 +62,14 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
         },
       }).then(() => {
         dispatch(deleteFromCart(item._id));
+        idbPromise("cart", "delete", { ...item });
       });
       return;
     }
     dispatch(deleteFromCart(item._id));
+    idbPromise("cart", "delete", { ...item });
   };
-
+  
   return (
     <div
       key={item._id}

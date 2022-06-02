@@ -74,6 +74,7 @@ export const ADD_TO_CART = gql`
       quantity: $quantity
     ) {
       _id
+      quantity
     }
   }
 `;
@@ -176,13 +177,15 @@ export const DELETE_PRODUCT = gql`
 `;
 
 export const ADD_ORDER = gql`
-  mutation addOrder($products: [ID]!) {
+  mutation Mutation($products: [ID]!) {
     addOrder(products: $products) {
-      purchaseDate
+      _id
+      purchasedDate
       products {
         _id
         name
         description
+        image_url
         price
         quantity
         category {

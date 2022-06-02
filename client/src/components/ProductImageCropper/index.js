@@ -69,7 +69,7 @@ const ProductImageCropper = (props) => {
 
   return (
     <>
-      <div className='crop-container z-auto'>
+      <div className='crop-container z-50'>
         <div className='absolute top-0 bottom-0 left-0 right-0 md:top-36 md:bottom-36 md:right-40 md:left-40'>
           <Cropper
             image={loadedImageSrc}

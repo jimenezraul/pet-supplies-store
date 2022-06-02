@@ -11,15 +11,15 @@ export const GET_USER = gql`
       isAdmin
       orders {
         _id
-        purchasedDate
+        purchaseDate
         products {
-          _id
           name
           description
           image_url
           price
           quantity
         }
+        order_status
       }
       cart {
         _id
@@ -86,8 +86,7 @@ export const GET_PRODUCT_BY_ID = gql`
 export const GET_CART = gql`
   query Query {
     get_cart {
-      _id
-      products {
+      product {
         _id
         name
         description
@@ -95,6 +94,7 @@ export const GET_CART = gql`
         price
       }
       quantity
+      _id
     }
   }
 `;
@@ -103,6 +103,23 @@ export const QUERY_CHECKOUT = gql`
   query getCheckout($products: [ID]!) {
     checkout(products: $products) {
       session
+    }
+  }
+`;
+
+export const GET_ORDERS = gql`
+  query Get_orders($id: ID!) {
+    get_orders(_id: $id) {
+      _id
+      purchasedDate
+      products {
+        _id
+        name
+        description
+        image_url
+        price
+        quantity
+      }
     }
   }
 `;

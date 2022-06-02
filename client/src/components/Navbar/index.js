@@ -7,11 +7,13 @@ import {
   updateUser,
   updateWishlist,
   updateCart,
+  addMultipleToCart,
 } from "../../redux/Store/storeSlice";
 import { useQuery } from "@apollo/client";
-import { GET_USER } from "../../utils/queries";
+import { GET_CART, GET_USER } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
+import { idbPromise } from "../../utils/helpers";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -24,18 +26,25 @@ const Navbar = () => {
   const isAdmin = user.isAdmin;
 
   const { loading, error, data } = useQuery(GET_USER);
+  const { data: cartData } = useQuery(GET_CART);
 
   useEffect(() => {
-    if (data) {
-      dispatch(updateUser(data.user));
-      dispatch(updateWishlist(data.user.wishlist));
-      const cart = data.user.cart.map((item) => {
+    if (cartData) {
+      console.log("updating cart");
+      const newData = cartData?.get_cart.map((item) => {
         return {
           ...item.product,
           quantity: item.quantity,
         };
       });
-      dispatch(updateCart(cart));
+      dispatch(updateCart(newData));
+    }
+  }, [cartData, dispatch]);
+
+  useEffect(() => {
+    if (data) {
+      dispatch(updateUser(data.user));
+      dispatch(updateWishlist(data.user.wishlist));
     }
   }, [data, dispatch]);
 

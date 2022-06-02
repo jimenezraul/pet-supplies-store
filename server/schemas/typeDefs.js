@@ -18,10 +18,12 @@ const typeDefs = gql`
     category: Category
   }
 
+
   type Order {
     _id: ID
-    purchasedDate: String
+    purchaseDate: String
     products: [Product]
+    order_status: String
   }
 
   type Cart {
@@ -60,6 +62,7 @@ const typeDefs = gql`
     categories: [Category]
     get_cart: [Cart]
     checkout(products: [ID]!): Checkout
+    get_orders(_id: ID!): Order
   }
 
   type Mutation {

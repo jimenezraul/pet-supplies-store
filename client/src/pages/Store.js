@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import CategoriesCard from "../components/CategoriesCard";
 import ProductList from "../components/ProductList";
 import { useParams } from "react-router-dom";
+import { idbPromise } from "../utils/helpers";
 
 const Store = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,13 @@ const Store = () => {
   useEffect(() => {
     if (data) {
       dispatch(updateProduct(data.products));
+      data.products.forEach((product) => {
+        idbPromise("products", "put", product);
+      });
+    }else if (!loading) {
+      idbPromise("products", "get").then((products) => {
+        dispatch(updateProduct(products));
+      })
     }
     if (id && data) {
       // filter products by category
