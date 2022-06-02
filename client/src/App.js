@@ -18,7 +18,7 @@ import { setContext } from "@apollo/client/link/context";
 import Success from "./pages/Sucess";
 
 const uploadLink = createUploadLink({
-  uri: "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
