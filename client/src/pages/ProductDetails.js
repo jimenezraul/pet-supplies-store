@@ -2,18 +2,26 @@ import { useQuery, useMutation } from "@apollo/client";
 import { GET_PRODUCT_BY_ID } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, addToWishlist } from "../redux/Store/storeSlice";
+import {
+  addToCart,
+  addToWishlist,
+  updateCart,
+} from "../redux/Store/storeSlice";
 import { useRef, useEffect, useState } from "react";
 import Auth from "../utils/auth";
 import { ADD_TO_WISHLIST } from "../utils/mutations";
+import { ADD_TO_CART } from "../utils/mutations";
 
 const ProductDetails = () => {
   const quantity = useRef(null);
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.store.user);
   const [product, setProduct] = useState({ inWishlist: false });
   const auth = Auth.loggedIn();
   const { id } = useParams();
   const [addToWishList] = useMutation(ADD_TO_WISHLIST);
+  const [addToUserCart] = useMutation(ADD_TO_CART);
+  let cart = useSelector((state) => state.store.cart);
   let data = useQuery(GET_PRODUCT_BY_ID, {
     variables: {
       productId: id,
@@ -56,7 +64,59 @@ const ProductDetails = () => {
   }
 
   const addToCartHandler = () => {
-    dispatch(addToCart({ ...product, quantity: 1 }));
+    // if already in cart, update the quantity
+
+    if (cart?.length > 0) {
+      let inCart = false;
+      let quantityInCart = 0;
+
+      cart.forEach((item) => {
+        if (item._id === product._id) {
+          inCart = true;
+          quantityInCart =
+            parseInt(item.quantity) + parseInt(quantity?.current?.value);
+        }
+      });
+      const newCart = cart.map((item) => {
+        if (item._id === product._id) {
+          return { ...item, quantity: quantityInCart };
+        }
+        return item;
+      });
+
+      if (inCart) {
+        if (auth) {
+          addToUserCart({
+            variables: {
+              ...product,
+              id: product._id,
+              quantity: quantityInCart,
+              imageUrl: product.image_url,
+            },
+          }).then(() => {
+            dispatch(updateCart(newCart));
+          });
+          return;
+        }
+        dispatch(updateCart(newCart));
+        return;
+      }
+    }
+
+    if (auth) {
+      addToUserCart({
+        variables: {
+          ...product,
+          id: product._id,
+          quantity: parseFloat(quantity?.current?.value),
+          imageUrl: product.image_url,
+        },
+      }).then(() => {
+        dispatch(addToCart({ ...product, quantity: quantity.current.value }));
+      });
+    } else {
+      dispatch(addToCart({ ...product, quantity: quantity.current.value }));
+    }
   };
 
   return (
