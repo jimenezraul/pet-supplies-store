@@ -11,9 +11,11 @@ import Cart from "./pages/Cart";
 import SignUp from "./pages/Signup";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
+import PageNotFound from "./pages/PageNotFound";
 
 import ProductDetails from "./pages/ProductDetails";
 import { setContext } from "@apollo/client/link/context";
+import Success from "./pages/Success";
 
 const uploadLink = createUploadLink({
   uri: "/graphql",
@@ -67,6 +69,8 @@ function App() {
             <Route path='/profile' element={<Profile />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/admin' element={<Admin />} />
+            <Route path='/success' element={<Success />} />
+            <Route path='*' element={<PageNotFound />} />
           </Routes>
           <Footer />
         </div>
@@ -76,10 +80,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-

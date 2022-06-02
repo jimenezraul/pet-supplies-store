@@ -68,7 +68,7 @@ const resolvers = {
 
       const order = new Order({ products: args.products });
       const line_items = [];
-
+      console.log(order);
       const { products } = await order.populate("products");
 
       for (let i = 0; i < products.length; i++) {
@@ -142,7 +142,6 @@ const resolvers = {
     },
 
     signup: async (parent, args) => {
-      
       const user = await User.create(args);
       const token = signToken(user);
 
@@ -237,7 +236,6 @@ const resolvers = {
     },
 
     addCategory: async (parent, args, context) => {
-      
       if (!context.user) {
         throw new AuthenticationError("Not logged in");
       }
@@ -319,7 +317,6 @@ const resolvers = {
     },
 
     updateProduct: async (parent, args, context) => {
-      
       if (!context.user) {
         throw new AuthenticationError("Not logged in");
       }
@@ -358,6 +355,12 @@ const resolvers = {
         await User.findByIdAndUpdate(context.user._id, {
           $push: { orders: order },
         });
+
+        // empty cart
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $set: { cart: [] } }
+        );
 
         return order;
       }
