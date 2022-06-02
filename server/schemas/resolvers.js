@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Product, Category, SubCategory, Cart } = require("../models");
+const { User, Product, Category, Cart } = require("../models");
 const { signToken } = require("../utils/auth");
 const { GraphQLUpload } = require("graphql-upload");
 const generateRandomString = require("../utils/helpers");
@@ -61,9 +61,6 @@ const resolvers = {
     },
     categories: async () => {
       return Category.find();
-    },
-    subcategories: async () => {
-      return SubCategory.find();
     },
   },
 
@@ -199,6 +196,116 @@ const resolvers = {
       await user.save();
 
       return user;
+    },
+
+    addCategory: async (parent, args, context) => {
+      console.log(args);
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      if (!context.user.isAdmin) {
+        throw new AuthenticationError("Not authorized");
+      }
+
+      // create category and return new category
+      const category = await Category.create(args);
+
+      return category;
+    },
+
+    deleteCategory: async (parent, { id }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      if (!context.user.isAdmin) {
+        throw new AuthenticationError("Not authorized");
+      }
+
+      const category = await Category.findOneAndDelete({ _id: id });
+
+      return category;
+    },
+
+    updateCategory: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      if (!context.user.isAdmin) {
+        throw new AuthenticationError("Not authorized");
+      }
+
+      const category = await Category.findOneAndUpdate(
+        { _id: args._id },
+        args,
+        { new: true }
+      );
+
+      return category;
+    },
+
+    addProduct: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      if (!context.user.isAdmin) {
+        throw new AuthenticationError("Not authorized");
+      }
+
+      const { image, name, description, price, quantity, categoryId } = args;
+
+      const { createReadStream, filename } = await image;
+      const { ext } = path.parse(filename);
+      const randomString = generateRandomString(10);
+      const fileName = `${randomString}${ext}`;
+
+      const stream = createReadStream();
+      const pathName = path.join(
+        __dirname,
+        `../public/images/products/${fileName}`
+      );
+      await stream.pipe(fs.createWriteStream(pathName));
+      // create product and return new product
+      const product = await Product.create({
+        image_url: `/images/products/${fileName}`,
+        name: name,
+        description: description,
+        price: price,
+        quantity: quantity,
+        category: categoryId,
+      });
+      const newProduct = await Product.findOne({ _id: product._id }).populate(
+        "category"
+      );
+
+      return newProduct;
+    },
+
+    updateProduct: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      if (!context.user.isAdmin) {
+        throw new AuthenticationError("Not authorized");
+      }
+
+      const product = await Product.findOneAndUpdate({ _id: args.id }, args, {
+        new: true,
+      });
+
+      return product;
+    },
+
+    deleteProduct: async (parent, { id }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("Not logged in");
+      }
+      if (!context.user.isAdmin) {
+        throw new AuthenticationError("Not authorized");
+      }
+
+      const product = await Product.findOneAndDelete({ _id: id });
+
+      return product;
     },
   },
 };
