@@ -15,7 +15,6 @@ import { ADD_TO_CART } from "../utils/mutations";
 const ProductDetails = () => {
   const quantity = useRef(null);
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.store.user);
   const [product, setProduct] = useState({ inWishlist: false });
   const auth = Auth.loggedIn();
   const { id } = useParams();
