@@ -13,15 +13,3 @@ const categorySchema = new Schema({
 const Category = mongoose.model('Category', categorySchema);
 
 module.exports = Category;
-
-
-
-// create category model
-
-// category schema 
-
-    // name
-        // required
-        // trim
-
-

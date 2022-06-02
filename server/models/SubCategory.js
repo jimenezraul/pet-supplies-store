@@ -13,11 +13,3 @@ const subCategorySchema = new Schema({
 const SubCategory = mongoose.model('SubCategory', subCategorySchema);
 
 module.exports = SubCategory;
-
-// create subCategory model
-
-// subCategory schema 
-
-    // name
-        // required
-        // trim

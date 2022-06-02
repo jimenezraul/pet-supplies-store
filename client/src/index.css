@@ -4,14 +4,62 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 50px;
+}
+
+.shopButton {
+  background-color: #1d1da7;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 30px;
+  min-width: 120px;
+  margin-bottom: 10px;
+}
+.shopButton:hover {
+  background-color: #6687e2;
+  transition: 0.7s;
+}
+
+.categories img {
+  border-radius: 50%;
+}
+.categories img:hover {
+  border: 3px solid #6687e2;
+}
+/* END OF HOMEPAGE STYLES */
+
+/* logIn styles */
+
+.logInForm {
+  margin-top: 25%;
+  display: center;
+}
+#buttonLogo {
+  width: 25px;
+  height: 25px;
+  display: inline;
+  margin-left: 5px;
+}
+
+#signUpBtn {
+  width: 25px;
+  height: 25px;
+  display: inline;
+  margin-left: 5px;
 }
