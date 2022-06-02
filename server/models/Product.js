@@ -1,27 +1,40 @@
-// create product model
+const mongoose = require("mongoose");
 
-// product schema
+const { Schema } = mongoose;
 
-    // name
-        // required
-        // trim
+const productSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  description: {
+    type: String,
+  },
+  image_url: {
+    type: String,
+  },
+  price: {
+    type: Number,
+    required: true,
+    min: 0.99,
+  },
+  quantity: {
+    type: Number,
+    min: 0,
+    default: 1,
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: "Category",
+    required: true,
+  },
+  subCategory: {
+    type: Schema.Types.ObjectId,
+    ref: "SubCategory",
+  },
+});
 
-    // description
+const Product = mongoose.model("Product", productSchema);
 
-    // image_url
-
-    // price
-        // required
-        // min
-
-    // quantity
-        // min
-        // default 1
-
-    // category
-        // ref
-        // required
-
-    // subCategory  
-        // ref
-        // required
+module.exports = Product;

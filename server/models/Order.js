@@ -1,10 +1,24 @@
-// create order model
+const mongoose = require("mongoose");
 
-// order schema 
-    // purchase_date
-    // product reference
-    //order_status
-        //pending
-        //processing
-        //shipped
-        //default: 'pending'
+const { Schema } = mongoose;
+
+const orderSchema = new Schema({
+  purchaseDate: {
+    type: Date,
+    default: Date.now
+  },
+  products: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Product",
+    },
+  ],
+  order_status: {
+    type: String,
+    default: "pending",
+  },
+});
+
+const Order = mongoose.model("Order", orderSchema);
+
+module.exports = Order;
