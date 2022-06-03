@@ -1,4 +1,4 @@
-# Pet Supplies Store ProPet
+# ProPet | E-commerce platform for pet lovers
 
 ## Description
 
@@ -8,16 +8,20 @@ ProPet is an online store that allows buyers to log in, browse through multiple 
 
 ## Table of Contents
 
-- [Inventory Management System](#inventory-management-system)
+- [ProPet | E-commerce platform for pet lovers](#propet--e-commerce-platform-for-pet-lovers)
   - [Description](#description)
   - [Click here to view the live application.](#click-here-to-view-the-live-application)
   - [Table of Contents](#table-of-contents)
   - [Tools & Resources](#tools--resources)
+  - [Screenshots](#screenshots)
+  - [Main Page:](#main-page)
+  - [Sign Up Page:](#sign-up-page)
+  - [Log In Page:](#log-in-page)
+  - [Cart Page:](#cart-page)
+  - [Store Page:](#store-page)
   - [Instalation](#instalation)
   - [Seed Data](#seed-data)
   - [Start the server](#start-the-server)
-  - [License](#license)
-  - [Screenshots](#screenshots)
   - [License](#license)
   - [Deployment](#deployment)
   - [Contributing](#contributing)
