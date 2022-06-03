@@ -38,6 +38,7 @@ ProPet is an online store that allows buyers to log in, browse through multiple 
 - Express.js
 - MongoDB
 - GraphQL
+- Redux
 
 ## Screenshots
 
