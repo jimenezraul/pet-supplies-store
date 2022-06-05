@@ -31,7 +31,6 @@ const Navbar = () => {
   useEffect(() => {
     if (cartData) {
       if (!cart?.length) {
-        console.log("updating cart");
         const newData = cartData?.get_cart.map((item) => {
           return {
             ...item.product,
