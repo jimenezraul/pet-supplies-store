@@ -1,9 +1,8 @@
 .scrollCart {
     position: fixed; 
-    width: 100%;
+    width: 100px;
     bottom: 20px;
     align-items: center;
-    justify-content: end;
     z-index: 1000;
     cursor: pointer;
     animation: fadeIn 0.3s;
