@@ -7,6 +7,7 @@ import CategoriesCard from "../components/CategoriesCard";
 import ProductList from "../components/ProductList";
 import { useParams } from "react-router-dom";
 import { idbPromise } from "../utils/helpers";
+import ScrollCart from "../components/ScrollCart";
 
 const Store = () => {
   const dispatch = useDispatch();
@@ -72,6 +73,7 @@ const Store = () => {
           </div>
           <CategoriesCard />
           <ProductList />
+          <ScrollCart />
         </div>
       </div>
     </div>

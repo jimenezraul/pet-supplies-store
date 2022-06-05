@@ -58,7 +58,7 @@ const resolvers = {
       const user = await User.findOne({ _id: context.user._id }).populate(
         "cart.product"
       );
-      console.log(user.cart);
+      
       return user.cart;
     },
 
@@ -365,7 +365,7 @@ const resolvers = {
     addOrder: async (parent, { products }, context) => {
       if (context.user) {
         const order = new Order({ products });
-        console.log(order);
+        
         await User.findByIdAndUpdate(context.user._id, {
           $push: { orders: order },
         });
