@@ -19,11 +19,11 @@ const ScrollCart = () => {
   window.addEventListener("scroll", checkScrollTop);
 
   return (
-    <Link to='/cart'>
-      <div
-        className='scrollCart right-12'
-        style={{ height: 120, display: showScroll ? "flex" : "none" }}
-      >
+    <div
+      className='scrollCart right-12'
+      style={{ height: 120, display: showScroll ? "flex" : "none" }}
+    >
+      <Link to='/cart'>
         <i className='text-2xl relative fa-solid fa-cart-shopping bg-white rounded-full shadow-lg p-5'>
           {cart.length > 0 && (
             <span className='absolute badge-cart inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full'>
@@ -31,8 +31,8 @@ const ScrollCart = () => {
             </span>
           )}
         </i>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 
