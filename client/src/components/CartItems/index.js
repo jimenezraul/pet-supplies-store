@@ -37,18 +37,10 @@ const CartItem = () => {
             quantity: item.quantity + 1,
             imageUrl: item.image_url,
           },
-          // update the cart in the store
-          update: (cache, { data: { add2Cart } }) => {
-            const { get_cart } = cache.readQuery({ query: GET_CART });
-            dispatch(updateCart(get_cart));
-            cache.writeQuery({
-              query: GET_CART,
-              data: {
-                get_cart: [...get_cart, item],
-              },
-            });
-          },
         });
+        dispatch(
+          updateCartQuantity({ _id: item._id, quantity: item.quantity + 1 })
+        );
         return;
       } else {
         dispatch(
@@ -66,17 +58,8 @@ const CartItem = () => {
             variables: {
               productId: item._id,
             },
-            update: (cache, { data: { add2Cart } }) => {
-              const { get_cart } = cache.readQuery({ query: GET_CART });
-              dispatch(updateCart(get_cart));
-              cache.writeQuery({
-                query: GET_CART,
-                data: {
-                  get_cart: [...get_cart, item],
-                },
-              });
-            },
           });
+          dispatch(deleteFromCart(item._id));
           return;
         } else {
           dispatch(deleteFromCart(item._id));
@@ -91,17 +74,10 @@ const CartItem = () => {
             quantity: item.quantity - 1,
             imageUrl: item.image_url,
           },
-          update: (cache, { data: { add2Cart } }) => {
-            const { get_cart } = cache.readQuery({ query: GET_CART });
-            dispatch(updateCart(get_cart));
-            cache.writeQuery({
-              query: GET_CART,
-              data: {
-                get_cart: [...get_cart, item],
-              },
-            });
-          },
         });
+        dispatch(
+          updateCartQuantity({ _id: item._id, quantity: item.quantity - 1 })
+        );
         return;
       }
     }

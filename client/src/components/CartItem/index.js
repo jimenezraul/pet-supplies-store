@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useMutation } from "@apollo/client";
-import { DELETE_FROM_CART } from "../../utils/mutations";
+import { DELETE_FROM_CART, ADD_TO_CART } from "../../utils/mutations";
 import {
   updateCartQuantity,
   deleteFromCart,
@@ -16,6 +16,7 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
   const total = (item.quantity * item.price).toFixed(2);
 
   const [deleteFromUserCart] = useMutation(DELETE_FROM_CART);
+  const [add2Cart] = useMutation(ADD_TO_CART);
 
   useEffect(() => {
     setValue(item.quantity);
@@ -23,36 +24,36 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
 
   const quantityHandler = (e) => {
     let quantityValue = e.target.value;
-
-    if (quantityValue === "") {
-      setValue("");
-    }
-    setValue(quantityValue);
-  };
-
-  useEffect(() => {
-    if (value === 0 || value === "0") {
-      deleteFromUserCart({
-        variables: {
-          productId: item._id,
-        },
-      }).then(() => {
+    if (quantityValue > 0) {
+      if (value !== "") {
+        add2Cart({
+          variables: {
+            ...item,
+            id: item._id,
+            quantity: parseInt(quantityValue),
+            imageUrl: item.image_url,
+          },
+        });
+        dispatch(
+          updateCartQuantity({
+            _id: item._id,
+            quantity: parseInt(quantityValue),
+          })
+        );
+        idbPromise("cart", "put", { ...item, quantity: quantityValue });
+      }
+    } else {
+      if (auth) {
+        deleteFromUserCart({
+          variables: {
+            productId: item._id,
+          },
+        });
         dispatch(deleteFromCart(item._id));
-        idbPromise("cart", "delete", { ...item });
-      });
+        idbPromise("cart", "delete", item._id);
+      }
     }
-
-    if (value !== "") {
-      const newValue = parseInt(value);
-      dispatch(
-        updateCartQuantity({
-          _id: item._id,
-          quantity: newValue,
-        })
-      );
-      idbPromise("cart", "put", { ...item, quantity: newValue });
-    }
-  }, [value, item._id, item, dispatch, deleteFromUserCart]);
+  };
 
   const removeItemHandler = () => {
     if (auth) {
@@ -69,7 +70,7 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
     dispatch(deleteFromCart(item._id));
     idbPromise("cart", "delete", { ...item });
   };
-  
+
   return (
     <div
       key={item._id}

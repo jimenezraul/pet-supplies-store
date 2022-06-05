@@ -30,16 +30,18 @@ const Navbar = () => {
 
   useEffect(() => {
     if (cartData) {
-      console.log("updating cart");
-      const newData = cartData?.get_cart.map((item) => {
-        return {
-          ...item.product,
-          quantity: item.quantity,
-        };
-      });
-      dispatch(updateCart(newData));
+      if (!cart?.length) {
+        console.log("updating cart");
+        const newData = cartData?.get_cart.map((item) => {
+          return {
+            ...item.product,
+            quantity: item.quantity,
+          };
+        });
+        dispatch(updateCart(newData));
+      }
     }
-  }, [cartData, dispatch]);
+  }, [cartData, dispatch, cart.length]);
 
   useEffect(() => {
     if (data) {

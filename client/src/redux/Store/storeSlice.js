@@ -54,7 +54,6 @@ export const storeSlice = createSlice({
       state.wishlist = action.payload;
     },
     deleteFromCart: (state, action) => {
-      console.log(action.payload);
       let newState = state.cart.filter((product) => {
         return product._id.toString() !== action.payload.toString();
       });
