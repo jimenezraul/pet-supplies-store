@@ -26,28 +26,35 @@ const Navbar = () => {
   const isAdmin = user.isAdmin;
 
   const { loading, error, data } = useQuery(GET_USER);
-  const { data: cartData } = useQuery(GET_CART);
-
-  useEffect(() => {
-    if (cartData) {
-      if (!cart?.length) {
-        const newData = cartData?.get_cart.map((item) => {
-          return {
-            ...item.product,
-            quantity: item.quantity,
-          };
-        });
-        dispatch(updateCart(newData));
-      }
-    }
-  }, [cartData, dispatch, cart.length]);
 
   useEffect(() => {
     if (data) {
       dispatch(updateUser(data.user));
       dispatch(updateWishlist(data.user.wishlist));
+
+      const newData = data.user.cart.map((item) => {
+        return {
+          ...item.product,
+          quantity: item.quantity,
+        };
+      });
+      dispatch(updateCart(newData));
     }
   }, [data, dispatch]);
+
+  // useEffect(() => {
+  //   if (user?.cart?.length > 0) {
+  //     if (!cart.length) {
+  //       const newData = user.cart.map((item) => {
+  //         return {
+  //           ...item.product,
+  //           quantity: item.quantity,
+  //         };
+  //       });
+  //       dispatch(updateCart(newData));
+  //     }
+  //   }
+  // }, [user, dispatch, cart.length]);
 
   useEffect(() => {
     if (currentPathName === "") {

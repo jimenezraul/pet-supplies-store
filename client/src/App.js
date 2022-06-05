@@ -35,6 +35,15 @@ const client = new ApolloClient({
   link: authLink.concat(uploadLink),
   cache: new InMemoryCache({
     typePolicies: {
+      User: {
+        fields: {
+          cart: {
+            merge(_, incoming) {
+              return incoming;
+            },
+          },
+        },
+      },
       Query: {
         fields: {
           categories: {

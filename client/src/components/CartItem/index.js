@@ -8,40 +8,36 @@ import {
 } from "../../redux/Store/storeSlice";
 import Auth from "../../utils/auth";
 import { idbPromise } from "../../utils/helpers";
+import { GET_CART, GET_USER } from "../../utils/queries";
 
 const CartItem = ({ item, increaseAndDecreaseHandler }) => {
   const auth = Auth.loggedIn();
   const dispatch = useDispatch();
-  const [value, setValue] = useState(item.quantity);
   const total = (item.quantity * item.price).toFixed(2);
 
   const [deleteFromUserCart] = useMutation(DELETE_FROM_CART);
   const [add2Cart] = useMutation(ADD_TO_CART);
 
-  useEffect(() => {
-    setValue(item.quantity);
-  }, [item.quantity]);
-
   const quantityHandler = (e) => {
-    let quantityValue = e.target.value;
-    if (quantityValue > 0) {
-      if (value !== "") {
-        add2Cart({
-          variables: {
-            ...item,
-            id: item._id,
-            quantity: parseInt(quantityValue),
-            imageUrl: item.image_url,
-          },
-        });
-        dispatch(
-          updateCartQuantity({
-            _id: item._id,
-            quantity: parseInt(quantityValue),
-          })
-        );
-        idbPromise("cart", "put", { ...item, quantity: quantityValue });
-      }
+    console.log("change")
+    let value = e.target.value;
+
+    if (value !== "0") {
+      add2Cart({
+        variables: {
+          ...item,
+          id: item._id,
+          quantity: parseInt(value),
+          imageUrl: item.image_url,
+        },
+      });
+      dispatch(
+        updateCartQuantity({
+          _id: item._id,
+          quantity: parseInt(value),
+        })
+      );
+      idbPromise("cart", "put", { ...item, quantity: value });
     } else {
       if (auth) {
         deleteFromUserCart({
@@ -101,9 +97,9 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
 
         <input
           className='mx-2 border text-center w-8'
-          type='float'
+          type='text'
           onChange={(e) => quantityHandler(e)}
-          value={value}
+          value={item.quantity}
         />
 
         <svg
