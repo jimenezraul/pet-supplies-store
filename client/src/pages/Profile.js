@@ -55,7 +55,7 @@ const Profile = () => {
                     <img
                       className='mb-3 w-24 h-24 rounded-full shadow-lg'
                       src={`${
-                        user.image_url ? user.image_url : "/images/user.png"
+                        user.image_url ? user.image_url : "/assets/images/user.png"
                       }`}
                       alt='user'
                     />
