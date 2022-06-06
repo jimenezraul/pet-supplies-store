@@ -1260,6 +1260,13 @@ Environmentally Friendly Materials: Hamster exercise balls select high-quality e
     password: "password",
   });
 
+  await User.create({
+    first_name: "Demo",
+    last_name: "Demo",
+    email: "demo@example.com",
+    password: "demo123",
+  });
+
   console.log("users seeded");
 
   process.exit();

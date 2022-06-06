@@ -14,7 +14,7 @@ function Success() {
       const cart = user?.cart;
       const products = cart?.map((product) => product?.product?._id);
       if (products?.length) {
-        console.log(products);
+        
         const { data } = await addOrder({ variables: { products } });
         const productData = data.addOrder.products;
 
