@@ -19,8 +19,12 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
   const [add2Cart] = useMutation(ADD_TO_CART);
 
   const quantityHandler = (e) => {
-    console.log("change")
+    console.log("change");
     let value = e.target.value;
+
+    if (value === "") {
+      return;
+    }
 
     if (value !== "0") {
       add2Cart({
@@ -99,7 +103,7 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
           className='mx-2 border text-center w-8'
           type='text'
           onChange={(e) => quantityHandler(e)}
-          value={item.quantity}
+          value={item.quantity ? item.quantity : ""}
         />
 
         <svg

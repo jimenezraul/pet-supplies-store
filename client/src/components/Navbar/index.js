@@ -25,7 +25,7 @@ const Navbar = () => {
   const user = useSelector((state) => state.store.user);
   const isAdmin = user.isAdmin;
 
-  const { loading, error, data } = useQuery(GET_USER);
+  const { data } = useQuery(GET_USER);
 
   useEffect(() => {
     if (data) {
@@ -41,20 +41,6 @@ const Navbar = () => {
       dispatch(updateCart(newData));
     }
   }, [data, dispatch]);
-
-  // useEffect(() => {
-  //   if (user?.cart?.length > 0) {
-  //     if (!cart.length) {
-  //       const newData = user.cart.map((item) => {
-  //         return {
-  //           ...item.product,
-  //           quantity: item.quantity,
-  //         };
-  //       });
-  //       dispatch(updateCart(newData));
-  //     }
-  //   }
-  // }, [user, dispatch, cart.length]);
 
   useEffect(() => {
     if (currentPathName === "") {
