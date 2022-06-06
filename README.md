@@ -1,4 +1,4 @@
-# ProPet | E-commerce platform for pet lovers
+# ProPet | E-commerce platform
 
 ## Description
 
@@ -8,7 +8,7 @@ ProPet is an online store that allows buyers to log in, browse through multiple 
 
 ## Table of Contents
 
-- [ProPet | E-commerce platform for pet lovers](#propet--e-commerce-platform-for-pet-lovers)
+- [ProPet | E-commerce platform](#propet--e-commerce-platform)
   - [Description](#description)
   - [Click here to view the live application.](#click-here-to-view-the-live-application)
   - [Table of Contents](#table-of-contents)
