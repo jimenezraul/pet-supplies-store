@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_PRODUCT } from "../../utils/mutations";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import ProductImageCropper from "../ProductImageCropper";
 import { GET_PRODUCTS } from "../../utils/queries";
 

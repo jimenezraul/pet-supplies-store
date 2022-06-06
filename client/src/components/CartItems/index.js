@@ -4,12 +4,10 @@ import { ADD_TO_CART, DELETE_FROM_CART } from "../../utils/mutations";
 import {
   updateCartQuantity,
   deleteFromCart,
-  updateCart,
-  updateUser,
 } from "../../redux/Store/storeSlice";
 import CartSingleItem from "../CartItem";
 import Auth from "../../utils/auth";
-import { GET_CART, GET_USER } from "../../utils/queries";
+import { GET_USER } from "../../utils/queries";
 
 const CartItem = () => {
   const auth = Auth.loggedIn();

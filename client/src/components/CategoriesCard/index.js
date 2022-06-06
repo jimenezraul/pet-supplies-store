@@ -8,7 +8,7 @@ import { GET_CATEGORIES } from "../../utils/queries";
 
 const CategoriesCard = () => {
   const dispatch = useDispatch();
-  const { loading, error, data } = useQuery(GET_CATEGORIES);
+  const { data } = useQuery(GET_CATEGORIES);
   let categories = useSelector((state) => state.store.categories);
   
   categories = categories.map((category) => {

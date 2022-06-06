@@ -7,10 +7,9 @@ import {
   updateUser,
   updateWishlist,
   updateCart,
-  addMultipleToCart,
 } from "../../redux/Store/storeSlice";
 import { useQuery } from "@apollo/client";
-import { GET_CART, GET_USER } from "../../utils/queries";
+import { GET_USER } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 import { idbPromise } from "../../utils/helpers";

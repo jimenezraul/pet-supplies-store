@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useMutation } from "@apollo/client";
 import { DELETE_FROM_CART, ADD_TO_CART } from "../../utils/mutations";
@@ -8,7 +7,6 @@ import {
 } from "../../redux/Store/storeSlice";
 import Auth from "../../utils/auth";
 import { idbPromise } from "../../utils/helpers";
-import { GET_CART, GET_USER } from "../../utils/queries";
 
 const CartItem = ({ item, increaseAndDecreaseHandler }) => {
   const auth = Auth.loggedIn();
