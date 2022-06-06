@@ -6,7 +6,7 @@ import UpdateProductModal from "../Modals/UpdateProductModal";
 
 const AdminProductList = () => {
   const [filteredData, setFilteredData] = useState([]);
-  const { loading, error, data } = useQuery(GET_PRODUCTS);
+  const { data } = useQuery(GET_PRODUCTS);
   const [deleteProduct] = useMutation(DELETE_PRODUCT);
   const [productData, setProductData] = useState({});
 

@@ -1,14 +1,12 @@
 import { useState, useRef } from "react";
 import { useMutation } from "@apollo/client";
 import { UPDATE_PRODUCT } from "../../utils/mutations";
-import { useDispatch, useSelector } from "react-redux";
-import { updateCategory } from "../../redux/Store/storeSlice";
-import { GET_CATEGORIES, GET_PRODUCTS } from "../../utils/queries";
+import { useSelector } from "react-redux";
+import { GET_PRODUCTS } from "../../utils/queries";
 
 const UpdateProductModal = (props) => {
   const { product } = props;
   const inputFile = useRef(null);
-  const dispatch = useDispatch();
   const [formState, setFormState] = useState(product);
 
   const { categories } = useSelector((state) => state.store);

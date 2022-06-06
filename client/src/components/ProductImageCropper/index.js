@@ -1,9 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
 import Cropper from "react-easy-crop";
-import { useSelector, useDispatch } from "react-redux";
-import { UPDATE_PROFILE_PICTURE } from "../../utils/mutations";
-import { useMutation } from "@apollo/client";
-import { toggle_Modal, updateUser } from "../../redux/Store/storeSlice";
 const b64toBlob = require("b64-to-blob");
 
 const ProductImageCropper = (props) => {

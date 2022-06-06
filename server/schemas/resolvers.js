@@ -58,7 +58,7 @@ const resolvers = {
       const user = await User.findOne({ _id: context.user._id }).populate(
         "cart.product"
       );
-      console.log(user.cart);
+      
       return user.cart;
     },
 
@@ -215,13 +215,13 @@ const resolvers = {
       const stream = createReadStream();
       const pathName = path.join(
         __dirname,
-        `../public/images/profile/${fileName}`
+        `../public/assets/images/profile/${fileName}`
       );
       await stream.pipe(fs.createWriteStream(pathName));
 
       const user = await User.findOneAndUpdate(
         { _id: context.user._id },
-        { image_url: `/images/profile/${fileName}` }
+        { image_url: `/assets/images/profile/${fileName}` }
       );
       return user;
     },
@@ -311,12 +311,12 @@ const resolvers = {
       const stream = createReadStream();
       const pathName = path.join(
         __dirname,
-        `../public/images/products/${fileName}`
+        `../public/assets/images/products/${fileName}`
       );
       await stream.pipe(fs.createWriteStream(pathName));
       // create product and return new product
       const product = await Product.create({
-        image_url: `/images/products/${fileName}`,
+        image_url: `/assets/images/products/${fileName}`,
         name: name,
         description: description,
         price: price,
@@ -365,7 +365,7 @@ const resolvers = {
     addOrder: async (parent, { products }, context) => {
       if (context.user) {
         const order = new Order({ products });
-        console.log(order);
+        
         await User.findByIdAndUpdate(context.user._id, {
           $push: { orders: order },
         });

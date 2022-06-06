@@ -1,0 +1,31 @@
+.scrollCart {
+    position: fixed; 
+    width: 100px;
+    bottom: 20px;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+    animation: fadeIn 0.3s;
+    transition: opacity 0.4s;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  .badge-cart {
+    position: absolute;
+    top: 10px;
+    left: 38px;
+    background-color: #f44336;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 0.4s;
+  }

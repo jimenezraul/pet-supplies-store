@@ -4,11 +4,10 @@ import { ADD_TO_CART, DELETE_FROM_CART } from "../../utils/mutations";
 import {
   updateCartQuantity,
   deleteFromCart,
-  updateCart,
 } from "../../redux/Store/storeSlice";
 import CartSingleItem from "../CartItem";
 import Auth from "../../utils/auth";
-import { GET_CART, GET_USER } from "../../utils/queries";
+import { GET_USER } from "../../utils/queries";
 
 const CartItem = () => {
   const auth = Auth.loggedIn();
@@ -37,6 +36,15 @@ const CartItem = () => {
             quantity: item.quantity + 1,
             imageUrl: item.image_url,
           },
+          update: (cache, { data: add2cart }) => {
+            const { user } = cache.readQuery({ query: GET_USER });
+            cache.writeQuery({
+              query: GET_USER,
+              data: {
+                user: { ...user, product: item, quantity: item.quantity + 1 },
+              },
+            });
+          },
         });
         dispatch(
           updateCartQuantity({ _id: item._id, quantity: item.quantity + 1 })
@@ -57,6 +65,21 @@ const CartItem = () => {
           deleteFromUserCart({
             variables: {
               productId: item._id,
+            },
+            update: (cache, { data: { deleteFromCart } }) => {
+              // deleteFromCart.product.quantity = 1;
+              const { user } = cache.readQuery({ query: GET_USER });
+              cache.writeQuery({
+                query: GET_USER,
+                data: {
+                  user: {
+                    ...user,
+                    cart: user.cart.filter(
+                      (product) => product.product._id !== item._id
+                    ),
+                  },
+                },
+              });
             },
           });
           dispatch(deleteFromCart(item._id));

@@ -13,6 +13,7 @@ export const GET_USER = gql`
         _id
         purchaseDate
         products {
+          _id
           name
           description
           image_url
