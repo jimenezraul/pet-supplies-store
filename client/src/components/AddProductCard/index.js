@@ -4,9 +4,11 @@ import { ADD_PRODUCT } from "../../utils/mutations";
 import { useSelector } from "react-redux";
 import ProductImageCropper from "../ProductImageCropper";
 import { GET_PRODUCTS } from "../../utils/queries";
+import Loading from "../Loading";
 
 const AddCategoryModal = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [newFile, setNewFile] = useState(null);
   const { categories } = useSelector((state) => state.store);
@@ -38,6 +40,7 @@ const AddCategoryModal = () => {
     }
 
     try {
+      setLoading(true);
       await addProduct({
         variables: {
           image: newFile,
@@ -47,8 +50,7 @@ const AddCategoryModal = () => {
           quantity: parseInt(quantity),
           categoryId: category,
         },
-        update: (cache, { data:  {addProduct}  }) => {
-          console.log(addProduct);
+        update: (cache, { data: { addProduct } }) => {
           const { products } = cache.readQuery({
             query: GET_PRODUCTS,
           });
@@ -58,6 +60,7 @@ const AddCategoryModal = () => {
           });
         },
       });
+      setLoading(false);
       setMessage(`${name} added successfully`);
       setNewFile(null);
       setFormState({
@@ -86,6 +89,7 @@ const AddCategoryModal = () => {
   return (
     <>
       <div className='justify-center flex w-full'>
+        {loading && <Loading />}
         <div className='w-full md:w-11/12 border flex justify-center mx-auto max-w-3xl'>
           {/*content*/}
           <div className='border-0 shadow-lg relative flex flex-wrap w-full bg-white outline-none focus:outline-none'>

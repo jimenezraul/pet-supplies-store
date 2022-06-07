@@ -1,11 +1,39 @@
-body {
-    padding: 0px;
-    margin: 0px;
-  }
-  #root {
-    width: 100vw;
-    height: 100vh;
-    background: rgb(53, 126, 221);
-    padding-top: 20px;
-  }
-  
+.loading{
+    position: relative;
+}
+
+.loading::before,
+.loading::after{
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    animation: rotate 1s infinite
+    cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.loading::before{
+    background-color: #ff0d86;
+}
+
+.loading::after{
+    background-color: #2a58ff;
+    animation-delay: .5s;
+}
+
+@keyframes rotate{
+    0%,100%{
+        left: 95px;
+    }
+    25%{
+        transform: scale(.3);
+    }
+    50%{
+        left: 0;
+    }
+    75%{
+        transform: scale(1);
+    }
+}
