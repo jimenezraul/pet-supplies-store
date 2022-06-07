@@ -47,7 +47,7 @@ const AddCategoryModal = () => {
           quantity: parseInt(quantity),
           categoryId: category,
         },
-        update: (cache, { data: { addProduct } }) => {
+        update: (cache, { data:  {addProduct}  }) => {
           console.log(addProduct);
           const { products } = cache.readQuery({
             query: GET_PRODUCTS,
