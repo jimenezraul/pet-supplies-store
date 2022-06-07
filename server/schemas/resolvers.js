@@ -6,6 +6,8 @@ const generateRandomString = require("../utils/helpers");
 const path = require("node:path");
 const fs = require("node:fs");
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+const AWS = require("aws-sdk");
+require("dotenv").config();
 
 const resolvers = {
   Upload: GraphQLUpload,
@@ -58,7 +60,7 @@ const resolvers = {
       const user = await User.findOne({ _id: context.user._id }).populate(
         "cart.product"
       );
-      
+
       return user.cart;
     },
 
@@ -207,23 +209,39 @@ const resolvers = {
       if (!context.user) {
         throw new AuthenticationError("Not logged in");
       }
-      const { createReadStream, filename } = await image;
+      const s3 = new AWS.S3({
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      });
+
+      const { createReadStream, filename, mimetype, encoding } = await image;
       const { ext } = path.parse(filename);
       const randomString = generateRandomString(10);
       const fileName = `${randomString}${ext}`;
 
-      const stream = createReadStream();
-      const pathName = path.join(
-        __dirname,
-        `../public/assets/images/profile/${fileName}`
-      );
-      await stream.pipe(fs.createWriteStream(pathName));
+      const uploadFile = (file_name) => {
+        // Setting up S3 upload parameters
+        const params = {
+          Bucket: process.env.AWS_BUCKET_NAME,
+          Key: file_name, // File name you want to save as in S3
+          Body: createReadStream(),
+        };
 
-      const user = await User.findOneAndUpdate(
-        { _id: context.user._id },
-        { image_url: `/assets/images/profile/${fileName}` }
-      );
-      return user;
+        // Uploading files to the bucket
+        s3.upload(params, async function (err, data) {
+          if (err) {
+            throw err;
+          }
+
+          const user = await User.findOneAndUpdate(
+            { _id: context.user._id },
+            { image_url: `${data.Location}` }
+          );
+          return user;
+        });
+      };
+
+      uploadFile(fileName);
     },
     addToWishlist: async (parent, { productId }, context) => {
       if (!context.user) {
@@ -301,6 +319,11 @@ const resolvers = {
         throw new AuthenticationError("Not authorized");
       }
 
+      const s3 = new AWS.S3({
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      });
+
       const { image, name, description, price, quantity, categoryId } = args;
 
       const { createReadStream, filename } = await image;
@@ -308,26 +331,26 @@ const resolvers = {
       const randomString = generateRandomString(10);
       const fileName = `${randomString}${ext}`;
 
-      const stream = createReadStream();
-      const pathName = path.join(
-        __dirname,
-        `../public/assets/images/products/${fileName}`
-      );
-      await stream.pipe(fs.createWriteStream(pathName));
+      const params = {
+        Bucket: process.env.AWS_BUCKET_NAME,
+        Key: fileName, // File name you want to save as in S3
+        Body: createReadStream(),
+      };
+
+      // Uploading files to the bucket
+      const res = await s3.upload(params).promise();
+
       // create product and return new product
       const product = await Product.create({
-        image_url: `/assets/images/products/${fileName}`,
+        image_url: `${res.Location}`,
         name: name,
         description: description,
         price: price,
         quantity: quantity,
         category: categoryId,
       });
-      const newProduct = await Product.findOne({ _id: product._id }).populate(
-        "category"
-      );
 
-      return newProduct;
+      return product;
     },
 
     updateProduct: async (parent, args, context) => {
@@ -365,7 +388,7 @@ const resolvers = {
     addOrder: async (parent, { products }, context) => {
       if (context.user) {
         const order = new Order({ products });
-        
+
         await User.findByIdAndUpdate(context.user._id, {
           $push: { orders: order },
         });
