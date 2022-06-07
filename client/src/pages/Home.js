@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateCategory, updateCurrentPage } from "../redux/Store/storeSlice";
 import { useQuery } from "@apollo/client";
 import { GET_CATEGORIES } from "../utils/queries";
+import Loading from "../components/Loading";
 
 const slideImages = [
   {
@@ -54,7 +55,7 @@ const categories = [
 const Home = () => {
   let categories_ids = useSelector((state) => state.store.categories);
   const dispatch = useDispatch();
-  const { loading, error, data } = useQuery(GET_CATEGORIES);
+  const { loading, data } = useQuery(GET_CATEGORIES);
 
   useEffect(() => {
     if (data) {
@@ -66,11 +67,12 @@ const Home = () => {
     return {
       name: category.name,
       path: `/store/category/${category._id}`,
-    }
+    };
   });
 
   return (
     <div className='flex flex-col flex-1'>
+      {loading && <Loading />}
       <div className='container mx-auto my-3 md:my-5'>
         <Slide>
           {slideImages.map((slideImage, index) => (
@@ -113,7 +115,11 @@ const Home = () => {
               {categories.map((category, index) => (
                 <Link
                   onClick={() => dispatch(updateCurrentPage("store"))}
-                  to={`${categories_ids.filter((category_id) => category_id.name === category.name)[0]?.path}`}
+                  to={`${
+                    categories_ids.filter(
+                      (category_id) => category_id.name === category.name
+                    )[0]?.path
+                  }`}
                   key={index}
                 >
                   <div key={index} className='text-center mx-auto'>

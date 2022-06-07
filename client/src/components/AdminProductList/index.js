@@ -77,7 +77,7 @@ const AdminProductList = () => {
           {filteredData.map((product) => (
             <div className='w-full flex border-b py-3' key={product._id}>
               <div className='w-2/12 flex justify-center p-2'>
-                <img className='w-20' src={product.image_url} alt='product' />
+                <img className='w-20' src={product?.image_url} alt='product' />
               </div>
               <div className='w-7/12 flex justify-between'>
                 <div className='font-bold text-xl mb-2'>{product.name}</div>

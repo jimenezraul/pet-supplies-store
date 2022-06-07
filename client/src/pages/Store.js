@@ -8,6 +8,7 @@ import ProductList from "../components/ProductList";
 import { useParams } from "react-router-dom";
 import { idbPromise } from "../utils/helpers";
 import ScrollCart from "../components/ScrollCart";
+import Loading from "../components/Loading";
 
 const Store = () => {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ const Store = () => {
 
   return (
     <div className='mt-3 flex-1'>
+      {loading && (<Loading />)}
       <div className='container mx-auto'>
         <div className='flex flex-wrap justify-center md:space-x-2'>
           <div className='flex justify-end w-11/12'>

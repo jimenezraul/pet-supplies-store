@@ -70,7 +70,7 @@ const ImageCropper = (props) => {
       dispatch(toggle_Modal());
       input.current.value = "";
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
     }
   };
 
