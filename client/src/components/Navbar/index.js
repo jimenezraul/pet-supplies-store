@@ -7,14 +7,17 @@ import {
   updateUser,
   updateWishlist,
   updateCart,
+  addToCart,
 } from "../../redux/Store/storeSlice";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { GET_USER } from "../../utils/queries";
+import { ADD_TO_CART } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 import { idbPromise } from "../../utils/helpers";
 
 const Navbar = () => {
+  const [add2Cart] = useMutation(ADD_TO_CART);
   const dispatch = useDispatch();
   const { currentPage, cart } = useSelector((state) => state.store);
   const [isOpen, setIsOpen] = useState(false);
@@ -30,16 +33,57 @@ const Navbar = () => {
     if (data) {
       dispatch(updateUser(data.user));
       dispatch(updateWishlist(data.user.wishlist));
-
-      const newData = data.user.cart.map((item) => {
-        return {
-          ...item.product,
-          quantity: item.quantity,
-        };
-      });
-      dispatch(updateCart(newData));
+      async function getCart() {
+        const cart = await idbPromise("cart", "get");
+        const newData = data.user.cart.map((item) => {
+          return {
+            ...item.product,
+            quantity: item.quantity,
+          };
+        });
+        dispatch(updateCart(newData));
+        cart.map((item) => {
+          const inCart = newData.find((p) => p._id === item._id);
+          if (!inCart) {
+            const data = {
+              ...item,
+              product: item,
+              quantity: parseInt(item.quantity),
+            };
+            dispatch(addToCart(data));
+            add2Cart({
+              variables: {
+                id: item._id,
+                name: item.name,
+                description: item.description,
+                imageUrl: item.image_url,
+                price: parseFloat(item.price),
+                quantity: parseInt(item.quantity),
+              },
+            });
+            return null;
+          }
+          return null;
+        });
+      }
+      getCart();
     }
-  }, [data, dispatch]);
+  }, [data, dispatch, add2Cart]);
+
+  useEffect(() => {
+    if (!loggedIn) {
+      idbPromise("cart", "get").then((res) => {
+        const itemData = res.map((item) => {
+          return {
+            ...item,
+            product: item,
+            quantity: item.quantity,
+          };
+        });
+        dispatch(updateCart(itemData));
+      });
+    }
+  }, [loggedIn, dispatch]);
 
   useEffect(() => {
     if (currentPathName === "") {

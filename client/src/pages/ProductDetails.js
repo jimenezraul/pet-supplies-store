@@ -114,12 +114,12 @@ const ProductDetails = () => {
           imageUrl: product.image_url,
         },
       }).then(() => {
-        dispatch(addToCart({ ...product, quantity: quantity.current.value }));
-        idbPromise("cart", "put", { ...product, quantity: quantity.current.value });
+        dispatch(addToCart({ ...product, quantity: parseInt(quantity.current.value) }));
+        idbPromise("cart", "put", { ...product, quantity: parseInt(quantity.current.value) });
       });
     } else {
-      dispatch(addToCart({ ...product, quantity: quantity.current.value }));
-      idbPromise("cart", "put", { ...product, quantity: quantity.current.value });
+      dispatch(addToCart({ ...product, quantity: parseInt(quantity.current.value) }));
+      idbPromise("cart", "put", { ...product, quantity: parseInt(quantity.current.value) });
     }
   };
 

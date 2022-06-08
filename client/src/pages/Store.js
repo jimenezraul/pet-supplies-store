@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useQuery } from "@apollo/client";
-import { GET_PRODUCTS, GET_CATEGORIES } from "../utils/queries";
-import { updateCategory, updateProduct } from "../redux/Store/storeSlice";
+import { GET_PRODUCTS } from "../utils/queries";
+import { updateProduct } from "../redux/Store/storeSlice";
 import { useEffect } from "react";
 import CategoriesCard from "../components/CategoriesCard";
 import ProductList from "../components/ProductList";
@@ -22,10 +22,10 @@ const Store = () => {
       data.products.forEach((product) => {
         idbPromise("products", "put", product);
       });
-    }else if (!loading) {
+    } else if (!loading) {
       idbPromise("products", "get").then((products) => {
         dispatch(updateProduct(products));
-      })
+      });
     }
     if (id && data) {
       // filter products by category
@@ -52,7 +52,7 @@ const Store = () => {
 
   return (
     <div className='mt-3 flex-1'>
-      {loading && (<Loading />)}
+      {loading && <Loading />}
       <div className='container mx-auto'>
         <div className='flex flex-wrap justify-center md:space-x-2'>
           <div className='flex justify-end w-11/12'>

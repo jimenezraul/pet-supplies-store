@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const OrderHistory = () => {
   const { orders } = useSelector((state) => state.store.user);
-  console.log(orders);
+
   return (
     <div>
       <h5 className='mb-1 text-xl font-medium text-gray-900 dark:text-white border-b pb-5'>

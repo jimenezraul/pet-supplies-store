@@ -1,18 +1,15 @@
 import CartItems from "../components/CartItems";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import { useLazyQuery } from "@apollo/client";
 import { loadStripe } from "@stripe/stripe-js";
 import { QUERY_CHECKOUT } from "../utils/queries";
 import { useEffect } from "react";
-import { idbPromise } from '../utils/helpers';
-import { addMultipleToCart } from "../redux/Store/storeSlice";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Cart = () => {
-  const dispatch = useDispatch();
   const cart = useSelector((state) => state.store.cart);
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
@@ -24,20 +21,9 @@ const Cart = () => {
     }
   }, [data]);
 
-  // useEffect(() => {
-  //   async function getCart() {
-  //     const cart = await idbPromise('cart', 'get');
-  //     dispatch(addMultipleToCart(cart));
-  //   }
-
-  //   if (!cart.length) {
-  //     getCart();
-  //   }
-  // }, [cart.length, dispatch]);
-
   const auth = Auth.loggedIn();
   const total = useSelector((state) =>
-    state.store.cart
+    state.store?.cart
       .reduce((acc, item) => acc + item.quantity * item.price, 0)
       .toFixed(2)
   );
