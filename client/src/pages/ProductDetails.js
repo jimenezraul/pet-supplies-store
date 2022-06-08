@@ -12,6 +12,7 @@ import Auth from "../utils/auth";
 import { ADD_TO_WISHLIST } from "../utils/mutations";
 import { ADD_TO_CART } from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
+import ScrollCart from "../components/ScrollCart";
 
 const ProductDetails = () => {
   const quantity = useRef(null);
@@ -114,17 +115,28 @@ const ProductDetails = () => {
           imageUrl: product.image_url,
         },
       }).then(() => {
-        dispatch(addToCart({ ...product, quantity: parseInt(quantity.current.value) }));
-        idbPromise("cart", "put", { ...product, quantity: parseInt(quantity.current.value) });
+        dispatch(
+          addToCart({ ...product, quantity: parseInt(quantity.current.value) })
+        );
+        idbPromise("cart", "put", {
+          ...product,
+          quantity: parseInt(quantity.current.value),
+        });
       });
     } else {
-      dispatch(addToCart({ ...product, quantity: parseInt(quantity.current.value) }));
-      idbPromise("cart", "put", { ...product, quantity: parseInt(quantity.current.value) });
+      dispatch(
+        addToCart({ ...product, quantity: parseInt(quantity.current.value) })
+      );
+      idbPromise("cart", "put", {
+        ...product,
+        quantity: parseInt(quantity.current.value),
+      });
     }
   };
 
   return (
     <div className='flex-1'>
+      <ScrollCart />
       <div className='container mx-auto px-4 py-8'>
         <section className='text-gray-600 body-font overflow-hidden'>
           <div className='container px-5 py-24 mx-auto'>
