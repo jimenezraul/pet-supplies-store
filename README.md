@@ -2,7 +2,7 @@
 
 ## Description
 
-ProPet is an online store that allows buyers to log in, browse through multiple categories of pets, pick out products, select favorite products, and them to cart and complete the purchase.
+ProPet is MERN Stack an online store that allows buyers to log in, browse through multiple categories of pets, pick out products, select favorite products, and them to cart and complete the purchase.
 
 ## Click [here](https://afternoon-spire-43659.herokuapp.com/) to view the live application.
 
@@ -39,6 +39,7 @@ ProPet is an online store that allows buyers to log in, browse through multiple 
 - MongoDB
 - GraphQL
 - Redux
+- AWS S3 Bucket
 
 ## Screenshots
 
