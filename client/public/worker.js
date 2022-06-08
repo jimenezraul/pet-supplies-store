@@ -1,7 +1,12 @@
-var CACHE_NAME = 'pwa-task-manager';
+var CACHE_NAME = 'pet-store';
 var urlsToCache = [
   '/',
-  '/completed'
+    '/store',
+    '/store/product/:id',
+    '/store/cart',
+    '/store/category/:id',
+    '/login',
+    '/signup',
 ];
 
 // Install a service worker
