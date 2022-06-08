@@ -4,6 +4,7 @@ import { addToCart, updateCartQuantity } from "../../redux/Store/storeSlice";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_CART } from "../../utils/mutations";
 import Auth from "../../utils/auth";
+import { idbPromise } from "../../utils/helpers";
 
 const ProductList = () => {
   const auth = Auth.loggedIn();
@@ -11,7 +12,6 @@ const ProductList = () => {
   const products = useSelector((state) => state.store.products);
   const cart = useSelector((state) => state.store.cart);
   const dispatch = useDispatch();
-
 
   const addToCartHandler = (e) => {
     //check if the product is already in the cart
@@ -32,6 +32,10 @@ const ProductList = () => {
             quantity: inCart.quantity + 1,
           })
         );
+        idbPromise("cart", "put", {
+          ...e,
+          quantity: inCart.quantity + 1,
+        }); 
       });
     } else {
       if (auth) {
@@ -44,9 +48,11 @@ const ProductList = () => {
           },
         }).then(() => {
           dispatch(addToCart({ ...e, quantity: 1 }));
+          idbPromise("cart", "put", { ...e, quantity: 1 });
         });
       } else {
         dispatch(addToCart({ ...e, quantity: 1 }));
+        idbPromise("cart", "put", { ...e, quantity: 1 });
       }
     }
   };

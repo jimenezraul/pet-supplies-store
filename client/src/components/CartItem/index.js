@@ -17,7 +17,6 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
   const [add2Cart] = useMutation(ADD_TO_CART);
 
   const quantityHandler = (e) => {
-    console.log("change");
     let value = e.target.value;
 
     if (value === "") {
@@ -25,21 +24,31 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
     }
 
     if (value !== "0") {
-      add2Cart({
-        variables: {
-          ...item,
-          id: item._id,
-          quantity: parseInt(value),
-          imageUrl: item.image_url,
-        },
-      });
-      dispatch(
-        updateCartQuantity({
-          _id: item._id,
-          quantity: parseInt(value),
-        })
-      );
-      idbPromise("cart", "put", { ...item, quantity: value });
+      if (auth) {
+        add2Cart({
+          variables: {
+            ...item,
+            id: item._id,
+            quantity: parseInt(value),
+            imageUrl: item.image_url,
+          },
+        });
+        dispatch(
+          updateCartQuantity({
+            _id: item._id,
+            quantity: parseInt(value),
+          })
+        );
+        idbPromise("cart", "put", { ...item, quantity: value });
+      } else {
+        dispatch(
+          updateCartQuantity({
+            _id: item._id,
+            quantity: parseInt(value),
+          })
+        );
+        idbPromise("cart", "put", { ...item, quantity: value });
+      }
     } else {
       if (auth) {
         deleteFromUserCart({
@@ -49,6 +58,9 @@ const CartItem = ({ item, increaseAndDecreaseHandler }) => {
         });
         dispatch(deleteFromCart(item._id));
         idbPromise("cart", "delete", item._id);
+      } else {
+        dispatch(deleteFromCart(item._id));
+        idbPromise("cart", "delete", {_id: item._id});
       }
     }
   };
