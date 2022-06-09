@@ -1,6 +1,6 @@
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_PRODUCT_BY_ID } from "../utils/queries";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
@@ -141,11 +141,25 @@ const ProductDetails = () => {
         <section className='text-gray-600 body-font overflow-hidden'>
           <div className='container px-5 py-24 mx-auto'>
             <div className='lg:w-4/5 mx-auto flex flex-wrap'>
-              <img
-                alt='ecommerce'
-                className='lg:w-1/2 h-full object-cover object-center rounded'
-                src={product.image_url}
-              />
+              <div className='lg:w-1/2 w-full'>
+                <Link
+                  to={-1}
+                  className='flex font-semibold text-blue-800 text-sm mb-10'
+                >
+                  <svg
+                    className='fill-current mr-2 text-blue-800 w-4'
+                    viewBox='0 0 448 512'
+                  >
+                    <path d='M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z' />
+                  </svg>
+                  Back
+                </Link>
+                <img
+                  alt='ecommerce'
+                  className='object-cover object-center rounded'
+                  src={product.image_url}
+                />
+              </div>
               <div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
                 <h1 className='text-gray-900 text-3xl title-font font-medium mb-1'>
                   {product.name}
