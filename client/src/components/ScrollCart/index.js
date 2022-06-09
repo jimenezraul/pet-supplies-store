@@ -20,8 +20,8 @@ const ScrollCart = () => {
 
   return (
     <div
-      className='scrollCart right-4'
-      style={{ height: 120, display: showScroll ? "block" : "none" }}
+      className='scrollCart right-0 md:right-3 lg:right-5 xl:right-28'
+      style={{ height: 100, display: showScroll ? "block" : "none" }}
     >
       <Link to='/cart'>
         <i className='text-2xl relative fa-solid fa-cart-shopping bg-white rounded-full border shadow-lg p-5 leading-none'>
