@@ -9,10 +9,6 @@ import { useQuery } from "@apollo/client";
 import { GET_CATEGORIES } from "../utils/queries";
 import Loading from "../components/Loading";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
-
 const slideImages = [
   {
     url: "/assets/homepage/cat.jpeg",

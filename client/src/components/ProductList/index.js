@@ -6,10 +6,6 @@ import { ADD_TO_CART } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import { idbPromise } from "../../utils/helpers";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
-
 const ProductList = () => {
   const auth = Auth.loggedIn();
   const [add2Cart] = useMutation(ADD_TO_CART);

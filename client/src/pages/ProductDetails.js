@@ -135,7 +135,12 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className='flex-1'>
+    <div
+      data-aos='fade-up'
+      data-aos-delay='50'
+      data-aos-duration='1000'
+      className='flex-1'
+    >
       <ScrollCart />
       <div className='container mx-auto px-4 py-8'>
         <section className='text-gray-600 body-font overflow-hidden'>
