@@ -6,6 +6,10 @@ import { ADD_TO_CART } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import { idbPromise } from "../../utils/helpers";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 const ProductList = () => {
   const auth = Auth.loggedIn();
   const [add2Cart] = useMutation(ADD_TO_CART);
@@ -35,7 +39,7 @@ const ProductList = () => {
         idbPromise("cart", "put", {
           ...e,
           quantity: inCart.quantity + 1,
-        }); 
+        });
       });
     } else {
       if (auth) {
@@ -61,6 +65,9 @@ const ProductList = () => {
       <div className='bg-white border rounded shadow-lg flex flex-wrap py-5'>
         {products.map((product) => (
           <div
+            data-aos='fade-up'
+            data-aos-delay='50'
+            data-aos-duration='1000'
             className='w-6/12 lg:w-4/12 flex justify-center p-2'
             key={product._id}
           >
