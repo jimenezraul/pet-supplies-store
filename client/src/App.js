@@ -17,6 +17,10 @@ import ProductDetails from "./pages/ProductDetails";
 import { setContext } from "@apollo/client/link/context";
 import Success from "./pages/Sucess";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 const uploadLink = createUploadLink({
   uri: "/graphql",
 });
