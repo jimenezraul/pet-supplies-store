@@ -9,6 +9,10 @@ import { useQuery } from "@apollo/client";
 import { GET_CATEGORIES } from "../utils/queries";
 import Loading from "../components/Loading";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 const slideImages = [
   {
     url: "/assets/homepage/cat.jpeg",
@@ -73,7 +77,12 @@ const Home = () => {
   return (
     <div className='flex flex-col flex-1'>
       {loading && <Loading />}
-      <div className='container mx-auto my-3 md:my-5'>
+      <div
+        data-aos='fade-in'
+        data-aos-delay='100'
+        data-aos-duration='1000'
+        className='container mx-auto my-3 md:my-5'
+      >
         <Slide>
           {slideImages.map((slideImage, index) => (
             <div className='each-slide' key={index}>
@@ -89,7 +98,12 @@ const Home = () => {
         </Slide>
       </div>
 
-      <div className='flex bg-white flex-col justify-center mb-4 shadow-md'>
+      <div
+        data-aos='fade-up'
+        data-aos-delay='50'
+        data-aos-duration='1000'
+        className='flex bg-white flex-col justify-center mb-4 shadow-md'
+      >
         <h2 className='text-center text-4xl py-4 font-semibold'>
           Welcome to ProPet{" "}
         </h2>
@@ -105,7 +119,12 @@ const Home = () => {
         </div>
       </div>
 
-      <div className='bg-white mb-5 shadow-md'>
+      <div
+        data-aos='fade-up'
+        data-aos-delay='50'
+        data-aos-duration='1000'
+        className='bg-white mb-5 shadow-md'
+      >
         <div className='container mx-auto'>
           <div className='p-2'>
             <p className='font-bold md:ml-9 text-2xl'>Shop By Pet</p>
