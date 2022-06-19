@@ -2,13 +2,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToCart, removeFromWishlist } from "../../redux/Store/storeSlice";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { REMOVE_FROM_WISHLIST } from "../../utils/mutations";
+import { REMOVE_FROM_WISHLIST, ADD_TO_CART } from "../../utils/mutations";
 
 const Wishlist = () => {
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.store.wishlist);
 
   const [removeFromWishList, { error }] = useMutation(REMOVE_FROM_WISHLIST);
+  const [add2Cart] = useMutation(ADD_TO_CART);
 
   const removeFromWishlistHandler = async (id) => {
     await removeFromWishList({
@@ -18,6 +19,23 @@ const Wishlist = () => {
     }).then(() => {
       dispatch(removeFromWishlist(id));
     });
+  };
+
+  const addToCartHandler = async (item) => {
+    const data = {
+      ...item,
+      quantity: 1,
+    };
+
+    await add2Cart({
+      variables: {
+        ...data,
+        id: data._id,
+        quantity: 1,
+        imageUrl: data.image_url,
+      },
+    });
+    dispatch(addToCart(data));
   };
 
   return (
@@ -61,7 +79,7 @@ const Wishlist = () => {
                             className={`w-full flex justify-center py-4 ${border}`}
                           >
                             <button
-                              onClick={() => dispatch(addToCart(product))}
+                              onClick={() => addToCartHandler(product)}
                               className='ml-1 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent'
                             >
                               Add To Cart
