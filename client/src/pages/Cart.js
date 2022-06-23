@@ -79,7 +79,7 @@ const Cart = () => {
             to='/store'
             className='flex font-semibold text-blue-800 text-sm mt-10'
           >
-          <i class="flex flex-col justify-center mr-1 fa-solid fa-arrow-left"></i>
+          <i className="flex flex-col justify-center mr-1 fa-solid fa-arrow-left"></i>
             Continue Shopping
           </Link>
         </div>
