@@ -138,16 +138,16 @@ const ProductDetails = () => {
     <div className='flex-1'
     >
       <ScrollCart />
-      <div className='container mx-auto px-4 py-8'>
+      <div className='container mx-auto py-8'>
         <section className='text-gray-600 body-font overflow-hidden'>
           <div className='container px-5 mx-auto'>
-            <div className='lg:w-4/5 mx-auto flex flex-wrap'>
+            <div className='lg:w-4/5 mx-auto flex flex-wrap p-6 bg-white rounded-lg shadow-lg border'>
               <div className='lg:w-1/2 w-full'>
                 <Link
                   to={-1}
                   className='flex font-semibold text-blue-800 text-sm mb-10'
                 >
-                <i class="flex flex-col justify-center mr-1 fa-solid fa-arrow-left"></i>
+                <i className="flex flex-col justify-center mr-1 fa-solid fa-arrow-left"></i>
                   Back
                 </Link>
                 <img
