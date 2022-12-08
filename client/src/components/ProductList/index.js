@@ -61,9 +61,6 @@ const ProductList = () => {
       <div className='flex flex-wrap'>
         {products.map((product) => (
           <div
-            data-aos='fade-up'
-            data-aos-delay='50'
-            data-aos-duration='1000'
             className='w-6/12 lg:w-4/12 flex justify-center p-2'
             key={product._id}
           >

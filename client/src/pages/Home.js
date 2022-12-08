@@ -74,9 +74,6 @@ const Home = () => {
     <div className='flex flex-col flex-1'>
       {loading && <Loading />}
       <div
-        data-aos='fade-in'
-        data-aos-delay='100'
-        data-aos-duration='1000'
         className='container mx-auto my-3 md:my-5'
       >
         <Slide>
@@ -95,9 +92,6 @@ const Home = () => {
       </div>
 
       <div
-        data-aos='fade-up'
-        data-aos-delay='50'
-        data-aos-duration='1000'
         className='flex bg-white flex-col justify-center mb-4 shadow-md'
       >
         <h2 className='text-center text-4xl py-4 font-semibold'>
@@ -116,9 +110,6 @@ const Home = () => {
       </div>
 
       <div
-        data-aos='fade-up'
-        data-aos-delay='50'
-        data-aos-duration='1000'
         className='bg-white mb-5 shadow-md'
       >
         <div className='container mx-auto'>
