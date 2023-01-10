@@ -8,6 +8,7 @@
     "watch": "nodemon",
     "seed": "node config/seeds.js"
   },
+  "type" : "module", 
   "keywords": [],
   "author": "",
   "license": "ISC",
