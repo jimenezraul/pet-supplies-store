@@ -125,14 +125,13 @@ const Home = () => {
               </button>
             </Link>
           </div>
-          <div className='w-full lg:w-1/2 relative'>
+          <div className='w-full lg:w-1/2'>
             <img
-              className='w-full h-full object-cover z-[100] relative'
+              className='w-full h-full object-cover'
               src={dogImage}
               alt='dog'
               referrerPolicy='no-referrer'
             />
-            <div className='absolute top-0 rounded-full left-0 w-full h-full bg-white backdrop-blur-lg shadow-xl border'></div>
           </div>
         </div>
       </div>
