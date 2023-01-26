@@ -107,7 +107,7 @@ const Home = () => {
         <div className='flex flex-wrap-reverse'>
           <div className='w-full lg:w-1/2 flex flex-col justify-center p-6'>
             <h1 className='text-4xl lg:text-7xl font-bold text-gray-800'>
-              ProPet
+              ProPet 
             </h1>
             <h2 className='text-xl lg:text-3xl font-bold text-gray-800'>
               Your One-Stop Shop for All Pet Supplies
