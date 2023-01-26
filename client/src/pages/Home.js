@@ -1,54 +1,82 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Slide } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
-import "./home.css";
-import { useDispatch, useSelector } from "react-redux";
-import { updateCategory, updateCurrentPage } from "../redux/Store/storeSlice";
-import { useQuery } from "@apollo/client";
-import { GET_CATEGORIES } from "../utils/queries";
-import Loading from "../components/Loading";
-
-const slideImages = [
-  {
-    url: "/assets/homepage/cat.jpeg",
-    caption: "Cat",
-  },
-  {
-    url: "/assets/homepage/parrots.jpeg",
-    caption: "Parrot",
-  },
-  {
-    url: "/assets/homepage/dog.jpeg",
-    caption: "Dog",
-  },
-];
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './home.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateCategory, updateCurrentPage } from '../redux/Store/storeSlice';
+import { useQuery } from '@apollo/client';
+import { GET_CATEGORIES } from '../utils/queries';
+import Loading from '../components/Loading';
 
 const categories = [
   {
-    url: "/assets/categories/dogs/dog.jpeg",
-    name: "Dog",
-    path: "/store/dog",
+    url: '/assets/categories/dogs/dog.jpeg',
+    name: 'Dog',
+    path: '/store/dog',
   },
   {
-    url: "/assets/categories/cats/cat.jpeg",
-    name: "Cat",
-    path: "/store/cat",
+    url: '/assets/categories/cats/cat.jpeg',
+    name: 'Cat',
+    path: '/store/cat',
   },
   {
-    url: "/assets/categories/fish/fish.jpeg",
-    name: "Fish",
-    path: "/store/fish",
+    url: '/assets/categories/fish/fish.jpeg',
+    name: 'Fish',
+    path: '/store/fish',
   },
   {
-    url: "/assets/categories/hamsters/hamster.jpeg",
-    name: "Hamster",
-    path: "/store/hamster",
+    url: '/assets/categories/hamsters/hamster.jpeg',
+    name: 'Hamster',
+    path: '/store/hamster',
   },
   {
-    url: "/assets/categories/parrots/parrot.jpeg",
-    name: "Bird",
-    path: "/store/bird",
+    url: '/assets/categories/parrots/parrot.jpeg',
+    name: 'Bird',
+    path: '/store/bird',
+  },
+];
+
+const brands = [
+  {
+    name: 'American Journey',
+    url: '/assets/homepage/brands/american-j.jpg',
+  },
+  {
+    name: 'Blue Buffalo',
+    url: '/assets/homepage/brands/blue.jpg',
+  },
+  {
+    name: 'Fancy Feast',
+    url: '/assets/homepage/brands/fancy-feast.jpg',
+  },
+  {
+    name: 'Greenies',
+    url: '/assets/homepage/brands/greenies.jpg',
+  },
+  {
+    name: 'Hills',
+    url: '/assets/homepage/brands/hills.jpg',
+  },
+  {
+    name: 'Nexgard',
+    url: '/assets/homepage/brands/nexgard.jpg',
+  },
+  {
+    name: 'Nutro',
+    url: '/assets/homepage/brands/nutro.jpg',
+  },
+  {
+    name: 'Purina',
+    url: '/assets/homepage/brands/purina.jpg',
+  },
+  {
+    name: 'Royal Canin',
+    url: '/assets/homepage/brands/royal-canin.jpg',
+  },
+  {
+    name: 'Vibeful',
+    url: '/assets/homepage/brands/vibeful.jpeg',
   },
 ];
 
@@ -70,57 +98,53 @@ const Home = () => {
     };
   });
 
+  const dogImage = '/assets/homepage/dogs.png';
+
   return (
     <div className='flex flex-col flex-1'>
       {loading && <Loading />}
-      <div
-        className='container mx-auto my-3 md:my-5'
-      >
-        <Slide>
-          {slideImages.map((slideImage, index) => (
-            <div className='each-slide' key={index}>
-              <div>
-                <img
-                  className='slideImage'
-                  src={slideImage.url}
-                  alt='slide-pictures'
-                />
-              </div>
-            </div>
-          ))}
-        </Slide>
-      </div>
-
-      <div
-        className='flex bg-white flex-col justify-center mb-4 shadow-md'
-      >
-        <h2 className='text-center text-4xl py-4 font-semibold'>
-          Welcome to ProPet{" "}
-        </h2>
-        <div className='w-full text-center'>
-          <Link
-            to='/store'
-            onClick={() => dispatch(updateCurrentPage("store"))}
-          >
-            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4'>
-              Shop Now
-            </button>
-          </Link>
+      <div className='container mx-auto pt-16'>
+        <div className='flex flex-wrap-reverse'>
+          <div className='w-full lg:w-1/2 flex flex-col justify-center p-6'>
+            <h1 className='text-5xl lg:text-7xl font-bold text-gray-800'>
+              ProPets
+            </h1>
+            <h2 className='text-xl lg:text-3xl font-bold text-gray-800'>
+              Your One-Stop Shop for All Pet Supplies
+            </h2>
+            <p className='text-gray-600 lg:text-xl'>
+              Find everything you need for your furry friend at ProPets - from
+              food to toys to grooming supplies.
+            </p>
+            <Link to='/store'>
+              <button
+                onClick={() => dispatch(updateCurrentPage('store'))}
+                className='text-2xl bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4'
+              >
+                Shop Now
+              </button>
+            </Link>
+          </div>
+          <div className='w-full lg:w-1/2 relative'>
+            <img
+              className='w-full h-full object-cover z-[100] relative'
+              src={dogImage}
+              alt='dog'
+            />
+            <div className='absolute top-0 rounded-full left-0 w-full h-full bg-white backdrop-blur-lg shadow-xl border'></div>
+          </div>
         </div>
       </div>
-
-      <div
-        className='bg-white mb-5 shadow-md'
-      >
+      <div className='bg-white mb-5'>
         <div className='container mx-auto'>
           <div className='p-2'>
-            <p className='font-bold md:ml-9 text-2xl'>Shop By Pet</p>
+            <p className='font-bold py-4 text-2xl'>Shop By Pet</p>
           </div>
           <div className='categories bg-white pb-5'>
             <div className='grid grid-cols-3 md:grid-cols-5 gap-4'>
               {categories.map((category, index) => (
                 <Link
-                  onClick={() => dispatch(updateCurrentPage("store"))}
+                  onClick={() => dispatch(updateCurrentPage('store'))}
                   to={`${
                     categories_ids.filter(
                       (category_id) => category_id.name === category.name
@@ -142,6 +166,17 @@ const Home = () => {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+      <div className='container mx-auto px-4 mb-6'>
+        <h3 className='text-2xl font-bold text-gray-800 py-6'>Top Brands</h3>
+
+        <div className='grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-2'>
+          {brands.map((brand, index) => (
+            <div key={index} className='bg-white p-4 flex justify-center items-center rounded-lg shadow-lg border'>
+              <img src={brand.url} alt={brand.name} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
