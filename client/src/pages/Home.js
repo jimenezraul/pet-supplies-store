@@ -107,7 +107,7 @@ const Home = () => {
         <div className='flex flex-wrap-reverse'>
           <div className='w-full lg:w-1/2 flex flex-col justify-center p-6'>
             <h1 className='text-4xl lg:text-7xl font-bold text-gray-800'>
-              ProPets
+              ProPet
             </h1>
             <h2 className='text-xl lg:text-3xl font-bold text-gray-800'>
               Your One-Stop Shop for All Pet Supplies
@@ -130,6 +130,7 @@ const Home = () => {
               className='w-full h-full object-cover z-[100] relative'
               src={dogImage}
               alt='dog'
+              referrerPolicy='no-referrer'
             />
             <div className='absolute top-0 rounded-full left-0 w-full h-full bg-white backdrop-blur-lg shadow-xl border'></div>
           </div>
@@ -171,9 +172,12 @@ const Home = () => {
       <div className='container mx-auto px-4 mb-6'>
         <h3 className='text-2xl font-bold text-gray-800 py-6'>Top Brands</h3>
 
-        <div className='grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-2'>
+        <div className='grid grid-cols-2 gap-2 md:grid-cols-5'>
           {brands.map((brand, index) => (
-            <div key={index} className='bg-white p-4 flex justify-center items-center rounded-lg shadow-lg border'>
+            <div
+              key={index}
+              className='bg-white p-4 flex justify-center items-center rounded-lg shadow-lg border'
+            >
               <img src={brand.url} alt={brand.name} />
             </div>
           ))}
