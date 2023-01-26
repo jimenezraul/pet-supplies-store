@@ -113,7 +113,7 @@ const Home = () => {
               Your One-Stop Shop for All Pet Supplies
             </h2>
             <p className='text-gray-600 lg:text-xl'>
-              Find everything you need for your furry friend at ProPets - from
+              Find everything you need for your furry friend at ProPet - from
               food to toys to grooming supplies.
             </p>
             <Link to='/store'>
