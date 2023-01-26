@@ -135,8 +135,8 @@ const Navbar = () => {
             alt='Logo'
           />
           <div className='relative flex flex-col p-4'>
-            <h1 className='relative logo text-5xl text-white'>ProPet</h1>
-            <p className='absolute text-xl top-14 left-20 text-white'>
+            <h1 className='relative logo text-3xl lg:text-5xl text-white'>ProPet</h1>
+            <p className='absolute text-md lg:text-xl top-12 lg:top-14 left-10 lg:left-20 text-white'>
               onlineStore
             </p>
           </div>
