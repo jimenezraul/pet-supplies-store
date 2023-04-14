@@ -9,7 +9,6 @@ import CartSingleItem from "../CartItem";
 import Auth from "../../utils/auth";
 import { GET_USER } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
-import { useEffect } from "react";
 
 const CartItem = () => {
   const auth = Auth.loggedIn();

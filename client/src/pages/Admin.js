@@ -17,6 +17,8 @@ const Admin = () => {
   const { loading, error, data } = useQuery(GET_CATEGORIES);
   const [deleteCategory] = useMutation(DELETE_CATEGORY);
 
+  console.log(loading, error)
+
   useEffect(() => {
     if (data) {
       dispatch(updateCategory(data.categories));

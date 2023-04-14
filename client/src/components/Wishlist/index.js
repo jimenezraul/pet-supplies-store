@@ -8,7 +8,7 @@ const Wishlist = () => {
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.store.wishlist);
 
-  const [removeFromWishList, { error }] = useMutation(REMOVE_FROM_WISHLIST);
+  const [removeFromWishList] = useMutation(REMOVE_FROM_WISHLIST);
   const [add2Cart] = useMutation(ADD_TO_CART);
 
   const removeFromWishlistHandler = async (id) => {

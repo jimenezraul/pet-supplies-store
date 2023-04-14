@@ -15,6 +15,8 @@ const UpdateProductModal = (props) => {
   const [newFile, setNewFile] = useState(null);
   const [updateProduct] = useMutation(UPDATE_PRODUCT);
 
+  console.log(SelectedFile);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
