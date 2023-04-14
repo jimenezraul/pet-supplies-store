@@ -107,13 +107,13 @@ const Home = () => {
         <div className='flex flex-wrap-reverse'>
           <div className='w-full lg:w-1/2 flex flex-col justify-center p-6'>
             <h1 className='text-4xl lg:text-7xl font-bold text-gray-800'>
-              ProPet
+              ProPet 
             </h1>
             <h2 className='text-xl lg:text-3xl font-bold text-gray-800'>
               Your One-Stop Shop for All Pet Supplies
             </h2>
             <p className='text-gray-600 lg:text-xl'>
-              Find everything you need for your furry friend at ProPets - from
+              Find everything you need for your furry friend at ProPet - from
               food to toys to grooming supplies.
             </p>
             <Link to='/store'>
@@ -125,14 +125,13 @@ const Home = () => {
               </button>
             </Link>
           </div>
-          <div className='w-full lg:w-1/2 relative'>
+          <div className='w-full lg:w-1/2'>
             <img
-              className='w-full h-full object-cover z-[100] relative'
+              className='w-full h-full object-cover'
               src={dogImage}
               alt='dog'
               referrerPolicy='no-referrer'
             />
-            <div className='absolute top-0 rounded-full left-0 w-full h-full bg-white backdrop-blur-lg shadow-xl border'></div>
           </div>
         </div>
       </div>
