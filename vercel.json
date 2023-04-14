@@ -1,0 +1,12 @@
+{
+  "builds": [
+    { "src": "/client/build/*.html", "use": "@vercel/static" },
+    { "src": "/server/server.js", "use": "@vercel/node" }
+  ],
+  "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/server/server.js"
+      }
+    ]
+}
