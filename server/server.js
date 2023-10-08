@@ -23,18 +23,25 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "public")));
 // Serve up static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
+if (process.env.NODE_ENV === 'production') {
+  app.enable('trust proxy');
+  app.use(function (req, res, next) {
+    if (req.secure) {
+      next();
+    } else {
+      res.redirect('https://' + req.headers.host + req.url);
+    }
+  });
+  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
 }
 
 app.get("/service-worker.js", (req, res) => {
   res.sendFile(
     path.resolve(__dirname, "public", "../client/src/service-worker.js")
   );
-});
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 // Create a new instance of an Apollo server with the GraphQL schema
