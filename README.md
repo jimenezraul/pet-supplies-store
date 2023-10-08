@@ -4,7 +4,7 @@
 
 ProPet is MERN Stack an online store that allows buyers to log in, browse through multiple categories of pets, pick out products, select favorite products, and them to cart and complete the purchase.
 
-## Click [here](https://afternoon-spire-43659.herokuapp.com/) to view the live application.
+## Click [here](https://propet.onrender.com) to view the live application.
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@ ProPet is MERN Stack an online store that allows buyers to log in, browse throug
   - [Description](#description)
   - [Click here to view the live application.](#click-here-to-view-the-live-application)
   - [Table of Contents](#table-of-contents)
-  - [Tools & Resources](#tools--resources)
+  - [Tools \& Resources](#tools--resources)
   - [Screenshots](#screenshots)
   - [Main Page:](#main-page)
   - [Sign Up Page:](#sign-up-page)
@@ -90,8 +90,8 @@ This application is covered by the MIT license.
 
 ## Deployment
 
-Application deployed on Heroku  
-[Live Demo](https://afternoon-spire-43659.herokuapp.com/)
+Application deployed on Render  
+[Live Demo](https://propet.onrender.com)
 
 ## Contributing
 
