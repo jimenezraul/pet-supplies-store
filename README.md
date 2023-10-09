@@ -4,7 +4,7 @@
 
 ProPet is MERN Stack an online store that allows buyers to log in, browse through multiple categories of pets, pick out products, select favorite products, and them to cart and complete the purchase.
 
-## Click [here](https://propet.onrender.com) to view the live application.
+## Click [here](https://propet-06m8.onrender.com/) to view the live application.
 
 ## Table of Contents
 
